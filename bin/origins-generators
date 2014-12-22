@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+# vim:ft=python
+
+"""Origins Generators HTTP Service
+
+Usage:
+    origins-generators [--debug] [--host <host>] [--port <port>]
+
+Options:
+    -h --help           Show this screen.
+    -v --version        Show version.
+    --debug             Turns on debugging.
+    --host <host>       Host of the service [default: localhost].
+    --port <port>       Port of the service [default: 5000].
+"""
+
+from docopt import docopt
+from origins_generators.service import app
+
+
+options = docopt(__doc__, version='Origins Generators 0.1.0')
+
+debug = options['--debug']
+host = options['--host']
+port = int(options['--port'])
+
+app.run(host=host, port=port, debug=debug)
