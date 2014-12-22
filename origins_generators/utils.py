@@ -39,6 +39,14 @@ def timestr_to_timestamp(s):
         return int(dt.timestamp() * 1000)
 
 
+html_re = re.compile(r'<\w+(\s+("[^"]*"|\'[^\']*\'|[^>])+)?>|<\/\w+>', re.I)
+
+# REDCap labels can contain HTML. The Origins label must not contain any markup
+# for downstream use.
+def strip_html(s):
+    return html_re.sub('', s)
+
+
 def is_remote(s):
     return re.match(r'^https?://', s)
 

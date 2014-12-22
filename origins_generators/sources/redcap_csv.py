@@ -4,7 +4,7 @@ import csv
 import time
 from datetime import datetime
 from . import base
-from ..utils import prettify_name
+from .. import utils
 
 
 FIELDS = (
@@ -28,15 +28,6 @@ FIELDS = (
 
 
 DEFAULT_SECTION = 'General'
-
-
-html_re = re.compile(r'<\w+(\s+("[^"]*"|\'[^\']*\'|[^>])+)?>|<\/\w+>', re.I)
-
-
-# REDCap labels can contain HTML. The Origins label must not contain any markup
-# for downstream use.
-def strip_html(s):
-    return html_re.sub('', s)
 
 
 # REDCap data dictionaries contain the date in the filename. This attempts
@@ -103,7 +94,7 @@ class Client(base.Client):
 
         return {
             'origins:id': os.path.join(project['origins:id'], name),
-            'prov:label': prettify_name(name),
+            'prov:label': utils.prettify_name(name),
             'prov:type': 'Form',
             'name': name,
         }
@@ -111,7 +102,7 @@ class Client(base.Client):
     def parse_section(self, form, attrs):
         name = attrs['section_header'] or DEFAULT_SECTION
 
-        stripped_name = strip_html(name)
+        stripped_name = utils.strip_html(name)
 
         return {
             'origins:id': os.path.join(form['origins:id'], stripped_name),
