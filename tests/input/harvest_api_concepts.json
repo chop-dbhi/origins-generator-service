@@ -1,0 +1,3583 @@
+
+[
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/1/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/1/"
+            }
+        },
+        "category": {
+            "id": 1,
+            "name": "Patient Details",
+            "order": 1.0,
+            "parent": null
+        },
+        "description": "",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/2/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/2/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/2/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/2/values/"
+                    }
+                },
+                "alt_name": "Patient Birthdate",
+                "alt_plural_name": "Patient Birthdates",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Date patient was born as recorded on birth certificate or passport; the month, day and year on which person was born.",
+                "enumerable": false,
+                "field_name": "birthdate",
+                "id": 2,
+                "internal_type": "date",
+                "keywords": "",
+                "model_name": "patient",
+                "modified": "2012-10-03T21:14:17.630",
+                "name": "Patient Birthdate",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": 0.0,
+                "plural_name": "Patient Birthdates",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "date",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/3/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/3/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/3/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/3/values/"
+                    }
+                },
+                "alt_name": "Patient Birthdate Estimated?",
+                "alt_plural_name": "Patient Birthdate Estimated?s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Whether birthdate is exact (no) or estimated (yes).",
+                "enumerable": true,
+                "field_name": "birthdate_estimated",
+                "id": 3,
+                "internal_type": "nullboolean",
+                "keywords": "",
+                "model_name": "patient",
+                "modified": "2012-10-08T09:45:21.216",
+                "name": "Patient Birthdate Estimated?",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ]
+                ],
+                "order": 1.0,
+                "plural_name": "Patient Birthdate Estimated?s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "boolean",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Age",
+        "id": 1,
+        "keywords": "",
+        "modified": "2014-03-21T22:08:45.614",
+        "name": "Age",
+        "order": null,
+        "plural_name": "Ages",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/2/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/2/"
+            }
+        },
+        "category": {
+            "id": 1,
+            "name": "Patient Details",
+            "order": 1.0,
+            "parent": null
+        },
+        "description": "",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/1/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/1/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/1/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/1/values/"
+                    }
+                },
+                "alt_name": "Patient Gender",
+                "alt_plural_name": "Patient Genders",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Self-identified gender where gender is the assemblage of properties that distinguish people on the basis of the societal roles (ORDR;HLF Table 0001 (with additions))",
+                "enumerable": true,
+                "field_name": "gender",
+                "id": 1,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "patient",
+                "modified": "2012-10-03T21:14:57.923",
+                "name": "Patient Gender",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 1.0,
+                "plural_name": "Patient Genders",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Gender",
+        "id": 2,
+        "keywords": "",
+        "modified": "2013-10-16T11:02:15.914",
+        "name": "Gender",
+        "order": null,
+        "plural_name": "Genders",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/10/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/10/"
+            }
+        },
+        "category": {
+            "id": 1,
+            "name": "Patient Details",
+            "order": 1.0,
+            "parent": null
+        },
+        "description": "",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/82/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/82/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/82/values/"
+                    }
+                },
+                "alt_name": "MRN",
+                "alt_plural_name": "MRNs",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "",
+                "enumerable": false,
+                "field_name": "mrn",
+                "id": 82,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "patient",
+                "modified": "2013-07-25T01:07:25.098",
+                "name": "MRN",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "MRNs",
+                "plural_unit": "",
+                "published": true,
+                "searchable": true,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "MRN",
+        "id": 10,
+        "keywords": "",
+        "modified": "2013-07-25T01:10:40.194",
+        "name": "MRN",
+        "order": null,
+        "plural_name": "MRNs",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/48/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/48/"
+            }
+        },
+        "category": {
+            "id": 3,
+            "name": "Encounter",
+            "order": 2.0,
+            "parent": null
+        },
+        "description": "Diagnosis or problem for a patient encounter.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/64/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/64/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/64/values/"
+                    }
+                },
+                "alt_name": "Diagnosis Name",
+                "alt_plural_name": "Diagnosis Names",
+                "app_name": "diagnoses",
+                "data_modified": null,
+                "description": "Diagnosis or problem for a patient encounter.",
+                "enumerable": false,
+                "field_name": "name",
+                "id": 64,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "diagnosis",
+                "modified": "2012-10-11T09:23:20.436",
+                "name": "Diagnosis Name",
+                "nullable": false,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Diagnosis Names",
+                "plural_unit": "",
+                "published": true,
+                "searchable": true,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 48,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.449",
+        "name": "Diagnosis",
+        "order": null,
+        "plural_name": "Diagnosis",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/46/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/46/"
+            }
+        },
+        "category": {
+            "id": 3,
+            "name": "Encounter",
+            "order": 2.0,
+            "parent": null
+        },
+        "description": "",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/4/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/4/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/4/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/4/values/"
+                    }
+                },
+                "alt_name": "Encounter Date",
+                "alt_plural_name": "Encounter Dates",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "",
+                "enumerable": false,
+                "field_name": "encounter_datetime",
+                "id": 4,
+                "internal_type": "datetime",
+                "keywords": "",
+                "model_name": "encounter",
+                "modified": "2013-10-16T10:30:11.944",
+                "name": "Encounter Date",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Encounter Dates",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "datetime",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "EncounterAge",
+        "id": 46,
+        "keywords": "",
+        "modified": "2012-10-15T22:57:16.715",
+        "name": "Encounter Date",
+        "order": null,
+        "plural_name": "Encounter Dates",
+        "published": true,
+        "queryable": false,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/38/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/38/"
+            }
+        },
+        "category": {
+            "id": 3,
+            "name": "Encounter",
+            "order": 2.0,
+            "parent": null
+        },
+        "description": "",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/5/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/5/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/5/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/5/values/"
+                    }
+                },
+                "alt_name": "Encounter Description",
+                "alt_plural_name": "Encounter Descriptions",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": null,
+                "enumerable": true,
+                "field_name": "description",
+                "id": 5,
+                "internal_type": "text",
+                "keywords": null,
+                "model_name": "encounter",
+                "modified": "2012-10-10T11:19:10.167",
+                "name": "Encounter Description",
+                "nullable": false,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Encounter Descriptions",
+                "plural_unit": null,
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": null
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 38,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.066",
+        "name": "Encounter Description",
+        "order": null,
+        "plural_name": "Encounter Descriptions",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/47/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/47/"
+            }
+        },
+        "category": {
+            "id": 3,
+            "name": "Encounter",
+            "order": 2.0,
+            "parent": null
+        },
+        "description": "Type of referral ordered.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/57/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/57/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/57/values/"
+                    }
+                },
+                "alt_name": "Referral Name",
+                "alt_plural_name": "Referral Names",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Type of referral ordered.",
+                "enumerable": false,
+                "field_name": "name",
+                "id": 57,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "referral",
+                "modified": "2012-10-11T14:30:37.347",
+                "name": "Referral Name",
+                "nullable": false,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Referral Names",
+                "plural_unit": "",
+                "published": true,
+                "searchable": true,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 47,
+        "keywords": "",
+        "modified": "2012-10-11T12:56:27.186",
+        "name": "Referral",
+        "order": null,
+        "plural_name": "Referrals",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/8/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/8/"
+            }
+        },
+        "category": {
+            "id": 3,
+            "name": "Encounter",
+            "order": 2.0,
+            "parent": null
+        },
+        "description": "",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/51/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/51/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/51/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/51/values/"
+                    }
+                },
+                "alt_name": "HEENT Exam",
+                "alt_plural_name": "HEENT Exams",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Findings noted on examination of the head, ears, eyes, nose and throat.",
+                "enumerable": true,
+                "field_name": "heent",
+                "id": 51,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "systemsreview",
+                "modified": "2012-10-04T13:55:38.251",
+                "name": "HEENT Exam",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 1.0,
+                "plural_name": "HEENT Exams",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/52/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/52/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/52/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/52/values/"
+                    }
+                },
+                "alt_name": "Chest Exam",
+                "alt_plural_name": "Chest Exams",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Findings noted on examination of the chest.",
+                "enumerable": true,
+                "field_name": "chest",
+                "id": 52,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "systemsreview",
+                "modified": "2012-10-04T13:54:48.155",
+                "name": "Chest Exam",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 2.0,
+                "plural_name": "Chest Exams",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/53/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/53/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/53/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/53/values/"
+                    }
+                },
+                "alt_name": "Abdominal Exam",
+                "alt_plural_name": "Abdominal Exams",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Findings noted on examination of the abdomen.",
+                "enumerable": true,
+                "field_name": "abdominal",
+                "id": 53,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "systemsreview",
+                "modified": "2012-10-04T13:53:15.084",
+                "name": "Abdominal Exam",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 3.0,
+                "plural_name": "Abdominal Exams",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/54/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/54/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/54/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/54/values/"
+                    }
+                },
+                "alt_name": "Cardiac Exam",
+                "alt_plural_name": "Cardiac Exams",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Findings noted on examination of the heart.",
+                "enumerable": true,
+                "field_name": "cardiac",
+                "id": 54,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "systemsreview",
+                "modified": "2012-10-04T13:54:01.181",
+                "name": "Cardiac Exam",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 4.0,
+                "plural_name": "Cardiac Exams",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/55/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/55/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/55/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/55/values/"
+                    }
+                },
+                "alt_name": "Musculoskeletal Exam",
+                "alt_plural_name": "Musculoskeletal Exams",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Findings noted on examination of the musculoskeletal region.",
+                "enumerable": true,
+                "field_name": "musculoskeletal",
+                "id": 55,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "systemsreview",
+                "modified": "2012-10-04T13:56:04.215",
+                "name": "Musculoskeletal Exam",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 5.0,
+                "plural_name": "Musculoskeletal Exams",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/56/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/56/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/56/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/56/values/"
+                    }
+                },
+                "alt_name": "Neurologic Exam",
+                "alt_plural_name": "Neurologic Exam",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Findings noted upon neurologic examination.",
+                "enumerable": true,
+                "field_name": "neurologic",
+                "id": 56,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "systemsreview",
+                "modified": "2012-10-04T13:56:28.641",
+                "name": "Neurologic Exam",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 5.0,
+                "plural_name": "Neurologic Exam",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "SystemsReview",
+        "id": 8,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.390",
+        "name": "Review of Systems",
+        "order": null,
+        "plural_name": "Review of Systems",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/17/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/17/"
+            }
+        },
+        "category": {
+            "id": 2,
+            "name": "Lab Measurements",
+            "order": 3.0,
+            "parent": null
+        },
+        "description": "Liver function test, which usually is used to detect liver injury.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/49/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/49/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/49/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/49/values/"
+                    }
+                },
+                "alt_name": "Alanine transaminase (SGPT)",
+                "alt_plural_name": "Alanine transaminase (SGPT)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Liver function test, which usually is used to detect liver injury.",
+                "enumerable": false,
+                "field_name": "sgpt",
+                "id": 49,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T21:09:08.934",
+                "name": "Alanine transaminase (SGPT)",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Alanine transaminase (SGPT)s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 17,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:22.989",
+        "name": "Alanine transaminase (SGPT)",
+        "order": null,
+        "plural_name": "Alanine transaminase (SGPT)s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/18/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/18/"
+            }
+        },
+        "category": {
+            "id": 2,
+            "name": "Lab Measurements",
+            "order": 3.0,
+            "parent": null
+        },
+        "description": "Total lymphocyte count in blood.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/50/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/50/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/50/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/50/values/"
+                    }
+                },
+                "alt_name": "ALC",
+                "alt_plural_name": "ALCs",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Total lymphocyte count in blood.",
+                "enumerable": false,
+                "field_name": "alc",
+                "id": 50,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T21:10:34.604",
+                "name": "ALC",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "ALCs",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 18,
+        "keywords": "",
+        "modified": "2012-10-11T10:19:04.005",
+        "name": "ALC",
+        "order": null,
+        "plural_name": "ALCs",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/21/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/21/"
+            }
+        },
+        "category": {
+            "id": 2,
+            "name": "Lab Measurements",
+            "order": 3.0,
+            "parent": null
+        },
+        "description": "CD4 Percentage",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/47/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/47/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/47/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/47/values/"
+                    }
+                },
+                "alt_name": "CD4 %",
+                "alt_plural_name": "CD4 %s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "CD4 Percentage",
+                "enumerable": false,
+                "field_name": "cd4_percent",
+                "id": 47,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T20:52:51.462",
+                "name": "CD4 %",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "CD4 %s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 21,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.036",
+        "name": "CD4 %",
+        "order": null,
+        "plural_name": "CD4 %s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/22/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/22/"
+            }
+        },
+        "category": {
+            "id": 2,
+            "name": "Lab Measurements",
+            "order": 3.0,
+            "parent": null
+        },
+        "description": "Measure of CD4 (T-helper cells) in blood.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/46/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/46/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/46/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/46/values/"
+                    }
+                },
+                "alt_name": "CD4 Count",
+                "alt_plural_name": "CD4 Counts",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Measure of CD4 (T-helper cells) in blood.",
+                "enumerable": false,
+                "field_name": "cd4",
+                "id": 46,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T20:51:37.580",
+                "name": "CD4 Count",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "CD4 Counts",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 22,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.047",
+        "name": "CD4 Count",
+        "order": null,
+        "plural_name": "CD4 Counts",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/23/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/23/"
+            }
+        },
+        "category": {
+            "id": 2,
+            "name": "Lab Measurements",
+            "order": 3.0,
+            "parent": null
+        },
+        "description": "Measure of CD8 (T-Suppressor or killer cells) in blood.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/48/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/48/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/48/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/48/values/"
+                    }
+                },
+                "alt_name": "CD8 Count",
+                "alt_plural_name": "CD8 Counts",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Measure of CD8 (T-Suppressor or killer cells) in blood.",
+                "enumerable": false,
+                "field_name": "cd8",
+                "id": 48,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T20:53:35.203",
+                "name": "CD8 Count",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "CD8 Counts",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 23,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.077",
+        "name": "CD8 Count",
+        "order": null,
+        "plural_name": "CD8 Counts",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/28/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/28/"
+            }
+        },
+        "category": {
+            "id": 4,
+            "name": "CBC",
+            "order": 3.1,
+            "parent": {
+                "id": 2,
+                "name": "Lab Measurements",
+                "order": 3.0
+            }
+        },
+        "description": "The iron-containing respiratory pigment in red blood cells of vertebrates, consisting of about 6 percent heme and 94 percent globin.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/30/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/30/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/30/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/30/values/"
+                    }
+                },
+                "alt_name": "Hemoglobin (HGB)",
+                "alt_plural_name": "Hemoglobin (HGB)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "The iron-containing respiratory pigment in red blood cells of vertebrates, consisting of about 6 percent heme and 94 percent globin.",
+                "enumerable": false,
+                "field_name": "hgb",
+                "id": 30,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T21:02:38.055",
+                "name": "Hemoglobin (HGB)",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Hemoglobin (HGB)s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 28,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.274",
+        "name": "Hemoglobin (HGB)",
+        "order": null,
+        "plural_name": "Hemoglobin (HGB)s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/31/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/31/"
+            }
+        },
+        "category": {
+            "id": 4,
+            "name": "CBC",
+            "order": 3.1,
+            "parent": {
+                "id": 2,
+                "name": "Lab Measurements",
+                "order": 3.0
+            }
+        },
+        "description": "The volume of the average red blood cell in a given blood sample that is found by multiplying the hematocrit by 10 and dividing by the estimated number of red blood cells .",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/34/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/34/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/34/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/34/values/"
+                    }
+                },
+                "alt_name": "Mean Corpuscular Volume (MCV)",
+                "alt_plural_name": "Mean Corpuscular Volume (MCV)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "The volume of the average red blood cell in a given blood sample that is found by multiplying the hematocrit by 10 and dividing by the estimated number of red blood cells .",
+                "enumerable": false,
+                "field_name": "mcv",
+                "id": 34,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T21:04:17.668",
+                "name": "Mean Corpuscular Volume (MCV)",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Mean Corpuscular Volume (MCV)s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 31,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.577",
+        "name": "Mean Corpuscular Volume (MCV)",
+        "order": null,
+        "plural_name": "Mean Corpuscular Volume (MCV)s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/32/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/32/"
+            }
+        },
+        "category": {
+            "id": 4,
+            "name": "CBC",
+            "order": 3.1,
+            "parent": {
+                "id": 2,
+                "name": "Lab Measurements",
+                "order": 3.0
+            }
+        },
+        "description": "Minute, nonnucleated, disklike cytoplasmic bodies found in the blood plasma of mammals, derived from a megakaryocyte and function to promote blood clotting.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/33/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/33/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/33/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/33/values/"
+                    }
+                },
+                "alt_name": "Platelets",
+                "alt_plural_name": "Platelets",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Minute, nonnucleated, disklike cytoplasmic bodies found in the blood plasma of mammals, derived from a megakaryocyte and function to promote blood clotting.",
+                "enumerable": false,
+                "field_name": "platelets",
+                "id": 33,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T21:04:55.570",
+                "name": "Platelets",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Platelets",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 32,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.590",
+        "name": "Platelets",
+        "order": null,
+        "plural_name": "Platelets",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/37/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/37/"
+            }
+        },
+        "category": {
+            "id": 4,
+            "name": "CBC",
+            "order": 3.1,
+            "parent": {
+                "id": 2,
+                "name": "Lab Measurements",
+                "order": 3.0
+            }
+        },
+        "description": "Blood test to measure the number of white blood cells.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/31/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/31/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/31/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/31/values/"
+                    }
+                },
+                "alt_name": "White Blood Cells (WBC)",
+                "alt_plural_name": "White Blood Cells (WBC)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Blood test to measure the number of white blood cells.",
+                "enumerable": false,
+                "field_name": "wbc",
+                "id": 31,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T21:07:22.975",
+                "name": "White Blood Cells (WBC)",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "White Blood Cells (WBC)s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 37,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.355",
+        "name": "White Blood Cells (WBC)",
+        "order": null,
+        "plural_name": "White Blood Cells (WBC)s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/25/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/25/"
+            }
+        },
+        "category": {
+            "id": 5,
+            "name": "CHEM 7",
+            "order": 3.2,
+            "parent": {
+                "id": 2,
+                "name": "Lab Measurements",
+                "order": 3.0
+            }
+        },
+        "description": "Laboratory test that determines a blood serum creatinine level.  Often used with BUN to assess kidney function.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/39/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/39/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/39/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/39/values/"
+                    }
+                },
+                "alt_name": "Creatinine (Cr)",
+                "alt_plural_name": "Creatinine (Cr)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Laboratory test that determines a blood serum creatinine level.  Often used with BUN to assess kidney function.",
+                "enumerable": false,
+                "field_name": "cr",
+                "id": 39,
+                "internal_type": "float",
+                "keywords": "",
+                "model_name": "labresult",
+                "modified": "2012-10-03T20:58:32.845",
+                "name": "Creatinine (Cr)",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "lt",
+                        "is less than"
+                    ],
+                    [
+                        "lte",
+                        "is less than or equal to"
+                    ],
+                    [
+                        "gt",
+                        "is greater than"
+                    ],
+                    [
+                        "gte",
+                        "is greater than or equal to"
+                    ],
+                    [
+                        "range",
+                        "is between"
+                    ],
+                    [
+                        "-range",
+                        "is not between"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Creatinine (Cr)s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "number",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 25,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.100",
+        "name": "Creatinine (Cr)",
+        "order": null,
+        "plural_name": "Creatinine (Cr)s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/49/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/49/"
+            }
+        },
+        "category": {
+            "id": 7,
+            "name": "Disease Management",
+            "order": 4.0,
+            "parent": null
+        },
+        "description": "Disease indication for a drug given to a patient.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/60/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/60/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/60/values/"
+                    }
+                },
+                "alt_name": "Drug Disease",
+                "alt_plural_name": "Drug Diseases",
+                "app_name": "drugs",
+                "data_modified": null,
+                "description": "Disease indication for a drug given to a patient.",
+                "enumerable": false,
+                "field_name": "disease",
+                "id": 60,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "drug",
+                "modified": "2012-10-11T14:29:43.700",
+                "name": "Drug Disease",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Drug Diseases",
+                "plural_unit": "",
+                "published": true,
+                "searchable": true,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 49,
+        "keywords": "",
+        "modified": "2012-10-11T11:47:13.035",
+        "name": "Drug Indication",
+        "order": null,
+        "plural_name": "Drug Indications",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/50/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/50/"
+            }
+        },
+        "category": {
+            "id": 7,
+            "name": "Disease Management",
+            "order": 4.0,
+            "parent": null
+        },
+        "description": "Name of medication given to a patient.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/59/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/59/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/59/values/"
+                    }
+                },
+                "alt_name": "Medication",
+                "alt_plural_name": "Medications",
+                "app_name": "drugs",
+                "data_modified": null,
+                "description": "Name of drug given to a patient.",
+                "enumerable": false,
+                "field_name": "name",
+                "id": 59,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "drug",
+                "modified": "2012-10-11T14:29:43.756",
+                "name": "Drug Name",
+                "nullable": false,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Drug Names",
+                "plural_unit": "",
+                "published": true,
+                "searchable": true,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 50,
+        "keywords": "",
+        "modified": "2012-10-11T12:57:26.600",
+        "name": "Medication",
+        "order": null,
+        "plural_name": "Medications",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/61/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/61/"
+            }
+        },
+        "category": {
+            "id": 7,
+            "name": "Disease Management",
+            "order": 4.0,
+            "parent": null
+        },
+        "description": "",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/77/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/77/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/77/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/77/values/"
+                    }
+                },
+                "alt_name": "Prophylaxis Adherence (last week)",
+                "alt_plural_name": "Prophylaxis Adherence (last week)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question on encounter form: \"During the last seven days how many of his/her pills did the patient take?\"",
+                "enumerable": true,
+                "field_name": "pro_adhere",
+                "id": 77,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "tbdetails",
+                "modified": "2012-10-11T12:44:45.808",
+                "name": "Tuberculosis Prophylaxis Adherence Last Week",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 0.0,
+                "plural_name": "Tuberculosis Prophylaxis Adherence Last Weeks",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/81/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/81/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/81/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/81/values/"
+                    }
+                },
+                "alt_name": "Prophylaxis Plan",
+                "alt_plural_name": "Prophylaxis Plans",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question on encounter form. Collects information related to tuberculosis drug therapy plans.",
+                "enumerable": true,
+                "field_name": "pro_plan",
+                "id": 81,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "tbdetails",
+                "modified": "2012-10-11T12:44:45.903",
+                "name": "Tuberculosis Prophylaxis Plan",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 1.0,
+                "plural_name": "Tuberculosis Prophylaxis Plans",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/76/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/76/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/76/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/76/values/"
+                    }
+                },
+                "alt_name": "Treatment Adherence (last week)",
+                "alt_plural_name": "Treatment Adherence (last week)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question on encounter form: \"During the last seven days how many of his/her pills did the patient take?\"",
+                "enumerable": true,
+                "field_name": "treat_adhere",
+                "id": 76,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "tbdetails",
+                "modified": "2012-10-11T12:44:45.910",
+                "name": "Tuberculosis Treatment Adherence Last Week",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 2.0,
+                "plural_name": "Tuberculosis Treatment Adherence Last Weeks",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            },
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/80/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/80/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/80/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/80/values/"
+                    }
+                },
+                "alt_name": "Treatment Plan",
+                "alt_plural_name": "Treatment Plans",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question on encounter form. Collects information related to tuberculosis drug therapy plans.",
+                "enumerable": true,
+                "field_name": "treat_plan",
+                "id": 80,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "tbdetails",
+                "modified": "2012-10-11T12:44:45.918",
+                "name": "Tuberculosis Treatment Plan",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": 3.0,
+                "plural_name": "Tuberculosis Treatment Plans",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "TBDetail",
+        "id": 61,
+        "keywords": "",
+        "modified": "2012-10-11T12:46:35.145",
+        "name": "Tuberculosis",
+        "order": null,
+        "plural_name": "Tuberculosis",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/39/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/39/"
+            }
+        },
+        "category": {
+            "id": 6,
+            "name": "HIV",
+            "order": 4.2,
+            "parent": {
+                "id": 7,
+                "name": "Disease Management",
+                "order": 4.0
+            }
+        },
+        "description": "Category A (Mildly symptomatic conditions.  A patient fits within this category, if there are two of the following associated symptoms, but NONE in category B or C), Category B (Moderately symptomatic conditions.  One or more of the following conditions places a patient at this condition level.), or Category C (Severely symptomatic conditions.  One or more places a patient in this group.)",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/71/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/71/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/71/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/71/values/"
+                    }
+                },
+                "alt_name": "HIV CDC Category",
+                "alt_plural_name": "HIV CDC Categorys",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Category A (Mildly symptomatic conditions.  A patient fits within this category, if there are two of the following associated symptoms, but NONE in category B or C), Category B (Moderately symptomatic conditions.  One or more of the following conditions places a patient at this condition level.), or Category C (Severely symptomatic conditions.  One or more places a patient in this group.)",
+                "enumerable": true,
+                "field_name": "cdc_category",
+                "id": 71,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "hivdetails",
+                "modified": "2012-10-10T10:55:58.327",
+                "name": "HIV CDC Category",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "HIV CDC Categorys",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 39,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.134",
+        "name": "HIV CDC Category",
+        "order": null,
+        "plural_name": "HIV CDC Categorys",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/40/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/40/"
+            }
+        },
+        "category": {
+            "id": 6,
+            "name": "HIV",
+            "order": 4.2,
+            "parent": {
+                "id": 7,
+                "name": "Disease Management",
+                "order": 4.0
+            }
+        },
+        "description": "Question on encounter forms: \"Is the patient currently taking, or has the patient ever taken, any of the following retroviral medications?\" or \"Current HIV Medications:\". This particular concept stores a history of active use of the associated antiretroviral medications for treatment.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/72/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/72/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/72/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/72/values/"
+                    }
+                },
+                "alt_name": "HIV Currently Taking Antiretrovial (ARV) Medications",
+                "alt_plural_name": "HIV Currently Taking Antiretrovial (ARV) Medications",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question on encounter forms: \"Is the patient currently taking, or has the patient ever taken, any of the following retroviral medications?\" or \"Current HIV Medications:\". This particular concept stores a history of active use of the associated antiretroviral medications for treatment.",
+                "enumerable": true,
+                "field_name": "taking_antiretrovirals",
+                "id": 72,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "hivdetails",
+                "modified": "2012-10-10T10:55:58.336",
+                "name": "HIV Currently Taking Antiretrovial (ARV) Medications",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "HIV Currently Taking Antiretrovial (ARV) Medications",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 40,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.146",
+        "name": "HIV Currently Taking Antiretrovial (ARV) Medications",
+        "order": null,
+        "plural_name": "HIV Currently Taking Antiretrovial (ARV) Medications",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/41/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/41/"
+            }
+        },
+        "category": {
+            "id": 6,
+            "name": "HIV",
+            "order": 4.2,
+            "parent": {
+                "id": 7,
+                "name": "Disease Management",
+                "order": 4.0
+            }
+        },
+        "description": null,
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/67/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/67/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/67/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/67/values/"
+                    }
+                },
+                "alt_name": "Hiv Details Treatment Adherence Last Week",
+                "alt_plural_name": "Hiv Details Treatment Adherence Last Weeks",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": null,
+                "enumerable": true,
+                "field_name": "treat_adhere",
+                "id": 67,
+                "internal_type": "char",
+                "keywords": null,
+                "model_name": "hivdetails",
+                "modified": "2012-10-10T10:55:58.344",
+                "name": "Hiv Details Treatment Adherence Last Week",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "Hiv Details Treatment Adherence Last Weeks",
+                "plural_unit": null,
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": null
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 41,
+        "keywords": null,
+        "modified": "2012-10-11T09:56:23.158",
+        "name": "Hiv Details Treatment Adherence Last Week",
+        "order": null,
+        "plural_name": "Hiv Details Treatment Adherence Last Weeks",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/42/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/42/"
+            }
+        },
+        "category": {
+            "id": 6,
+            "name": "HIV",
+            "order": 4.2,
+            "parent": {
+                "id": 7,
+                "name": "Disease Management",
+                "order": 4.0
+            }
+        },
+        "description": "Question on encounter form: \"Discordant couple?\".  Defined as a pair of long-term sexual partners in which one has a sexually transmitted infection and the other does not. ",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/73/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/73/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/73/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/73/values/"
+                    }
+                },
+                "alt_name": "HIV Discordant Couple",
+                "alt_plural_name": "HIV Discordant Couples",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question on encounter form: \"Discordant couple?\".  Defined as a pair of long-term sexual partners in which one has a sexually transmitted infection and the other does not. ",
+                "enumerable": true,
+                "field_name": "discordant_couple",
+                "id": 73,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "hivdetails",
+                "modified": "2012-10-10T10:55:58.354",
+                "name": "HIV Discordant Couple",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "HIV Discordant Couples",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 42,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.170",
+        "name": "HIV Discordant Couple",
+        "order": null,
+        "plural_name": "HIV Discordant Couples",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/43/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/43/"
+            }
+        },
+        "category": {
+            "id": 6,
+            "name": "HIV",
+            "order": 4.2,
+            "parent": {
+                "id": 7,
+                "name": "Disease Management",
+                "order": 4.0
+            }
+        },
+        "description": "Question on encounter form. Collects information related to HIV drug therapy plans.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/66/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/66/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/66/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/66/values/"
+                    }
+                },
+                "alt_name": "HIV Plan",
+                "alt_plural_name": "HIV Plans",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question on encounter form. Collects information related to HIV drug therapy plans.",
+                "enumerable": true,
+                "field_name": "plan",
+                "id": 66,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "hivdetails",
+                "modified": "2012-10-10T10:55:58.362",
+                "name": "HIV Plan",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "HIV Plans",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 43,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.181",
+        "name": "HIV Plan",
+        "order": null,
+        "plural_name": "HIV Plans",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/44/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/44/"
+            }
+        },
+        "category": {
+            "id": 6,
+            "name": "HIV",
+            "order": 4.2,
+            "parent": {
+                "id": 7,
+                "name": "Disease Management",
+                "order": 4.0
+            }
+        },
+        "description": "Question asked on encounter form.  Expects a numeric answer defining the HIV stage at a particular visit.  WHO Stage 1-4.  ",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/68/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/68/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/68/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/68/values/"
+                    }
+                },
+                "alt_name": "HIV Stage (Adult)",
+                "alt_plural_name": "HIV Stage (Adult)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Question asked on encounter form.  Expects a numeric answer defining the HIV stage at a particular visit.  WHO Stage 1-4.  ",
+                "enumerable": true,
+                "field_name": "stage_adult",
+                "id": 68,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "hivdetails",
+                "modified": "2012-10-10T10:55:58.372",
+                "name": "HIV Stage (Adult)",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "HIV Stage (Adult)s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 44,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.193",
+        "name": "HIV Stage (Adult)",
+        "order": null,
+        "plural_name": "HIV Stage (Adult)s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    },
+    {
+        "_links": {
+            "fields": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/45/fields/"
+            },
+            "self": {
+                "href": "http://harvest.research.chop.edu/demo/api/concepts/45/"
+            }
+        },
+        "category": {
+            "id": 6,
+            "name": "HIV",
+            "order": 4.2,
+            "parent": {
+                "id": 7,
+                "name": "Disease Management",
+                "order": 4.0
+            }
+        },
+        "description": "Whether the WHO Stage 1-4 has changed since the last visit.",
+        "fields": [
+            {
+                "_links": {
+                    "distribution": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/69/dist/"
+                    },
+                    "self": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/69/"
+                    },
+                    "stats": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/69/stats/"
+                    },
+                    "values": {
+                        "href": "http://harvest.research.chop.edu/demo/api/fields/69/values/"
+                    }
+                },
+                "alt_name": "HIV Stage Change Since Last Visit (Adult)",
+                "alt_plural_name": "HIV Stage Change Since Last Visit (Adult)s",
+                "app_name": "openmrs",
+                "data_modified": null,
+                "description": "Whether the WHO Stage 1-4 has changed since the last visit.",
+                "enumerable": true,
+                "field_name": "stage_adult_last",
+                "id": 69,
+                "internal_type": "char",
+                "keywords": "",
+                "model_name": "hivdetails",
+                "modified": "2012-10-10T10:55:58.380",
+                "name": "HIV Stage Change Since Last Visit (Adult)",
+                "nullable": true,
+                "operators": [
+                    [
+                        "exact",
+                        "is"
+                    ],
+                    [
+                        "-exact",
+                        "is not"
+                    ],
+                    [
+                        "iexact",
+                        "is"
+                    ],
+                    [
+                        "-iexact",
+                        "is not"
+                    ],
+                    [
+                        "in",
+                        "is either"
+                    ],
+                    [
+                        "-in",
+                        "is neither"
+                    ],
+                    [
+                        "icontains",
+                        "contains the text"
+                    ],
+                    [
+                        "-icontains",
+                        "does not contain the text"
+                    ]
+                ],
+                "order": null,
+                "plural_name": "HIV Stage Change Since Last Visit (Adult)s",
+                "plural_unit": "",
+                "published": true,
+                "searchable": false,
+                "simple_type": "string",
+                "unit": ""
+            }
+        ],
+        "formatter_name": "Formatter",
+        "id": 45,
+        "keywords": "",
+        "modified": "2012-10-11T09:56:23.206",
+        "name": "HIV Stage Change Since Last Visit (Adult)",
+        "order": null,
+        "plural_name": "HIV Stage Change Since Last Visit (Adult)s",
+        "published": true,
+        "queryable": true,
+        "sortable": true,
+        "viewable": true
+    }
+]

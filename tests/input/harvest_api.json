@@ -1,0 +1,39 @@
+{
+    "_links": {
+        "categories": {
+            "href": "http://harvest.research.chop.edu/demo/api/categories/"
+        },
+        "concepts": {
+            "href": "http://harvest.research.chop.edu/demo/api/concepts/"
+        },
+        "contexts": {
+            "href": "http://harvest.research.chop.edu/demo/api/contexts/"
+        },
+        "exporter": {
+            "href": "http://harvest.research.chop.edu/demo/api/data/export/"
+        },
+        "fields": {
+            "href": "http://harvest.research.chop.edu/demo/api/fields/"
+        },
+        "ping": {
+            "href": "http://harvest.research.chop.edu/demo/api/ping/"
+        },
+        "preview": {
+            "href": "http://harvest.research.chop.edu/demo/api/data/preview/"
+        },
+        "public_queries": {
+            "href": "http://harvest.research.chop.edu/demo/api/queries/public/"
+        },
+        "queries": {
+            "href": "http://harvest.research.chop.edu/demo/api/queries/"
+        },
+        "self": {
+            "href": "http://harvest.research.chop.edu/demo/api/"
+        },
+        "views": {
+            "href": "http://harvest.research.chop.edu/demo/api/views/"
+        }
+    },
+    "title": "Serrano Hypermedia API",
+    "version": "2.3.4"
+}
