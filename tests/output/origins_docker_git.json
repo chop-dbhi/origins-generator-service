@@ -1,0 +1,298 @@
+{
+    "activity": {
+        "activity:21e06202fe95150ddad7341d92ad72987240d5c8": {
+            "origins:id": "21e06202fe95150ddad7341d92ad72987240d5c8",
+            "prov:endTime": "2014-09-22 13:55:51 -0400",
+            "prov:label": "Fix link argument in usage",
+            "prov:startTime": "2014-09-22 13:55:51 -0400"
+        },
+        "activity:509695486dd604628ae6617ced164c1ebd8a9834": {
+            "origins:id": "509695486dd604628ae6617ced164c1ebd8a9834",
+            "prov:endTime": "2014-09-22 13:59:31 -0400",
+            "prov:label": "Fix keys of Fig yaml example",
+            "prov:startTime": "2014-09-22 13:59:31 -0400"
+        },
+        "activity:906ec18f73ff35da001c613691dd60a194a59d31": {
+            "origins:id": "906ec18f73ff35da001c613691dd60a194a59d31",
+            "prov:endTime": "2014-09-23 08:11:58 -0400",
+            "prov:label": "Remove hard-coded fig.yml and deployment text with link to wiki",
+            "prov:startTime": "2014-09-23 08:08:48 -0400"
+        },
+        "activity:ec8736f967c0b576d3fe8a56fd5afdd533803422": {
+            "origins:id": "ec8736f967c0b576d3fe8a56fd5afdd533803422",
+            "prov:endTime": "2014-10-17 10:16:58 -0400",
+            "prov:label": "Update to latest stable (and explicit) version",
+            "prov:startTime": "2014-10-17 10:16:58 -0400"
+        },
+        "activity:f3aeda04c9716fe67c613d099e328e5ea9f2078a": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a",
+            "prov:endTime": "2014-09-22 13:44:23 -0400",
+            "prov:label": "Initial commit",
+            "prov:startTime": "2014-09-22 13:44:23 -0400"
+        }
+    },
+    "agent": {
+        "agent:Byron Ruth": {
+            "origins:id": "Byron Ruth",
+            "prov:label": "Byron Ruth"
+        }
+    },
+    "entity": {
+        "entity:21e06202fe95150ddad7341d92ad72987240d5c8:README.md": {
+            "origins:id": "21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "parents": [
+                "f3aeda04c9716fe67c613d099e328e5ea9f2078a"
+            ],
+            "prov:label": "README.md",
+            "prov:type": "File",
+            "sha1": "21e06202fe95150ddad7341d92ad72987240d5c8"
+        },
+        "entity:509695486dd604628ae6617ced164c1ebd8a9834:README.md": {
+            "origins:id": "509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "parents": [
+                "21e06202fe95150ddad7341d92ad72987240d5c8"
+            ],
+            "prov:label": "README.md",
+            "prov:type": "File",
+            "sha1": "509695486dd604628ae6617ced164c1ebd8a9834"
+        },
+        "entity:906ec18f73ff35da001c613691dd60a194a59d31:README.md": {
+            "origins:id": "906ec18f73ff35da001c613691dd60a194a59d31:README.md",
+            "parents": [
+                "509695486dd604628ae6617ced164c1ebd8a9834"
+            ],
+            "prov:label": "README.md",
+            "prov:type": "File",
+            "sha1": "906ec18f73ff35da001c613691dd60a194a59d31"
+        },
+        "entity:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile": {
+            "origins:id": "ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile",
+            "parents": [
+                "906ec18f73ff35da001c613691dd60a194a59d31"
+            ],
+            "prov:label": "Dockerfile",
+            "prov:type": "File",
+            "sha1": "ec8736f967c0b576d3fe8a56fd5afdd533803422"
+        },
+        "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile",
+            "parents": [],
+            "prov:label": "Dockerfile",
+            "prov:type": "File",
+            "sha1": "f3aeda04c9716fe67c613d099e328e5ea9f2078a"
+        },
+        "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md",
+            "parents": [],
+            "prov:label": "README.md",
+            "prov:type": "File",
+            "sha1": "f3aeda04c9716fe67c613d099e328e5ea9f2078a"
+        },
+        "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json",
+            "parents": [],
+            "prov:label": "default.json",
+            "prov:type": "File",
+            "sha1": "f3aeda04c9716fe67c613d099e328e5ea9f2078a"
+        }
+    },
+    "used": {
+        "used:21e06202fe95150ddad7341d92ad72987240d5c8:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md": {
+            "origins:id": "21e06202fe95150ddad7341d92ad72987240d5c8:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md",
+            "prov:activity": "activity:21e06202fe95150ddad7341d92ad72987240d5c8",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md",
+            "prov:time": "2014-09-22 13:55:51 -0400"
+        },
+        "used:509695486dd604628ae6617ced164c1ebd8a9834:21e06202fe95150ddad7341d92ad72987240d5c8:README.md": {
+            "origins:id": "509695486dd604628ae6617ced164c1ebd8a9834:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:activity": "activity:509695486dd604628ae6617ced164c1ebd8a9834",
+            "prov:entity": "entity:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:time": "2014-09-22 13:59:31 -0400"
+        },
+        "used:906ec18f73ff35da001c613691dd60a194a59d31:509695486dd604628ae6617ced164c1ebd8a9834:README.md": {
+            "origins:id": "906ec18f73ff35da001c613691dd60a194a59d31:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:activity": "activity:906ec18f73ff35da001c613691dd60a194a59d31",
+            "prov:entity": "entity:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:time": "2014-09-23 08:08:48 -0400"
+        },
+        "used:ec8736f967c0b576d3fe8a56fd5afdd533803422:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile": {
+            "origins:id": "ec8736f967c0b576d3fe8a56fd5afdd533803422:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile",
+            "prov:activity": "activity:ec8736f967c0b576d3fe8a56fd5afdd533803422",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile",
+            "prov:time": "2014-10-17 10:16:58 -0400"
+        }
+    },
+    "wasAssociatedWith": {
+        "wasAssociatedWith:Byron Ruth:21e06202fe95150ddad7341d92ad72987240d5c8": {
+            "origins:id": "Byron Ruth:21e06202fe95150ddad7341d92ad72987240d5c8",
+            "prov:activity": "activity:21e06202fe95150ddad7341d92ad72987240d5c8",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:role": [
+                "Author",
+                "Committer"
+            ]
+        },
+        "wasAssociatedWith:Byron Ruth:509695486dd604628ae6617ced164c1ebd8a9834": {
+            "origins:id": "Byron Ruth:509695486dd604628ae6617ced164c1ebd8a9834",
+            "prov:activity": "activity:509695486dd604628ae6617ced164c1ebd8a9834",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:role": [
+                "Author",
+                "Committer"
+            ]
+        },
+        "wasAssociatedWith:Byron Ruth:906ec18f73ff35da001c613691dd60a194a59d31": {
+            "origins:id": "Byron Ruth:906ec18f73ff35da001c613691dd60a194a59d31",
+            "prov:activity": "activity:906ec18f73ff35da001c613691dd60a194a59d31",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:role": [
+                "Author",
+                "Committer"
+            ]
+        },
+        "wasAssociatedWith:Byron Ruth:ec8736f967c0b576d3fe8a56fd5afdd533803422": {
+            "origins:id": "Byron Ruth:ec8736f967c0b576d3fe8a56fd5afdd533803422",
+            "prov:activity": "activity:ec8736f967c0b576d3fe8a56fd5afdd533803422",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:role": [
+                "Author",
+                "Committer"
+            ]
+        },
+        "wasAssociatedWith:Byron Ruth:f3aeda04c9716fe67c613d099e328e5ea9f2078a": {
+            "origins:id": "Byron Ruth:f3aeda04c9716fe67c613d099e328e5ea9f2078a",
+            "prov:activity": "activity:f3aeda04c9716fe67c613d099e328e5ea9f2078a",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:role": [
+                "Author",
+                "Committer"
+            ]
+        }
+    },
+    "wasAttributedTo": {
+        "wasAttributedTo:21e06202fe95150ddad7341d92ad72987240d5c8:README.md:Byron Ruth": {
+            "origins:id": "21e06202fe95150ddad7341d92ad72987240d5c8:README.md:Byron Ruth",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:entity": "entity:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:type": "Authorship"
+        },
+        "wasAttributedTo:509695486dd604628ae6617ced164c1ebd8a9834:README.md:Byron Ruth": {
+            "origins:id": "509695486dd604628ae6617ced164c1ebd8a9834:README.md:Byron Ruth",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:entity": "entity:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:type": "Authorship"
+        },
+        "wasAttributedTo:906ec18f73ff35da001c613691dd60a194a59d31:README.md:Byron Ruth": {
+            "origins:id": "906ec18f73ff35da001c613691dd60a194a59d31:README.md:Byron Ruth",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:entity": "entity:906ec18f73ff35da001c613691dd60a194a59d31:README.md",
+            "prov:type": "Authorship"
+        },
+        "wasAttributedTo:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile:Byron Ruth": {
+            "origins:id": "ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile:Byron Ruth",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:entity": "entity:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile",
+            "prov:type": "Authorship"
+        },
+        "wasAttributedTo:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile:Byron Ruth": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile:Byron Ruth",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile",
+            "prov:type": "Authorship"
+        },
+        "wasAttributedTo:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md:Byron Ruth": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md:Byron Ruth",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md",
+            "prov:type": "Authorship"
+        },
+        "wasAttributedTo:f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json:Byron Ruth": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json:Byron Ruth",
+            "prov:agent": "agent:Byron Ruth",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json",
+            "prov:type": "Authorship"
+        }
+    },
+    "wasDerivedFrom": {
+        "wasDerivedFrom:21e06202fe95150ddad7341d92ad72987240d5c8:README.md:509695486dd604628ae6617ced164c1ebd8a9834:README.md": {
+            "origins:id": "21e06202fe95150ddad7341d92ad72987240d5c8:README.md:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:activity": "activity:509695486dd604628ae6617ced164c1ebd8a9834",
+            "prov:generatedEntity": "entity:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:generation": "wasGeneratedBy:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:type": "prov:Revision",
+            "prov:usage": "used:509695486dd604628ae6617ced164c1ebd8a9834:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:usedEntity": "entity:21e06202fe95150ddad7341d92ad72987240d5c8:README.md"
+        },
+        "wasDerivedFrom:509695486dd604628ae6617ced164c1ebd8a9834:README.md:906ec18f73ff35da001c613691dd60a194a59d31:README.md": {
+            "origins:id": "509695486dd604628ae6617ced164c1ebd8a9834:README.md:906ec18f73ff35da001c613691dd60a194a59d31:README.md",
+            "prov:activity": "activity:906ec18f73ff35da001c613691dd60a194a59d31",
+            "prov:generatedEntity": "entity:906ec18f73ff35da001c613691dd60a194a59d31:README.md",
+            "prov:generation": "wasGeneratedBy:906ec18f73ff35da001c613691dd60a194a59d31:README.md",
+            "prov:type": "prov:Revision",
+            "prov:usage": "used:906ec18f73ff35da001c613691dd60a194a59d31:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:usedEntity": "entity:509695486dd604628ae6617ced164c1ebd8a9834:README.md"
+        },
+        "wasDerivedFrom:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile",
+            "prov:activity": "activity:ec8736f967c0b576d3fe8a56fd5afdd533803422",
+            "prov:generatedEntity": "entity:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile",
+            "prov:generation": "wasGeneratedBy:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile",
+            "prov:type": "prov:Revision",
+            "prov:usage": "used:ec8736f967c0b576d3fe8a56fd5afdd533803422:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile",
+            "prov:usedEntity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile"
+        },
+        "wasDerivedFrom:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md:21e06202fe95150ddad7341d92ad72987240d5c8:README.md": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:activity": "activity:21e06202fe95150ddad7341d92ad72987240d5c8",
+            "prov:generatedEntity": "entity:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:generation": "wasGeneratedBy:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:type": "prov:Revision",
+            "prov:usage": "used:21e06202fe95150ddad7341d92ad72987240d5c8:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md",
+            "prov:usedEntity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md"
+        }
+    },
+    "wasGeneratedBy": {
+        "wasGeneratedBy:21e06202fe95150ddad7341d92ad72987240d5c8:README.md": {
+            "origins:id": "21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:activity": "activity:21e06202fe95150ddad7341d92ad72987240d5c8",
+            "prov:entity": "entity:21e06202fe95150ddad7341d92ad72987240d5c8:README.md",
+            "prov:time": "2014-09-22 13:55:51 -0400"
+        },
+        "wasGeneratedBy:509695486dd604628ae6617ced164c1ebd8a9834:README.md": {
+            "origins:id": "509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:activity": "activity:509695486dd604628ae6617ced164c1ebd8a9834",
+            "prov:entity": "entity:509695486dd604628ae6617ced164c1ebd8a9834:README.md",
+            "prov:time": "2014-09-22 13:59:31 -0400"
+        },
+        "wasGeneratedBy:906ec18f73ff35da001c613691dd60a194a59d31:README.md": {
+            "origins:id": "906ec18f73ff35da001c613691dd60a194a59d31:README.md",
+            "prov:activity": "activity:906ec18f73ff35da001c613691dd60a194a59d31",
+            "prov:entity": "entity:906ec18f73ff35da001c613691dd60a194a59d31:README.md",
+            "prov:time": "2014-09-23 08:08:48 -0400"
+        },
+        "wasGeneratedBy:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile": {
+            "origins:id": "ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile",
+            "prov:activity": "activity:ec8736f967c0b576d3fe8a56fd5afdd533803422",
+            "prov:entity": "entity:ec8736f967c0b576d3fe8a56fd5afdd533803422:Dockerfile",
+            "prov:time": "2014-10-17 10:16:58 -0400"
+        },
+        "wasGeneratedBy:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile",
+            "prov:activity": "activity:f3aeda04c9716fe67c613d099e328e5ea9f2078a",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:Dockerfile",
+            "prov:time": "2014-09-22 13:44:23 -0400"
+        },
+        "wasGeneratedBy:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md",
+            "prov:activity": "activity:f3aeda04c9716fe67c613d099e328e5ea9f2078a",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:README.md",
+            "prov:time": "2014-09-22 13:44:23 -0400"
+        },
+        "wasGeneratedBy:f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json": {
+            "origins:id": "f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json",
+            "prov:activity": "activity:f3aeda04c9716fe67c613d099e328e5ea9f2078a",
+            "prov:entity": "entity:f3aeda04c9716fe67c613d099e328e5ea9f2078a:default.json",
+            "prov:time": "2014-09-22 13:44:23 -0400"
+        }
+    }
+}
