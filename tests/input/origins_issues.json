@@ -1,0 +1,497 @@
+[
+    {
+        "assignee": null,
+        "body": "Inspired by [Elasticsearch's bulk API](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-bulk.html) and [Neo4j's Batch operations](http://neo4j.com/docs/stable/rest-api-batch-ops.html), the idea is to deconstruct a PROV document into individual records that can be streamed one at a time.\r\n\r\nFor example:\r\n\r\n```javascript\r\n{\"id\": \"article\", \"concept\": \"entity\", \"attrs\": {\"origins:id\": \"...\", \"origins:label\": \"Article\"}}\r\n{\"id\": \"joe\", \"concept\": \"agent\", \"attrs\": {\"origins:id\": \"...\", \"origins:label\": \"Joe\"}}\r\n{\"concept\": \"attribution\", \"attrs\": {\"prov:entity\": \"joe\", \"prov:agent\": \"article\"}}\r\n```\r\n\r\nIf a document defines an `id` field, it and the corresponding `origins:uuid` (included or generated) will be kept in memory for reference for the remaining of the stream.\r\n\r\nThe one requirement is that the records must be streamed in order of reference. That is, if a record references another reference that has not been streamed yet, it is an error.\r\n\r\nDepends on refactoring in #99",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/100/comments",
+        "created_at": "2014-10-21T11:31:18Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/100/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/100",
+        "id": 46382712,
+        "labels": [
+            {
+                "color": "207de5",
+                "name": "type:idea",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Aidea"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/100/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 100,
+        "state": "open",
+        "title": "Stream-based PROV loader",
+        "updated_at": "2014-10-22T19:42:41Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/100",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "A consistent *hangup* when populating Origins is having to load resources and components using one format and provenance data using a different format. In many cases the PROV-JSON is simple enough to use and has the benefit of supporting other provenance concepts (compared to the Resource JSON format for example).\r\n\r\nThe logic needed to be support includes:\r\n\r\n- Objects that have the `origins:model` attribute will be handled specially for that model\r\n- [Agents may be entities or activities](http://www.w3.org/TR/2013/REC-prov-dm-20130430/#section-agents-attribution-association-delegation) so they must be scanned for Origins components as well\r\n- As defined in the API, components and relationships require a resource which must be declared under `entity`.\r\n- The `origins:uuid` and `origins:id` attributes would be used as they are now for looking an occurrent (specific revision) or a continuant (latest revision).\r\n",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/99/comments",
+        "created_at": "2014-10-21T11:08:22Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/99/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/99",
+        "id": 46380926,
+        "labels": [
+            {
+                "color": "5319e7",
+                "name": "area:importing",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/area%3Aimporting"
+            },
+            {
+                "color": "5319e7",
+                "name": "area:provenance",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/area%3Aprovenance"
+            },
+            {
+                "color": "207de5",
+                "name": "type:refactor",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Arefactor"
+            },
+            {
+                "color": "009800",
+                "name": "version:1.0",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/version%3A1.0"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/99/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 99,
+        "state": "open",
+        "title": "Add logic from sync method to PROV loader",
+        "updated_at": "2014-10-22T12:56:06Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/99",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "See https://tools.ietf.org/html/rfc5988\r\n\r\nThis is much cleaner and consistent approach and enables sending HEAD requests to get links without having to return the whole response body. Also this allows for the resources to be refactored to be arrays rather than an object with an embedded array. This make it less cumbersome to consume and manage on the client-side.",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/98/comments",
+        "created_at": "2014-09-29T10:44:03Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/98/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/98",
+        "id": 44279853,
+        "labels": [
+            {
+                "color": "5319e7",
+                "name": "area:service",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/area%3Aservice"
+            },
+            {
+                "color": "207de5",
+                "name": "type:refactor",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Arefactor"
+            },
+            {
+                "color": "009800",
+                "name": "version:1.0",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/version%3A1.0"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/98/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 98,
+        "state": "open",
+        "title": "Replace embedded _links with Link header",
+        "updated_at": "2014-09-29T10:44:23Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/98",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/97/comments",
+        "created_at": "2014-09-22T16:57:11Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/97/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/97",
+        "id": 43516764,
+        "labels": [
+            {
+                "color": "e11d21",
+                "name": "status:needsinfo",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/status%3Aneedsinfo"
+            },
+            {
+                "color": "207de5",
+                "name": "type:idea",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Aidea"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/97/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 97,
+        "state": "open",
+        "title": "Support for branding/themes",
+        "updated_at": "2014-09-22T16:57:11Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/97",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "For a rull representation of a resource, both managed and referenced components and relationships need to be supported. A referenced item must include the resource `id` for lookup. For components that simply means supporting `resource` attribute. For relationships this requires supporting a map for the `start` and `end` attributs, e.g.:\n\n```javascript\n{\n    \"start\": {\n        \"id\": \"some-component\",\n        \"resource\": \"external-resource\"\n    }\n}\n```\n\nThis depends on #95 to prevent ID collisions on export.",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/96/comments",
+        "created_at": "2014-09-19T14:38:22Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/96/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/96",
+        "id": 43245235,
+        "labels": [
+            {
+                "color": "207de5",
+                "name": "type:feature",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Afeature"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/96/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 96,
+        "state": "open",
+        "title": "Add support for referenced components and relationships in JSON format",
+        "updated_at": "2014-09-19T14:38:22Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/96",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "The logic for using a map before was to ensure uniqueness of IDs in a resource by the nature of the data structure. However, this is limiting for a resource that has referenced components or relationships since IDs do not need to be unique across resources.\n\nValidation is already performed on structure during import so the ID uniqueness check can be performed there.",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/95/comments",
+        "created_at": "2014-09-19T14:33:21Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/95/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/95",
+        "id": 43244705,
+        "labels": [
+            {
+                "color": "207de5",
+                "name": "type:refactor",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Arefactor"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/95/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 95,
+        "state": "open",
+        "title": "Change JSON to use arrays for components and relationships",
+        "updated_at": "2014-09-19T14:38:22Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/95",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "Currently events are published when the corresponding function/action occurs. This is problematic within a transaction since an event could be published before the transaction commits or even if the transaction fails.\n\nEach transaction should have a corresponding event queue that only gets published after the transaction is committed.",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/94/comments",
+        "created_at": "2014-09-17T11:18:46Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/94/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/94",
+        "id": 42998635,
+        "labels": [
+            {
+                "color": "e11d21",
+                "name": "type:bug",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Abug"
+            },
+            {
+                "color": "207de5",
+                "name": "type:refactor",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Arefactor"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/94/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 94,
+        "state": "open",
+        "title": "Publish events only after data is visible in graph",
+        "updated_at": "2014-09-17T11:18:46Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/94",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "It is a bit more familiar of a term.",
+        "closed_at": null,
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/93/comments",
+        "created_at": "2014-09-17T11:05:08Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/93/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/93",
+        "id": 42997232,
+        "labels": [
+            {
+                "color": "207de5",
+                "name": "type:refactor",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Arefactor"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/93/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 93,
+        "state": "open",
+        "title": "Rename `Model.set` to `update`",
+        "updated_at": "2014-09-17T11:05:08Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/93",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "",
+        "closed_at": "2014-09-13T17:53:42Z",
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/92/comments",
+        "created_at": "2014-09-13T16:54:46Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/92/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/92",
+        "id": 42700285,
+        "labels": [
+            {
+                "color": "e11d21",
+                "name": "type:bug",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Abug"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/92/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 92,
+        "state": "closed",
+        "title": "Undefined values in PUT overwrites existing attributes",
+        "updated_at": "2014-09-13T17:53:42Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/92",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    {
+        "assignee": null,
+        "body": "The `origins.provenance` package relies on various defined namespaces and formal identifiers for representing the provenance data. This should all be ripped out and replaced with simple mappings that do the minimum necessary for the purposes of Origins; which is represent the PROV data model as a graph.",
+        "closed_at": "2014-09-14T22:28:30Z",
+        "comments": 0,
+        "comments_url": "https://api.github.com/repos/chop-dbhi/origins/issues/91/comments",
+        "created_at": "2014-09-12T21:04:37Z",
+        "events_url": "https://api.github.com/repos/chop-dbhi/origins/issues/91/events",
+        "html_url": "https://github.com/chop-dbhi/origins/issues/91",
+        "id": 42670517,
+        "labels": [
+            {
+                "color": "5319e7",
+                "name": "area:graph",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/area%3Agraph"
+            },
+            {
+                "color": "5319e7",
+                "name": "area:provenance",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/area%3Aprovenance"
+            },
+            {
+                "color": "207de5",
+                "name": "type:refactor",
+                "url": "https://api.github.com/repos/chop-dbhi/origins/labels/type%3Arefactor"
+            }
+        ],
+        "labels_url": "https://api.github.com/repos/chop-dbhi/origins/issues/91/labels{/name}",
+        "locked": false,
+        "milestone": null,
+        "number": 91,
+        "state": "closed",
+        "title": "Simplifiy provenance loading",
+        "updated_at": "2014-09-14T22:28:30Z",
+        "url": "https://api.github.com/repos/chop-dbhi/origins/issues/91",
+        "user": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/515142?v=3",
+            "events_url": "https://api.github.com/users/bruth/events{/privacy}",
+            "followers_url": "https://api.github.com/users/bruth/followers",
+            "following_url": "https://api.github.com/users/bruth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruth/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/bruth",
+            "id": 515142,
+            "login": "bruth",
+            "organizations_url": "https://api.github.com/users/bruth/orgs",
+            "received_events_url": "https://api.github.com/users/bruth/received_events",
+            "repos_url": "https://api.github.com/users/bruth/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/bruth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruth/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    }
+]

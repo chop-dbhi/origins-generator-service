@@ -1,0 +1,126 @@
+{
+    "entity": {
+        "entity:.": {
+            "origins:id": ".",
+            "path": ".",
+            "prov:label": ".",
+            "prov:type": "Directory"
+        },
+        "entity:bar": {
+            "origins:id": "bar",
+            "path": "bar",
+            "prov:label": "bar",
+            "prov:type": "Directory"
+        },
+        "entity:bar/hello.json": {
+            "accessed": "2014-12-19T18:56:06",
+            "created": "2014-12-19T18:56:06",
+            "gid": 1768498755,
+            "mode": 33188,
+            "modified": "2014-12-19T18:56:06",
+            "origins:id": "bar/hello.json",
+            "path": "bar/hello.json",
+            "prov:label": "bar/hello.json",
+            "prov:type": "File",
+            "size": 0,
+            "uid": 316885297
+        },
+        "entity:bar/qux": {
+            "origins:id": "bar/qux",
+            "path": "bar/qux",
+            "prov:label": "bar/qux",
+            "prov:type": "Directory"
+        },
+        "entity:bar/qux/bar.json": {
+            "accessed": "2014-12-19T18:56:06",
+            "created": "2014-12-19T18:56:06",
+            "gid": 1768498755,
+            "mode": 33188,
+            "modified": "2014-12-19T18:56:06",
+            "origins:id": "bar/qux/bar.json",
+            "path": "bar/qux/bar.json",
+            "prov:label": "bar/qux/bar.json",
+            "prov:type": "File",
+            "size": 0,
+            "uid": 316885297
+        },
+        "entity:foo": {
+            "origins:id": "foo",
+            "path": "foo",
+            "prov:label": "foo",
+            "prov:type": "Directory"
+        },
+        "entity:foo.json": {
+            "accessed": "2014-12-19T18:55:07",
+            "created": "2014-12-19T18:55:07",
+            "gid": 1768498755,
+            "mode": 33188,
+            "modified": "2014-12-19T18:55:07",
+            "origins:id": "foo.json",
+            "path": "foo.json",
+            "prov:label": "foo.json",
+            "prov:type": "File",
+            "size": 0,
+            "uid": 316885297
+        },
+        "entity:foo/hello.json": {
+            "accessed": "2014-12-19T18:56:06",
+            "created": "2014-12-19T18:56:06",
+            "gid": 1768498755,
+            "mode": 33188,
+            "modified": "2014-12-19T18:56:06",
+            "origins:id": "foo/hello.json",
+            "path": "foo/hello.json",
+            "prov:label": "foo/hello.json",
+            "prov:type": "File",
+            "size": 0,
+            "uid": 316885297
+        },
+        "entity:foo/qux": {
+            "origins:id": "foo/qux",
+            "path": "foo/qux",
+            "prov:label": "foo/qux",
+            "prov:type": "Directory"
+        },
+        "entity:foo/qux/bar.json": {
+            "accessed": "2014-12-19T18:56:06",
+            "created": "2014-12-19T18:56:06",
+            "gid": 1768498755,
+            "mode": 33188,
+            "modified": "2014-12-19T18:56:06",
+            "origins:id": "foo/qux/bar.json",
+            "path": "foo/qux/bar.json",
+            "prov:label": "foo/qux/bar.json",
+            "prov:type": "File",
+            "size": 0,
+            "uid": 316885297
+        }
+    },
+    "wasInfluencedBy": {
+        "_:x1": {
+            "prov:influencee": "entity:foo.json",
+            "prov:influencer": "entity:.",
+            "prov:type": "origins:Edge"
+        },
+        "_:x2": {
+            "prov:influencee": "entity:bar/hello.json",
+            "prov:influencer": "entity:bar",
+            "prov:type": "origins:Edge"
+        },
+        "_:x3": {
+            "prov:influencee": "entity:bar/qux/bar.json",
+            "prov:influencer": "entity:bar/qux",
+            "prov:type": "origins:Edge"
+        },
+        "_:x4": {
+            "prov:influencee": "entity:foo/hello.json",
+            "prov:influencer": "entity:foo",
+            "prov:type": "origins:Edge"
+        },
+        "_:x5": {
+            "prov:influencee": "entity:foo/qux/bar.json",
+            "prov:influencer": "entity:foo/qux",
+            "prov:type": "origins:Edge"
+        }
+    }
+}

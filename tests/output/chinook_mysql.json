@@ -1,0 +1,1029 @@
+{
+    "entity": {
+        "entity:chinook": {
+            "name": "chinook",
+            "origins:id": "chinook",
+            "prov:label": "chinook",
+            "prov:type": "Database"
+        },
+        "entity:chinook/Album": {
+            "name": "Album",
+            "origins:id": "chinook/Album",
+            "prov:label": "Album",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Album/AlbumId": {
+            "default": null,
+            "name": "AlbumId",
+            "nullable": false,
+            "origins:id": "chinook/Album/AlbumId",
+            "prov:label": "AlbumId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Album/ArtistId": {
+            "default": null,
+            "name": "ArtistId",
+            "nullable": false,
+            "origins:id": "chinook/Album/ArtistId",
+            "prov:label": "ArtistId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Album/Title": {
+            "default": null,
+            "name": "Title",
+            "nullable": false,
+            "origins:id": "chinook/Album/Title",
+            "prov:label": "Title",
+            "prov:type": "Column",
+            "type": "VARCHAR(160)"
+        },
+        "entity:chinook/Artist": {
+            "name": "Artist",
+            "origins:id": "chinook/Artist",
+            "prov:label": "Artist",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Artist/ArtistId": {
+            "default": null,
+            "name": "ArtistId",
+            "nullable": false,
+            "origins:id": "chinook/Artist/ArtistId",
+            "prov:label": "ArtistId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Artist/Name": {
+            "default": null,
+            "name": "Name",
+            "nullable": true,
+            "origins:id": "chinook/Artist/Name",
+            "prov:label": "Name",
+            "prov:type": "Column",
+            "type": "VARCHAR(120)"
+        },
+        "entity:chinook/Customer": {
+            "name": "Customer",
+            "origins:id": "chinook/Customer",
+            "prov:label": "Customer",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Customer/Address": {
+            "default": null,
+            "name": "Address",
+            "nullable": true,
+            "origins:id": "chinook/Customer/Address",
+            "prov:label": "Address",
+            "prov:type": "Column",
+            "type": "VARCHAR(70)"
+        },
+        "entity:chinook/Customer/City": {
+            "default": null,
+            "name": "City",
+            "nullable": true,
+            "origins:id": "chinook/Customer/City",
+            "prov:label": "City",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Customer/Company": {
+            "default": null,
+            "name": "Company",
+            "nullable": true,
+            "origins:id": "chinook/Customer/Company",
+            "prov:label": "Company",
+            "prov:type": "Column",
+            "type": "VARCHAR(80)"
+        },
+        "entity:chinook/Customer/Country": {
+            "default": null,
+            "name": "Country",
+            "nullable": true,
+            "origins:id": "chinook/Customer/Country",
+            "prov:label": "Country",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Customer/CustomerId": {
+            "default": null,
+            "name": "CustomerId",
+            "nullable": false,
+            "origins:id": "chinook/Customer/CustomerId",
+            "prov:label": "CustomerId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Customer/Email": {
+            "default": null,
+            "name": "Email",
+            "nullable": false,
+            "origins:id": "chinook/Customer/Email",
+            "prov:label": "Email",
+            "prov:type": "Column",
+            "type": "VARCHAR(60)"
+        },
+        "entity:chinook/Customer/Fax": {
+            "default": null,
+            "name": "Fax",
+            "nullable": true,
+            "origins:id": "chinook/Customer/Fax",
+            "prov:label": "Fax",
+            "prov:type": "Column",
+            "type": "VARCHAR(24)"
+        },
+        "entity:chinook/Customer/FirstName": {
+            "default": null,
+            "name": "FirstName",
+            "nullable": false,
+            "origins:id": "chinook/Customer/FirstName",
+            "prov:label": "FirstName",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Customer/LastName": {
+            "default": null,
+            "name": "LastName",
+            "nullable": false,
+            "origins:id": "chinook/Customer/LastName",
+            "prov:label": "LastName",
+            "prov:type": "Column",
+            "type": "VARCHAR(20)"
+        },
+        "entity:chinook/Customer/Phone": {
+            "default": null,
+            "name": "Phone",
+            "nullable": true,
+            "origins:id": "chinook/Customer/Phone",
+            "prov:label": "Phone",
+            "prov:type": "Column",
+            "type": "VARCHAR(24)"
+        },
+        "entity:chinook/Customer/PostalCode": {
+            "default": null,
+            "name": "PostalCode",
+            "nullable": true,
+            "origins:id": "chinook/Customer/PostalCode",
+            "prov:label": "PostalCode",
+            "prov:type": "Column",
+            "type": "VARCHAR(10)"
+        },
+        "entity:chinook/Customer/State": {
+            "default": null,
+            "name": "State",
+            "nullable": true,
+            "origins:id": "chinook/Customer/State",
+            "prov:label": "State",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Customer/SupportRepId": {
+            "default": null,
+            "name": "SupportRepId",
+            "nullable": true,
+            "origins:id": "chinook/Customer/SupportRepId",
+            "prov:label": "SupportRepId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Employee": {
+            "name": "Employee",
+            "origins:id": "chinook/Employee",
+            "prov:label": "Employee",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Employee/Address": {
+            "default": null,
+            "name": "Address",
+            "nullable": true,
+            "origins:id": "chinook/Employee/Address",
+            "prov:label": "Address",
+            "prov:type": "Column",
+            "type": "VARCHAR(70)"
+        },
+        "entity:chinook/Employee/BirthDate": {
+            "default": null,
+            "name": "BirthDate",
+            "nullable": true,
+            "origins:id": "chinook/Employee/BirthDate",
+            "prov:label": "BirthDate",
+            "prov:type": "Column",
+            "type": "DATETIME"
+        },
+        "entity:chinook/Employee/City": {
+            "default": null,
+            "name": "City",
+            "nullable": true,
+            "origins:id": "chinook/Employee/City",
+            "prov:label": "City",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Employee/Country": {
+            "default": null,
+            "name": "Country",
+            "nullable": true,
+            "origins:id": "chinook/Employee/Country",
+            "prov:label": "Country",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Employee/Email": {
+            "default": null,
+            "name": "Email",
+            "nullable": true,
+            "origins:id": "chinook/Employee/Email",
+            "prov:label": "Email",
+            "prov:type": "Column",
+            "type": "VARCHAR(60)"
+        },
+        "entity:chinook/Employee/EmployeeId": {
+            "default": null,
+            "name": "EmployeeId",
+            "nullable": false,
+            "origins:id": "chinook/Employee/EmployeeId",
+            "prov:label": "EmployeeId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Employee/Fax": {
+            "default": null,
+            "name": "Fax",
+            "nullable": true,
+            "origins:id": "chinook/Employee/Fax",
+            "prov:label": "Fax",
+            "prov:type": "Column",
+            "type": "VARCHAR(24)"
+        },
+        "entity:chinook/Employee/FirstName": {
+            "default": null,
+            "name": "FirstName",
+            "nullable": false,
+            "origins:id": "chinook/Employee/FirstName",
+            "prov:label": "FirstName",
+            "prov:type": "Column",
+            "type": "VARCHAR(20)"
+        },
+        "entity:chinook/Employee/HireDate": {
+            "default": null,
+            "name": "HireDate",
+            "nullable": true,
+            "origins:id": "chinook/Employee/HireDate",
+            "prov:label": "HireDate",
+            "prov:type": "Column",
+            "type": "DATETIME"
+        },
+        "entity:chinook/Employee/LastName": {
+            "default": null,
+            "name": "LastName",
+            "nullable": false,
+            "origins:id": "chinook/Employee/LastName",
+            "prov:label": "LastName",
+            "prov:type": "Column",
+            "type": "VARCHAR(20)"
+        },
+        "entity:chinook/Employee/Phone": {
+            "default": null,
+            "name": "Phone",
+            "nullable": true,
+            "origins:id": "chinook/Employee/Phone",
+            "prov:label": "Phone",
+            "prov:type": "Column",
+            "type": "VARCHAR(24)"
+        },
+        "entity:chinook/Employee/PostalCode": {
+            "default": null,
+            "name": "PostalCode",
+            "nullable": true,
+            "origins:id": "chinook/Employee/PostalCode",
+            "prov:label": "PostalCode",
+            "prov:type": "Column",
+            "type": "VARCHAR(10)"
+        },
+        "entity:chinook/Employee/ReportsTo": {
+            "default": null,
+            "name": "ReportsTo",
+            "nullable": true,
+            "origins:id": "chinook/Employee/ReportsTo",
+            "prov:label": "ReportsTo",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Employee/State": {
+            "default": null,
+            "name": "State",
+            "nullable": true,
+            "origins:id": "chinook/Employee/State",
+            "prov:label": "State",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Employee/Title": {
+            "default": null,
+            "name": "Title",
+            "nullable": true,
+            "origins:id": "chinook/Employee/Title",
+            "prov:label": "Title",
+            "prov:type": "Column",
+            "type": "VARCHAR(30)"
+        },
+        "entity:chinook/Genre": {
+            "name": "Genre",
+            "origins:id": "chinook/Genre",
+            "prov:label": "Genre",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Genre/GenreId": {
+            "default": null,
+            "name": "GenreId",
+            "nullable": false,
+            "origins:id": "chinook/Genre/GenreId",
+            "prov:label": "GenreId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Genre/Name": {
+            "default": null,
+            "name": "Name",
+            "nullable": true,
+            "origins:id": "chinook/Genre/Name",
+            "prov:label": "Name",
+            "prov:type": "Column",
+            "type": "VARCHAR(120)"
+        },
+        "entity:chinook/Invoice": {
+            "name": "Invoice",
+            "origins:id": "chinook/Invoice",
+            "prov:label": "Invoice",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Invoice/BillingAddress": {
+            "default": null,
+            "name": "BillingAddress",
+            "nullable": true,
+            "origins:id": "chinook/Invoice/BillingAddress",
+            "prov:label": "BillingAddress",
+            "prov:type": "Column",
+            "type": "VARCHAR(70)"
+        },
+        "entity:chinook/Invoice/BillingCity": {
+            "default": null,
+            "name": "BillingCity",
+            "nullable": true,
+            "origins:id": "chinook/Invoice/BillingCity",
+            "prov:label": "BillingCity",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Invoice/BillingCountry": {
+            "default": null,
+            "name": "BillingCountry",
+            "nullable": true,
+            "origins:id": "chinook/Invoice/BillingCountry",
+            "prov:label": "BillingCountry",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Invoice/BillingPostalCode": {
+            "default": null,
+            "name": "BillingPostalCode",
+            "nullable": true,
+            "origins:id": "chinook/Invoice/BillingPostalCode",
+            "prov:label": "BillingPostalCode",
+            "prov:type": "Column",
+            "type": "VARCHAR(10)"
+        },
+        "entity:chinook/Invoice/BillingState": {
+            "default": null,
+            "name": "BillingState",
+            "nullable": true,
+            "origins:id": "chinook/Invoice/BillingState",
+            "prov:label": "BillingState",
+            "prov:type": "Column",
+            "type": "VARCHAR(40)"
+        },
+        "entity:chinook/Invoice/CustomerId": {
+            "default": null,
+            "name": "CustomerId",
+            "nullable": false,
+            "origins:id": "chinook/Invoice/CustomerId",
+            "prov:label": "CustomerId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Invoice/InvoiceDate": {
+            "default": null,
+            "name": "InvoiceDate",
+            "nullable": false,
+            "origins:id": "chinook/Invoice/InvoiceDate",
+            "prov:label": "InvoiceDate",
+            "prov:type": "Column",
+            "type": "DATETIME"
+        },
+        "entity:chinook/Invoice/InvoiceId": {
+            "default": null,
+            "name": "InvoiceId",
+            "nullable": false,
+            "origins:id": "chinook/Invoice/InvoiceId",
+            "prov:label": "InvoiceId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Invoice/Total": {
+            "default": null,
+            "name": "Total",
+            "nullable": false,
+            "origins:id": "chinook/Invoice/Total",
+            "prov:label": "Total",
+            "prov:type": "Column",
+            "type": "DECIMAL(10, 2)"
+        },
+        "entity:chinook/InvoiceLine": {
+            "name": "InvoiceLine",
+            "origins:id": "chinook/InvoiceLine",
+            "prov:label": "InvoiceLine",
+            "prov:type": "Table"
+        },
+        "entity:chinook/InvoiceLine/InvoiceId": {
+            "default": null,
+            "name": "InvoiceId",
+            "nullable": false,
+            "origins:id": "chinook/InvoiceLine/InvoiceId",
+            "prov:label": "InvoiceId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/InvoiceLine/InvoiceLineId": {
+            "default": null,
+            "name": "InvoiceLineId",
+            "nullable": false,
+            "origins:id": "chinook/InvoiceLine/InvoiceLineId",
+            "prov:label": "InvoiceLineId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/InvoiceLine/Quantity": {
+            "default": null,
+            "name": "Quantity",
+            "nullable": false,
+            "origins:id": "chinook/InvoiceLine/Quantity",
+            "prov:label": "Quantity",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/InvoiceLine/TrackId": {
+            "default": null,
+            "name": "TrackId",
+            "nullable": false,
+            "origins:id": "chinook/InvoiceLine/TrackId",
+            "prov:label": "TrackId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/InvoiceLine/UnitPrice": {
+            "default": null,
+            "name": "UnitPrice",
+            "nullable": false,
+            "origins:id": "chinook/InvoiceLine/UnitPrice",
+            "prov:label": "UnitPrice",
+            "prov:type": "Column",
+            "type": "DECIMAL(10, 2)"
+        },
+        "entity:chinook/MediaType": {
+            "name": "MediaType",
+            "origins:id": "chinook/MediaType",
+            "prov:label": "MediaType",
+            "prov:type": "Table"
+        },
+        "entity:chinook/MediaType/MediaTypeId": {
+            "default": null,
+            "name": "MediaTypeId",
+            "nullable": false,
+            "origins:id": "chinook/MediaType/MediaTypeId",
+            "prov:label": "MediaTypeId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/MediaType/Name": {
+            "default": null,
+            "name": "Name",
+            "nullable": true,
+            "origins:id": "chinook/MediaType/Name",
+            "prov:label": "Name",
+            "prov:type": "Column",
+            "type": "VARCHAR(120)"
+        },
+        "entity:chinook/Playlist": {
+            "name": "Playlist",
+            "origins:id": "chinook/Playlist",
+            "prov:label": "Playlist",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Playlist/Name": {
+            "default": null,
+            "name": "Name",
+            "nullable": true,
+            "origins:id": "chinook/Playlist/Name",
+            "prov:label": "Name",
+            "prov:type": "Column",
+            "type": "VARCHAR(120)"
+        },
+        "entity:chinook/Playlist/PlaylistId": {
+            "default": null,
+            "name": "PlaylistId",
+            "nullable": false,
+            "origins:id": "chinook/Playlist/PlaylistId",
+            "prov:label": "PlaylistId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/PlaylistTrack": {
+            "name": "PlaylistTrack",
+            "origins:id": "chinook/PlaylistTrack",
+            "prov:label": "PlaylistTrack",
+            "prov:type": "Table"
+        },
+        "entity:chinook/PlaylistTrack/PlaylistId": {
+            "default": null,
+            "name": "PlaylistId",
+            "nullable": false,
+            "origins:id": "chinook/PlaylistTrack/PlaylistId",
+            "prov:label": "PlaylistId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/PlaylistTrack/TrackId": {
+            "default": null,
+            "name": "TrackId",
+            "nullable": false,
+            "origins:id": "chinook/PlaylistTrack/TrackId",
+            "prov:label": "TrackId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Track": {
+            "name": "Track",
+            "origins:id": "chinook/Track",
+            "prov:label": "Track",
+            "prov:type": "Table"
+        },
+        "entity:chinook/Track/AlbumId": {
+            "default": null,
+            "name": "AlbumId",
+            "nullable": true,
+            "origins:id": "chinook/Track/AlbumId",
+            "prov:label": "AlbumId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Track/Bytes": {
+            "default": null,
+            "name": "Bytes",
+            "nullable": true,
+            "origins:id": "chinook/Track/Bytes",
+            "prov:label": "Bytes",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Track/Composer": {
+            "default": null,
+            "name": "Composer",
+            "nullable": true,
+            "origins:id": "chinook/Track/Composer",
+            "prov:label": "Composer",
+            "prov:type": "Column",
+            "type": "VARCHAR(220)"
+        },
+        "entity:chinook/Track/GenreId": {
+            "default": null,
+            "name": "GenreId",
+            "nullable": true,
+            "origins:id": "chinook/Track/GenreId",
+            "prov:label": "GenreId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Track/MediaTypeId": {
+            "default": null,
+            "name": "MediaTypeId",
+            "nullable": false,
+            "origins:id": "chinook/Track/MediaTypeId",
+            "prov:label": "MediaTypeId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Track/Milliseconds": {
+            "default": null,
+            "name": "Milliseconds",
+            "nullable": false,
+            "origins:id": "chinook/Track/Milliseconds",
+            "prov:label": "Milliseconds",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Track/Name": {
+            "default": null,
+            "name": "Name",
+            "nullable": false,
+            "origins:id": "chinook/Track/Name",
+            "prov:label": "Name",
+            "prov:type": "Column",
+            "type": "VARCHAR(200)"
+        },
+        "entity:chinook/Track/TrackId": {
+            "default": null,
+            "name": "TrackId",
+            "nullable": false,
+            "origins:id": "chinook/Track/TrackId",
+            "prov:label": "TrackId",
+            "prov:type": "Column",
+            "type": "INTEGER(11)"
+        },
+        "entity:chinook/Track/UnitPrice": {
+            "default": null,
+            "name": "UnitPrice",
+            "nullable": false,
+            "origins:id": "chinook/Track/UnitPrice",
+            "prov:label": "UnitPrice",
+            "prov:type": "Column",
+            "type": "DECIMAL(10, 2)"
+        }
+    },
+    "wasInfluencedBy": {
+        "_:x1": {
+            "prov:influencee": "entity:chinook/Album",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x10": {
+            "prov:influencee": "entity:chinook/Customer/FirstName",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x11": {
+            "prov:influencee": "entity:chinook/Customer/LastName",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x12": {
+            "prov:influencee": "entity:chinook/Customer/Company",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x13": {
+            "prov:influencee": "entity:chinook/Customer/Address",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x14": {
+            "prov:influencee": "entity:chinook/Customer/City",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x15": {
+            "prov:influencee": "entity:chinook/Customer/State",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x16": {
+            "prov:influencee": "entity:chinook/Customer/Country",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x17": {
+            "prov:influencee": "entity:chinook/Customer/PostalCode",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x18": {
+            "prov:influencee": "entity:chinook/Customer/Phone",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x19": {
+            "prov:influencee": "entity:chinook/Customer/Fax",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x2": {
+            "prov:influencee": "entity:chinook/Album/AlbumId",
+            "prov:influencer": "entity:chinook/Album",
+            "prov:type": "origins:Edge"
+        },
+        "_:x20": {
+            "prov:influencee": "entity:chinook/Customer/Email",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x21": {
+            "prov:influencee": "entity:chinook/Customer/SupportRepId",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        },
+        "_:x22": {
+            "prov:influencee": "entity:chinook/Employee",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x23": {
+            "prov:influencee": "entity:chinook/Employee/EmployeeId",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x24": {
+            "prov:influencee": "entity:chinook/Employee/LastName",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x25": {
+            "prov:influencee": "entity:chinook/Employee/FirstName",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x26": {
+            "prov:influencee": "entity:chinook/Employee/Title",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x27": {
+            "prov:influencee": "entity:chinook/Employee/ReportsTo",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x28": {
+            "prov:influencee": "entity:chinook/Employee/BirthDate",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x29": {
+            "prov:influencee": "entity:chinook/Employee/HireDate",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x3": {
+            "prov:influencee": "entity:chinook/Album/Title",
+            "prov:influencer": "entity:chinook/Album",
+            "prov:type": "origins:Edge"
+        },
+        "_:x30": {
+            "prov:influencee": "entity:chinook/Employee/Address",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x31": {
+            "prov:influencee": "entity:chinook/Employee/City",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x32": {
+            "prov:influencee": "entity:chinook/Employee/State",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x33": {
+            "prov:influencee": "entity:chinook/Employee/Country",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x34": {
+            "prov:influencee": "entity:chinook/Employee/PostalCode",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x35": {
+            "prov:influencee": "entity:chinook/Employee/Phone",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x36": {
+            "prov:influencee": "entity:chinook/Employee/Fax",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x37": {
+            "prov:influencee": "entity:chinook/Employee/Email",
+            "prov:influencer": "entity:chinook/Employee",
+            "prov:type": "origins:Edge"
+        },
+        "_:x38": {
+            "prov:influencee": "entity:chinook/Genre",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x39": {
+            "prov:influencee": "entity:chinook/Genre/GenreId",
+            "prov:influencer": "entity:chinook/Genre",
+            "prov:type": "origins:Edge"
+        },
+        "_:x4": {
+            "prov:influencee": "entity:chinook/Album/ArtistId",
+            "prov:influencer": "entity:chinook/Album",
+            "prov:type": "origins:Edge"
+        },
+        "_:x40": {
+            "prov:influencee": "entity:chinook/Genre/Name",
+            "prov:influencer": "entity:chinook/Genre",
+            "prov:type": "origins:Edge"
+        },
+        "_:x41": {
+            "prov:influencee": "entity:chinook/Invoice",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x42": {
+            "prov:influencee": "entity:chinook/Invoice/InvoiceId",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x43": {
+            "prov:influencee": "entity:chinook/Invoice/CustomerId",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x44": {
+            "prov:influencee": "entity:chinook/Invoice/InvoiceDate",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x45": {
+            "prov:influencee": "entity:chinook/Invoice/BillingAddress",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x46": {
+            "prov:influencee": "entity:chinook/Invoice/BillingCity",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x47": {
+            "prov:influencee": "entity:chinook/Invoice/BillingState",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x48": {
+            "prov:influencee": "entity:chinook/Invoice/BillingCountry",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x49": {
+            "prov:influencee": "entity:chinook/Invoice/BillingPostalCode",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x5": {
+            "prov:influencee": "entity:chinook/Artist",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x50": {
+            "prov:influencee": "entity:chinook/Invoice/Total",
+            "prov:influencer": "entity:chinook/Invoice",
+            "prov:type": "origins:Edge"
+        },
+        "_:x51": {
+            "prov:influencee": "entity:chinook/InvoiceLine",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x52": {
+            "prov:influencee": "entity:chinook/InvoiceLine/InvoiceLineId",
+            "prov:influencer": "entity:chinook/InvoiceLine",
+            "prov:type": "origins:Edge"
+        },
+        "_:x53": {
+            "prov:influencee": "entity:chinook/InvoiceLine/InvoiceId",
+            "prov:influencer": "entity:chinook/InvoiceLine",
+            "prov:type": "origins:Edge"
+        },
+        "_:x54": {
+            "prov:influencee": "entity:chinook/InvoiceLine/TrackId",
+            "prov:influencer": "entity:chinook/InvoiceLine",
+            "prov:type": "origins:Edge"
+        },
+        "_:x55": {
+            "prov:influencee": "entity:chinook/InvoiceLine/UnitPrice",
+            "prov:influencer": "entity:chinook/InvoiceLine",
+            "prov:type": "origins:Edge"
+        },
+        "_:x56": {
+            "prov:influencee": "entity:chinook/InvoiceLine/Quantity",
+            "prov:influencer": "entity:chinook/InvoiceLine",
+            "prov:type": "origins:Edge"
+        },
+        "_:x57": {
+            "prov:influencee": "entity:chinook/MediaType",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x58": {
+            "prov:influencee": "entity:chinook/MediaType/MediaTypeId",
+            "prov:influencer": "entity:chinook/MediaType",
+            "prov:type": "origins:Edge"
+        },
+        "_:x59": {
+            "prov:influencee": "entity:chinook/MediaType/Name",
+            "prov:influencer": "entity:chinook/MediaType",
+            "prov:type": "origins:Edge"
+        },
+        "_:x6": {
+            "prov:influencee": "entity:chinook/Artist/ArtistId",
+            "prov:influencer": "entity:chinook/Artist",
+            "prov:type": "origins:Edge"
+        },
+        "_:x60": {
+            "prov:influencee": "entity:chinook/Playlist",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x61": {
+            "prov:influencee": "entity:chinook/Playlist/PlaylistId",
+            "prov:influencer": "entity:chinook/Playlist",
+            "prov:type": "origins:Edge"
+        },
+        "_:x62": {
+            "prov:influencee": "entity:chinook/Playlist/Name",
+            "prov:influencer": "entity:chinook/Playlist",
+            "prov:type": "origins:Edge"
+        },
+        "_:x63": {
+            "prov:influencee": "entity:chinook/PlaylistTrack",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x64": {
+            "prov:influencee": "entity:chinook/PlaylistTrack/PlaylistId",
+            "prov:influencer": "entity:chinook/PlaylistTrack",
+            "prov:type": "origins:Edge"
+        },
+        "_:x65": {
+            "prov:influencee": "entity:chinook/PlaylistTrack/TrackId",
+            "prov:influencer": "entity:chinook/PlaylistTrack",
+            "prov:type": "origins:Edge"
+        },
+        "_:x66": {
+            "prov:influencee": "entity:chinook/Track",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x67": {
+            "prov:influencee": "entity:chinook/Track/TrackId",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x68": {
+            "prov:influencee": "entity:chinook/Track/Name",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x69": {
+            "prov:influencee": "entity:chinook/Track/AlbumId",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x7": {
+            "prov:influencee": "entity:chinook/Artist/Name",
+            "prov:influencer": "entity:chinook/Artist",
+            "prov:type": "origins:Edge"
+        },
+        "_:x70": {
+            "prov:influencee": "entity:chinook/Track/MediaTypeId",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x71": {
+            "prov:influencee": "entity:chinook/Track/GenreId",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x72": {
+            "prov:influencee": "entity:chinook/Track/Composer",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x73": {
+            "prov:influencee": "entity:chinook/Track/Milliseconds",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x74": {
+            "prov:influencee": "entity:chinook/Track/Bytes",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x75": {
+            "prov:influencee": "entity:chinook/Track/UnitPrice",
+            "prov:influencer": "entity:chinook/Track",
+            "prov:type": "origins:Edge"
+        },
+        "_:x8": {
+            "prov:influencee": "entity:chinook/Customer",
+            "prov:influencer": "entity:chinook",
+            "prov:type": "origins:Edge"
+        },
+        "_:x9": {
+            "prov:influencee": "entity:chinook/Customer/CustomerId",
+            "prov:influencer": "entity:chinook/Customer",
+            "prov:type": "origins:Edge"
+        }
+    }
+}

@@ -1,0 +1,386 @@
+{
+    "activity": {
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/100": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/100",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/91": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/91",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/91/close": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/91/close",
+            "prov:startTime": 1410733710000,
+            "prov:type": "Close Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/92": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/92",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/92/close": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/92/close",
+            "prov:startTime": 1410630822000,
+            "prov:type": "Close Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/93": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/94": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/95": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/95",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/96": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/97": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/98": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/98",
+            "prov:type": "Create Issue"
+        },
+        "activity:https://api.github.com/repos/chop-dbhi/origins/issues/99": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/99",
+            "prov:type": "Create Issue"
+        }
+    },
+    "agent": {
+        "agent:https://api.github.com/users/bruth": {
+            "id": 515142,
+            "login": "bruth",
+            "origins:id": "https://api.github.com/users/bruth",
+            "prov:label": "bruth",
+            "prov:type": "User",
+            "url": "https://api.github.com/users/bruth"
+        }
+    },
+    "entity": {
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/100": {
+            "body": "Inspired by [Elasticsearch's bulk API](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-bulk.html) and [Neo4j's Batch operations](http://neo4j.com/docs/stable/rest-api-batch-ops.html), the idea is to deconstruct a PROV document into individual records that can be streamed one at a time.\r\n\r\nFor example:\r\n\r\n```javascript\r\n{\"id\": \"article\", \"concept\": \"entity\", \"attrs\": {\"origins:id\": \"...\", \"origins:label\": \"Article\"}}\r\n{\"id\": \"joe\", \"concept\": \"agent\", \"attrs\": {\"origins:id\": \"...\", \"origins:label\": \"Joe\"}}\r\n{\"concept\": \"attribution\", \"attrs\": {\"prov:entity\": \"joe\", \"prov:agent\": \"article\"}}\r\n```\r\n\r\nIf a document defines an `id` field, it and the corresponding `origins:uuid` (included or generated) will be kept in memory for reference for the remaining of the stream.\r\n\r\nThe one requirement is that the records must be streamed in order of reference. That is, if a record references another reference that has not been streamed yet, it is an error.\r\n\r\nDepends on refactoring in #99",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-10-21T11:31:18Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/100",
+            "number": 100,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/100",
+            "prov:label": "Stream-based PROV loader",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Stream-based PROV loader",
+            "updated_at": "2014-10-22T19:42:41Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/100"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/91": {
+            "body": "The `origins.provenance` package relies on various defined namespaces and formal identifiers for representing the provenance data. This should all be ripped out and replaced with simple mappings that do the minimum necessary for the purposes of Origins; which is represent the PROV data model as a graph.",
+            "closed_at": "2014-09-14T22:28:30Z",
+            "comments": 0,
+            "created_at": "2014-09-12T21:04:37Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/91",
+            "number": 91,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/91",
+            "prov:label": "Simplifiy provenance loading",
+            "prov:type": "Issue",
+            "state": "closed",
+            "title": "Simplifiy provenance loading",
+            "updated_at": "2014-09-14T22:28:30Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/91"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/92": {
+            "body": "",
+            "closed_at": "2014-09-13T17:53:42Z",
+            "comments": 0,
+            "created_at": "2014-09-13T16:54:46Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/92",
+            "number": 92,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/92",
+            "prov:label": "Undefined values in PUT overwrites existing attributes",
+            "prov:type": "Issue",
+            "state": "closed",
+            "title": "Undefined values in PUT overwrites existing attributes",
+            "updated_at": "2014-09-13T17:53:42Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/92"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/93": {
+            "body": "It is a bit more familiar of a term.",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-09-17T11:05:08Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/93",
+            "number": 93,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:label": "Rename `Model.set` to `update`",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Rename `Model.set` to `update`",
+            "updated_at": "2014-09-17T11:05:08Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/93"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/94": {
+            "body": "Currently events are published when the corresponding function/action occurs. This is problematic within a transaction since an event could be published before the transaction commits or even if the transaction fails.\n\nEach transaction should have a corresponding event queue that only gets published after the transaction is committed.",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-09-17T11:18:46Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/94",
+            "number": 94,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:label": "Publish events only after data is visible in graph",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Publish events only after data is visible in graph",
+            "updated_at": "2014-09-17T11:18:46Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/94"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/95": {
+            "body": "The logic for using a map before was to ensure uniqueness of IDs in a resource by the nature of the data structure. However, this is limiting for a resource that has referenced components or relationships since IDs do not need to be unique across resources.\n\nValidation is already performed on structure during import so the ID uniqueness check can be performed there.",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-09-19T14:33:21Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/95",
+            "number": 95,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/95",
+            "prov:label": "Change JSON to use arrays for components and relationships",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Change JSON to use arrays for components and relationships",
+            "updated_at": "2014-09-19T14:38:22Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/95"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/96": {
+            "body": "For a rull representation of a resource, both managed and referenced components and relationships need to be supported. A referenced item must include the resource `id` for lookup. For components that simply means supporting `resource` attribute. For relationships this requires supporting a map for the `start` and `end` attributs, e.g.:\n\n```javascript\n{\n    \"start\": {\n        \"id\": \"some-component\",\n        \"resource\": \"external-resource\"\n    }\n}\n```\n\nThis depends on #95 to prevent ID collisions on export.",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-09-19T14:38:22Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/96",
+            "number": 96,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:label": "Add support for referenced components and relationships in JSON format",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Add support for referenced components and relationships in JSON format",
+            "updated_at": "2014-09-19T14:38:22Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/96"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/97": {
+            "body": "",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-09-22T16:57:11Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/97",
+            "number": 97,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:label": "Support for branding/themes",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Support for branding/themes",
+            "updated_at": "2014-09-22T16:57:11Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/97"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/98": {
+            "body": "See https://tools.ietf.org/html/rfc5988\r\n\r\nThis is much cleaner and consistent approach and enables sending HEAD requests to get links without having to return the whole response body. Also this allows for the resources to be refactored to be arrays rather than an object with an embedded array. This make it less cumbersome to consume and manage on the client-side.",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-09-29T10:44:03Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/98",
+            "number": 98,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/98",
+            "prov:label": "Replace embedded _links with Link header",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Replace embedded _links with Link header",
+            "updated_at": "2014-09-29T10:44:23Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/98"
+        },
+        "entity:https://api.github.com/repos/chop-dbhi/origins/issues/99": {
+            "body": "A consistent *hangup* when populating Origins is having to load resources and components using one format and provenance data using a different format. In many cases the PROV-JSON is simple enough to use and has the benefit of supporting other provenance concepts (compared to the Resource JSON format for example).\r\n\r\nThe logic needed to be support includes:\r\n\r\n- Objects that have the `origins:model` attribute will be handled specially for that model\r\n- [Agents may be entities or activities](http://www.w3.org/TR/2013/REC-prov-dm-20130430/#section-agents-attribution-association-delegation) so they must be scanned for Origins components as well\r\n- As defined in the API, components and relationships require a resource which must be declared under `entity`.\r\n- The `origins:uuid` and `origins:id` attributes would be used as they are now for looking an occurrent (specific revision) or a continuant (latest revision).\r\n",
+            "closed_at": null,
+            "comments": 0,
+            "created_at": "2014-10-21T11:08:22Z",
+            "html_url": "https://github.com/chop-dbhi/origins/issues/99",
+            "number": 99,
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/99",
+            "prov:label": "Add logic from sync method to PROV loader",
+            "prov:type": "Issue",
+            "state": "open",
+            "title": "Add logic from sync method to PROV loader",
+            "updated_at": "2014-10-22T12:56:06Z",
+            "url": "https://api.github.com/repos/chop-dbhi/origins/issues/99"
+        }
+    },
+    "wasAssociatedWith": {
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/100": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/100",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/100",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/91": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/91",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/91",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/92": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/92",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/92",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/93": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/94": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/95": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/95",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/95",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/96": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/97": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/98": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/98",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/98",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        },
+        "wasAssociatedWith:https://api.github.com/repos/chop-dbhi/origins/issues/99": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/99",
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/99",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:role": "Issue Creator"
+        }
+    },
+    "wasAttributedTo": {
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/100": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/100",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/100",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/91": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/91",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/91",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/92": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/92",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/92",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/93": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/94": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/95": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/95",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/95",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/96": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/97": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/98": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/98",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/98",
+            "prov:label": "Issue Creator"
+        },
+        "wasAttributedTo:https://api.github.com/repos/chop-dbhi/origins/issues/99": {
+            "origins:id": "https://api.github.com/repos/chop-dbhi/origins/issues/99",
+            "prov:agent": "agent:https://api.github.com/users/bruth",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/99",
+            "prov:label": "Issue Creator"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:x1": {
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/100",
+            "prov:time": 1414006961000
+        },
+        "_:x10": {
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/91",
+            "prov:time": 1410733710000
+        },
+        "_:x2": {
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/99",
+            "prov:time": 1413982566000
+        },
+        "_:x3": {
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/98",
+            "prov:time": 1411987463000
+        },
+        "_:x4": {
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/97",
+            "prov:time": 1411405031000
+        },
+        "_:x5": {
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/96",
+            "prov:time": 1411137502000
+        },
+        "_:x6": {
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/95",
+            "prov:time": 1411137502000
+        },
+        "_:x7": {
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/94",
+            "prov:time": 1410952726000
+        },
+        "_:x8": {
+            "prov:activity": "activity:https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/93",
+            "prov:time": 1410951908000
+        },
+        "_:x9": {
+            "prov:entity": "entity:https://api.github.com/repos/chop-dbhi/origins/issues/92",
+            "prov:time": 1410630822000
+        }
+    }
+}

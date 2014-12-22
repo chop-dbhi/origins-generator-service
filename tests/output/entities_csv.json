@@ -1,0 +1,31 @@
+{
+    "entity": {
+        "entity:1": {
+            "color": "yellow",
+            "origins:description": "",
+            "origins:id": "1",
+            "prov:label": "Tennis Ball",
+            "prov:type": "Ball",
+            "shape": "sphere",
+            "size": "small"
+        },
+        "entity:2": {
+            "color": "brown",
+            "origins:description": "",
+            "origins:id": "2",
+            "prov:label": "Basketball",
+            "prov:type": "Ball",
+            "shape": "sphere",
+            "size": "large"
+        },
+        "entity:3": {
+            "color": "brown",
+            "origins:description": "",
+            "origins:id": "3",
+            "prov:label": "Football",
+            "prov:type": "Ball",
+            "shape": "oblong",
+            "size": "medium"
+        }
+    }
+}
