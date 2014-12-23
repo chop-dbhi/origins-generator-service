@@ -27,7 +27,12 @@ ORDERED_PROV_TERMS = (
 
 
 def client_option(key, option):
-    toks = ['*', key, '<{}>'.format(option['type']), '-']
+    if 'anyOf' in option:
+        types = [o['type'] for o in option['anyOf']]
+    else:
+        types = [option['type']]
+
+    toks = ['*', key, '<{}>'.format('|'.join(types)), '-']
 
     toks.append(remove_newlines(option['description']))
 

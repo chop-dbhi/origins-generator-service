@@ -33,11 +33,10 @@ class Client(base.Client):
                 'default': ',',
             },
             'id': {
+                'description': 'The field name or an array of field names representing the identifier. Defaults to the first column.',  # noqa
                 'anyOf': [{
-                    'description': 'The field name of the identifier. Defaults to the first column.',  # noqa
                     'type': 'string',
                 }, {
-                    'description': 'An array of field names for a composite identifier.',  # noqa
                     'type': 'array',
                     'minItems': 2,
                     'uniqueItems': True,
@@ -47,11 +46,10 @@ class Client(base.Client):
                 }],
             },
             'label': {
+                'description': 'The field name or an array of field names representing the label. Defaults to the second column.',  # noqa
                 'anyOf': [{
-                    'description': 'The field name of the label. Defaults to the second column.',  # noqa
                     'type': 'string',
                 }, {
-                    'description': 'An array of field names for a composite label.',  # noqa
                     'type': 'array',
                     'minItems': 2,
                     'uniqueItems': True,
