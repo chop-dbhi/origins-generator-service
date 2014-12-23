@@ -12,8 +12,7 @@ def clone_repo(url, branch):
         '--branch', branch,
         '--single-branch',
         tmp,
-    ], stdout=subprocess.DEVNULL,
-       stderr=subprocess.DEVNULL)
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     return tmp
 
@@ -167,10 +166,12 @@ class Client(base.Client):
             else:
                 committer_id = commit['committer']
 
-                self.document.add('agent', {
+                committer = {
                     'origins:id': committer_id,
                     'prov:label': commit['committer'],
-                })
+                }
+
+                self.document.add('agent', committer)
 
                 self.document.add('wasAssociatedWith', {
                     'origins:id': '{}:{}'.format(committer_id, activity_id),

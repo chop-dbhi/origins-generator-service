@@ -1,8 +1,4 @@
-import re
 import csv
-import codecs
-import requests
-from io import StringIO
 from .._csv import UnicodeCsvReader
 from . import base
 from .. import utils

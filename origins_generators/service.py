@@ -1,4 +1,3 @@
-import re
 import json
 from flask import Flask, request, url_for
 from .exceptions import UnknownSource, SourceNotSupported
@@ -10,10 +9,6 @@ app = Flask(__name__)
 DEFAULT_HEADERS = {
     'Content-Type': 'application/json',
 }
-
-
-def clean_description(s):
-    return re.sub(r'\s+', ' ', s.strip())
 
 
 def jsonify(data):
@@ -33,7 +28,7 @@ def list_sources():
         except Exception:
             continue
 
-        description = clean_description(Client.description)
+        description = utils.remove_newlines(Client.description)
 
         items.append({
             'name': Client.name,
@@ -57,7 +52,7 @@ def source(name):
         }), 422
 
     if request.method == 'GET':
-        description = clean_description(Client.description)
+        description = utils.remove_newlines(Client.description)
 
         attrs = {
             'name': Client.name,

@@ -13,4 +13,3 @@ class TestCase(SourceTestCase):
         expected_output = self.load_output('sample_vcf.json')
 
         self.assertEqual(output, expected_output)
-

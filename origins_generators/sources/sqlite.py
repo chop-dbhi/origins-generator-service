@@ -1,7 +1,6 @@
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.engine import reflection
-from sqlalchemy.engine.url import URL
 from . import base
 from .. import utils
 
@@ -51,7 +50,8 @@ class Client(base.Client):
         if self.options.name:
             name = self.options.name
         else:
-            name = utils.prettify_name(os.path.splitext(os.path.basename(uri))[0])
+            basename = os.path.splitext(os.path.basename(uri))[0]
+            name = utils.prettify_name(basename)
 
         return {
             'origins:id': id,

@@ -60,8 +60,7 @@ class Client(base.Client):
         "Return a list of collection dicts in the database."
         return [{
             'name': n,
-        } for n in self.db.collection_names()
-          if n != 'system.indexes']
+        } for n in self.db.collection_names() if n != 'system.indexes']
 
     def get_fields(self, collection_name):
         """Return a list of field dicts in the collection.

@@ -1,8 +1,5 @@
-import re
 import os
 import csv
-import time
-from datetime import datetime
 from . import base
 from .. import utils
 
@@ -114,7 +111,7 @@ class Client(base.Client):
     def parse_field(self, section, attrs):
         attrs['origins:id'] = os.path.join(section['origins:id'],
                                            attrs['field_name'])
-        attrs['prov:label'] = strip_html(attrs['field_label'])
+        attrs['prov:label'] = utils.strip_html(attrs['field_label'])
         attrs['prov:type'] = 'Field'
 
         return attrs
