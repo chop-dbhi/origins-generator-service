@@ -18,6 +18,11 @@ def validate(instance, schema, *args, **kwargs):
     return instance
 
 
+def remove_newlines(s):
+    "Replaces newlines with spaces."
+    return re.sub(r'\s+', ' ', s.strip())
+
+
 def prettify_name(name):
     """Prettifies a variable or file name.
 
@@ -36,10 +41,15 @@ def timestr_to_timestamp(s):
     "Converts a time string to a timestamp."
     if s:
         dt = dateutil.parser.parse(s)
+        return dt_to_timestamp(dt)
+
+
+def dt_to_timestamp(dt):
+    if dt:
         return int(dt.timestamp() * 1000)
 
-
 html_re = re.compile(r'<\w+(\s+("[^"]*"|\'[^\']*\'|[^>])+)?>|<\/\w+>', re.I)
+
 
 # REDCap labels can contain HTML. The Origins label must not contain any markup
 # for downstream use.

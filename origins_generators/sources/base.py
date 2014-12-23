@@ -1,4 +1,4 @@
-from ..utils import validate, IdGenerator
+from ..utils import validate, IdGenerator, remove_newlines
 from . import JSON_SCHEMA_NS
 
 
@@ -26,6 +26,53 @@ ORDERED_PROV_TERMS = (
 )
 
 
+def client_option(key, option):
+    toks = ['*', key, '<{}>'.format(option['type']), '-']
+
+    toks.append(remove_newlines(option['description']))
+
+    if 'default' in option:
+        toks.append('Default is {!r}.'.format(option['default']))
+
+    return ' '.join(toks)
+
+
+def client_docstring(client):
+    # Spaced with two newlines
+    paras = [
+        remove_newlines(client.description),
+    ]
+
+    # Set of options for the client
+    options = []
+    props = dict(client.options['properties'])
+
+    # Put require options first
+    if 'required' in client.options:
+        required = ['Required:']
+
+        for key in client.options['required']:
+            option = props.pop(key)
+            opt = client_option(key, option)
+            required.append(opt)
+
+        paras.append('\n'.join(required))
+
+    if props:
+        optional = ['Optional:']
+
+        # Remaining options are optional
+        for key, option in props.items():
+            opt = client_option(key, option)
+            optional.append(opt)
+
+        paras.append('\n'.join(optional))
+
+    paras.append('\n'.join(options))
+
+    return '\n\n'.join(paras)
+
+
 class Options():
     def __init__(self, options=None):
         if options:
@@ -36,6 +83,8 @@ class ClientMetaclass(type):
     def __new__(cls, name, bases, attrs):
         newcls = type.__new__(cls, name, bases, attrs)
 
+        # The schema attribute adds the boilerplate properties for the
+        # JSON schema format.
         if 'options' in attrs:
             schema = {
                 '$schema': JSON_SCHEMA_NS,
@@ -45,6 +94,9 @@ class ClientMetaclass(type):
             schema.update(newcls.options)
 
             newcls.schema = schema
+
+        if '__doc__' not in attrs:
+            newcls.__doc__ = client_docstring(newcls)
 
         return newcls
 
