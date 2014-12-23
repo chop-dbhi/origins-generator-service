@@ -5,6 +5,8 @@ from origins_generators import sources
 
 
 class SourceTestCase(unittest.TestCase):
+    maxDiff = None
+
     generator = None
 
     INPUT_DIR = os.path.join(os.path.dirname(__file__), '../input')
