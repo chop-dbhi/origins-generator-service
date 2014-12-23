@@ -7,23 +7,13 @@ if sys.version_info < (3, 3, 0):
 
 kwargs = {
     'name': 'origins-generators',
-
     'version': __import__('origins_generators').get_version(),
-
-    'description': 'Origins is a free and open source service for building '
-                   'information dependency graphs across your data, '
-                   'systems, and operations.',
-
-    'url': 'https://github.com/cbmi/origins-generators/',
-
+    'description': 'Provenance generator service for Origins.',
+    'url': 'https://github.com/chop-dbhi/origins-generators/',
     'author': 'Byron Ruth',
-
     'author_email': 'b@devel.io',
-
     'license': 'BSD',
-
-    'keywords': 'graph dependency provenance information service REST',
-
+    'keywords': 'provenance generator origins service REST',
     'classifiers': [
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
@@ -38,8 +28,9 @@ kwargs = {
     'install_requires': [
         'docopt>=0.6',
         'flask>=0.10,<0.11',
-        'requests',
-        'python-dateutil',
+        'requests>=2.4,<2.5',
+        'python-dateutil>=2.2,<2.3',
+        'jsonschema>=2.4,<2.5'
     ],
 
     'scripts': ['bin/origins-generators'],

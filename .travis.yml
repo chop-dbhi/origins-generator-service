@@ -1,10 +1,10 @@
 language: python
 
-sudo: off
-
 python:
     - "3.3"
     - "3.4"
+
+sudo: false
 
 env:
     - MYSQL_USER=travis MYSQL_HOST=127.0.0.1 POSTGRESQL_USER=postgres POSTGRESQL_HOST=127.0.0.1
@@ -13,16 +13,15 @@ services:
     - mongodb
 
 before_install:
-    - sh bin/check_signoff.sh
-    - sh tests/start-neo4j.sh
+    - bash bin/check_signoff.sh
+    - pip install -q flake8
+    - flake8
 
 install:
-    - pip install -q coveralls
+    - bash tests/start-neo4j.sh
     - pip install -r tests/requirements.txt
-    - pip install flake8
 
 before_script:
-    - flake8
     - mysql -u $MYSQL_USER < tests/input/chinook_mysql.sql > /dev/null
     - psql -U $POSTGRESQL_USER -c 'create database chinook' > /dev/null
     - psql -U $POSTGRESQL_USER -d chinook < tests/input/chinook_postgresql.sql > /dev/null
@@ -32,4 +31,5 @@ script:
     - coverage run test_suite.py
 
 after_success:
+    - pip install -q coveralls
     - coveralls > /dev/null
