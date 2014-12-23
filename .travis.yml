@@ -18,6 +18,8 @@ before_install:
     - flake8
 
 install:
+    # Install package, test requirements, and coverage for testing
+    - pip install -q -e .
     - pip install -q -r tests/requirements.txt
     - pip install -q coverage
 
