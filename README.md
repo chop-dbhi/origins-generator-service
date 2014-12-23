@@ -1,15 +1,15 @@
-# Origins Generators
+# Origins Generator Service
 
-An Origins generator extracts structural and descriptive metadata from common data sources into the PROV-JSON format which is directly consumable by [Origins](https://github.com/cbmi/origins/).
+[![Build Status](https://travis-ci.org/chop-dbhi/origins-generator-service.svg?branch=master)](https://travis-ci.org/chop-dbhi/origins-generator-service) [![Coverage Status](https://img.shields.io/coveralls/chop-dbhi/origins-generator-service.svg)](https://coveralls.io/r/chop-dbhi/origins-generator-service)
 
-All generators are exposed through an HTTP service. Performing a GET to the root endpoint will return a set available generators and options each generator supports.
+The Origins Generator Service exposes an HTTP service for generating provenance data in the PROV-JSON format which is directly consumable by [Origins](https://github.com/chop-dbhi/origins/).
 
 ## Install
 
 Docker image (recommended). All generator dependencies are included.
 
 ```
-docker run --publish 5000:5000 bruth/origins-generators
+docker run -p 5000:5000 bruth/origins-generator-service
 ```
 
 Manual. Generator dependencies need to be installed manually.
@@ -28,11 +28,34 @@ pip install origins-generators
 - `PyMongo`
 - `OpenPyXL`
 
-## REST Interface
+## Supported Sources
+
+- Relational Databases
+    - PostgreSQL
+    - MySQL
+    - SQLite
+    - Oracle
+- Document Stores
+    - Mongodb
+- Delimited Files
+    - CSV, TSV (any delimited)
+- Data Dictionaries
+    - Column-based attributes
+- Microsoft Excel
+- File System
+- Variant Call Format (VCF) Files
+- REDCap (MySQL)
+- REDCap (REST API)
+- REDCap (CSV)
+- Harvest (REST API)
+- GitHub Issues
+- Git
+
+## Interface
 
 **`GET /`**
     
-Return a list of supported sources.
+Return a list of available sources.
 
 ```bash
 $ curl http://localhost:5000
@@ -96,27 +119,3 @@ $ curl -X POST -H 'Content-Type: application/json' http://localhost:5000/postgre
 ```
 
 The response will be in the PROV-JSON format which can be imported directly into Origins.
-
-
-## Sources
-
-- Relational Databases
-    - PostgreSQL
-    - MySQL
-    - SQLite
-    - Oracle
-- Document Stores
-    - Mongodb
-- Delimited Files
-    - CSV, TSV (any delimited)
-- Data Dictionaries
-    - Column-based attributes
-- Microsoft Excel
-- File System
-- Variant Call Format (VCF) Files
-- REDCap (MySQL)
-- REDCap (REST API)
-- REDCap (CSV)
-- Harvest (REST API)
-- GitHub Issues
-- Git
