@@ -31,3 +31,12 @@ class SourceTestCase(unittest.TestCase):
     def load_output(self, name):
         with open(self.output_path(name)) as f:
             return json.load(f)
+
+    def assertProvCounts(self, output, expected):
+        "Asserts two provenance documents has the same number of elements."
+        # Ensure they have the same keys
+        self.assertEqual(set(output), set(expected))
+
+        # Ensure the number of elements are equal
+        for key in output:
+            self.assertEqual(len(output[key]), len(expected[key]))

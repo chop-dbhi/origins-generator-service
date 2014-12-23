@@ -24,4 +24,4 @@ class TestCase(SourceTestCase):
 
         expected_output = self.load_output('redcap_api.json')
 
-        self.assertEqual(output, expected_output)
+        self.assertProvCounts(output, expected_output)

@@ -21,4 +21,4 @@ class TestCase(SourceTestCase):
         output = client.generate()
 
         expected_output = self.load_output('origins_issues.json')
-        self.assertEqual(output, expected_output)
+        self.assertProvCounts(output, expected_output)

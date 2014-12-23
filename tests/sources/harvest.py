@@ -31,4 +31,4 @@ class TestCase(SourceTestCase):
 
         expected_output = self.load_output('harvest_openmrs.json')
 
-        self.assertEqual(output, expected_output)
+        self.assertProvCounts(output, expected_output)
