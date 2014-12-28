@@ -9,7 +9,7 @@ The Origins Generator Service exposes an HTTP service for generating provenance 
 Docker image (recommended). All generator dependencies are included.
 
 ```
-docker run -p 5000:5000 bruth/origins-generator-service
+docker run -p 5000:5000 dbhi/origins-generator-service
 ```
 
 Manual. Generator dependencies need to be installed manually.
