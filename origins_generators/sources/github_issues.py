@@ -82,14 +82,9 @@ class Client(base.Client):
         }
 
     def parse_issue_entity(self, issue):
-        if issue.get('pull_request'):
-            issue_type = 'Pull Request'
-        else:
-            issue_type = 'Issue'
-
         return {
             'origins:id': issue['url'],
-            'prov:type': issue_type,
+            'prov:type': 'Issue',
             'prov:label': issue['title'],
             'body': issue['body'],
             'title': issue['title'],
