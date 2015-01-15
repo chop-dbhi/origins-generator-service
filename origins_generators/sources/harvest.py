@@ -95,6 +95,7 @@ class Client(base.Client):
             attrs = dict(attrs)
 
             attrs['origins:id'] = 'concept:{}'.format(attrs['id'])
+            attrs['origins:description'] = attrs['description']
             attrs['prov:label'] = attrs['name']
             attrs['prov:type'] = 'Concept'
 
@@ -120,6 +121,7 @@ class Client(base.Client):
                 field = field.copy()
 
                 field['origins:id'] = 'field:{}'.format(field['id'])
+                field['origins:description'] = field['description']
                 field['prov:label'] = field['name']
                 field['prov:type'] = 'Field'
 
@@ -143,6 +145,7 @@ class Client(base.Client):
             self.document.add('wasInfluencedBy', {
                 'prov:influencer': service,
                 'prov:influencee': cat,
+                'prov:type': 'origins:Edge',
             })
 
             for concept in self.parse_concepts(cat):
@@ -151,6 +154,7 @@ class Client(base.Client):
                 self.document.add('wasInfluencedBy', {
                     'prov:influencer': cat,
                     'prov:influencee': concept,
+                    'prov:type': 'origins:Edge',
                 })
 
                 for field in self.parse_fields(concept):
@@ -159,4 +163,5 @@ class Client(base.Client):
                     self.document.add('wasInfluencedBy', {
                         'prov:influencer': concept,
                         'prov:influencee': field,
+                        'prov:type': 'origins:Edge',
                     })
