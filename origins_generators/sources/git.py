@@ -4,12 +4,15 @@ import subprocess
 from . import base
 
 
-def clone_repo(url, branch):
+def clone_repo(uri, branch):
     tmp = tempfile.mkdtemp()
 
     subprocess.check_call([
-        'git', 'clone', url,
-        '--branch', branch,
+        'git',
+        'clone',
+        uri,
+        '--branch',
+        branch,
         '--single-branch',
         tmp,
     ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
