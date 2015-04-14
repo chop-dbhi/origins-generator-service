@@ -42,7 +42,18 @@ docker exec -it postgres psql -U postgres chinook < tests/input/chinook_postgres
 
 ## MongoDB
 
-Currently there is no simple way to use a container for Mongo since the database must be restored from a directory of files that aren't available to the container.
+
+Start the container with a mount to the test data. *Note: an explicit command is passed to alleviate an issue of journal files not having enough space when the daemon starts up for boot2docker users.*
+
+```
+docker run --name mongodb -p 27017 -v $PWD/tests/input/mongodb:/origins/data mongo mongod --smallfiles
+```
+
+Create the database.
+
+```
+docker exec -it mongodb mongorestore --db chinook /origins/data
+```
 
 ## Oracle
 
