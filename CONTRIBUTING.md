@@ -2,14 +2,12 @@
 
 - Find or create an issue on the repository addressing the change being made
 - Fork the repository and create a branch
--
 
 # Checklist
 
 - The scope of each commit should be small so the impact of the change is clear.
 - The commit summary should state the change and the message should be descriptive enough so a human readable CHANGELOG can be easily produced from the text.
 - Sign off on all commits
-- 
 
 # Docker for Development
 
@@ -45,3 +43,17 @@ docker exec -it postgres psql -U postgres chinook < tests/input/chinook_postgres
 ## MongoDB
 
 Currently there is no simple way to use a container for Mongo since the database must be restored from a directory of files that aren't available to the container.
+
+## Oracle
+
+Start the container.
+
+```
+docker run --name oracle -p 1521 wnameless/oracle-xe-11g
+```
+
+Create the database.
+
+```
+docker exec -it oracle sqlplus system/oracle@xe < tests/input/chinook_oracle.sql
+```
