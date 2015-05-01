@@ -32,15 +32,6 @@ DEFAULT_SECTION = 'General'
 def get_download_date(path):
     return os.path.basename(path).split('.')[0].split('_')[-1]
 
-
-def rcreader(f):
-    # Skip header
-    next(f)
-
-    for row in csv.reader(f):
-        yield dict(zip(FIELDS, row))
-
-
 class Client(base.Client):
     name = 'REDCap Data Dictionary'
 
@@ -74,19 +65,21 @@ class Client(base.Client):
 
     def parse(self):
         with open(self.options.uri, 'rU') as f:
-            FACT_FIELDS = ('operation', 'domain', 'entity', 'attribute',
-                           'value', 'valid_time')
-            reader = rcreader(f)
+            reader = csv.reader(f)
             printed_header = False;
-          
+            
+            if not self.options.time:
+                self.options.time == get_download_date(self.options.uri)
+
             for line in reader:
-                for key, value in line.items():
+                for i, value in enumerate(line):
+                    key = FIELDS[i]
                     if key != "field_name":
-                        yield ','.join([
-                                       'assert', 
-                                       self.options.domain,
-                                       line['field_name'], 
-                                       key, 
-                                       value,
-                                       self.options.time
-                                  ]))
+                        yield (
+                                'assert', 
+                                self.options.domain,
+                                line['field_name'], 
+                                key, 
+                                value,
+                                self.options.time
+                              )
