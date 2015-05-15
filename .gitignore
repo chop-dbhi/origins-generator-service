@@ -8,3 +8,4 @@ htmlcov
 notebooks
 .ipynb_checkpoints
 projects
+origins-generator-service

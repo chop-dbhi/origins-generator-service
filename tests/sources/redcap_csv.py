@@ -11,6 +11,6 @@ class TestCase(SourceTestCase):
                                     name='REDCap Demo')
         output = client.generate()
 
-        expected_output = self.load_output('redcap_demo_csv.json')
+        expected_output = self.load_output('redcap-csv.csv')
 
-        self.assertProvCounts(output, expected_output)
+        self.assertCorrectOutput(output, expected_output)

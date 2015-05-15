@@ -1,3 +1,5 @@
+from io import StringIO
+import csv
 from ..utils import validate, IdGenerator, remove_newlines
 from . import JSON_SCHEMA_NS
 
@@ -196,8 +198,8 @@ class Client(metaclass=ClientMetaclass):
 
     def generate(self):
         gen = self.parse()
-        buf = BytesIO()
-        writer = csv.writer(buf)    
+        buf = StringIO()
+        writer = csv.writer(buf)
     
         for i, fact in enumerate(gen):
             # Write the fact to the buffer

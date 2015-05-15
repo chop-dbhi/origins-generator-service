@@ -52,6 +52,7 @@ class Client(base.Client):
             'time': {
                 'description': 'Valid Time for facts being generated',
                 'type': 'string',
+            },
             'name': {
                 'description': 'Name of the project.',
                 'type': 'string',
@@ -65,7 +66,7 @@ class Client(base.Client):
 
     def parse(self):
         with open(self.options.uri, 'rU') as f:
-            reader = csv.reader(f)
+            reader = csv.DictReader(f, fieldnames=FIELDS)
             printed_header = False;
             
             if not self.options.time:
@@ -73,17 +74,17 @@ class Client(base.Client):
 
             for line in reader:
                 if not printed_header:
+                    printed_header = True
                     yield [
                             'operation',
                             'domain',
                             'entity',
                             'attribute',
-                            'value'
+                            'value',
                             'valid_time'
                           ]
                 else:
-                    for i, value in enumerate(line):
-                        key = FIELDS[i]
+                    for key, value in line.items():
                         if key != "field_name":
                             yield (
                                     'assert', 
@@ -93,4 +94,3 @@ class Client(base.Client):
                                     value,
                                     self.options.time
                                   )
-                            

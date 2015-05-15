@@ -18,6 +18,16 @@ class Client(base.Client):
                 'description': 'A URL or local filesystem path to a file.',
                 'type': 'string',
             },
+            'domain': {
+                'description': 'The domain for new facts',
+                'type': 'string',
+                'default': None,
+            },
+            'time': {
+                'description': 'The valid time for new facts',
+                'type': 'string',
+                'default': None,
+            },
             'delimiter': {
                 'description': 'The delimiter of the file.',
                 'type': 'string',
@@ -92,30 +102,42 @@ class Client(base.Client):
 
     def parse_columns(self):
         columns = []
-
         for i, name in enumerate(self.options.columns):
-            column = {
-                'origins:id': name,
-                'prov:label': name,
-                'prov:type': 'Column',
-                'index': i,
-            }
-
-            columns.append(column)
-
+            columns.append(name)
         return columns
 
     def parse(self):
-        file = self.parse_file()
-        self.document.add('entity', file)
+        FIELDS = self.parse_columns()
+        with open(self.options.uri, 'rU', newline='') as f:
 
-        columns = self.parse_columns()
-
-        for column in columns:
-            self.document.add('entity', column)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': file,
-                'prov:influencee': column,
-                'prov:type': 'origins:Edge',
-            })
+            facts = []          
+            if not self.options.time:
+                facts = [['operation','domain','entity','attribute','value']]
+            else:
+                facts =[['operation','domain','entity','attribute','value','valid_time']]
+            
+            reader = csv.DictReader(f, fieldnames=FIELDS, 
+                                    delimiter=self.options.delimiter)
+            next(reader)
+            for line in reader:
+                for key, value in line.items():
+                    if key != FIELDS[0]:
+                        if not self.options.time:
+                            facts.append([
+                                            'assert',
+                                            self.options.domain,
+                                            line[FIELDS[0]],
+                                            key,
+                                            value
+                                        ])
+                        else:
+                            facts.append([
+                                            'assert',
+                                            self.options.domain,
+                                            line[FIELDS[0]],
+                                            key,
+                                            value,
+                                            self.options.time
+                                        ])
+            for fact in facts:
+                yield fact

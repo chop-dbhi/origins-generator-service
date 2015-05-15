@@ -1,4 +1,6 @@
+import io
 import os
+import sys
 import json
 import unittest
 from origins_generators import sources
@@ -30,13 +32,31 @@ class SourceTestCase(unittest.TestCase):
 
     def load_output(self, name):
         with open(self.output_path(name)) as f:
-            return json.load(f)
+            return f.read()
+         
+    def assertCorrectOutput(self, output, expected):
+        output_facts = output
+        expected_facts = sorted(expected.split("\n"))
 
-    def assertProvCounts(self, output, expected):
-        "Asserts two provenance documents has the same number of elements."
-        # Ensure they have the same keys
-        self.assertEqual(set(output), set(expected))
-
-        # Ensure the number of elements are equal
-        for key in output:
-            self.assertEqual(len(output[key]), len(expected[key]))
+        expected_list = []
+        for fact in expected_facts:
+                if fact.strip() != '':
+                    expected_list.append(fact.strip())
+        
+        output_list = []
+        for set_of_facts in output_facts:
+            for fact in sorted(set_of_facts.split("\r")):
+                if fact.strip() != '':
+                    output_list.append(fact.strip())
+        
+        output_list = sorted(output_list)
+        expected_list = sorted(expected_list)
+        print(len(output_list) + '|||' + len(expected_list))
+        for i, value in enumerate(output_list):
+            try:
+                if not (output_list[i] == expected_list[i]):                
+                    raise ValueError('Expected and real output is not equal')
+            except:
+                print(i)
+        print('output matches')
+        return None
