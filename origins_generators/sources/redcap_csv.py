@@ -71,26 +71,23 @@ class Client(base.Client):
             
             if not self.options.time:
                 self.options.time == get_download_date(self.options.uri)
+            yield [
+                        'operation',
+                        'domain',
+                        'entity',
+                        'attribute',
+                        'value',
+                        'valid_time'
+                  ]
 
             for line in reader:
-                if not printed_header:
-                    printed_header = True
-                    yield [
-                            'operation',
-                            'domain',
-                            'entity',
-                            'attribute',
-                            'value',
-                            'valid_time'
-                          ]
-                else:
-                    for key, value in line.items():
-                        if key != "field_name":
-                            yield (
-                                    'assert', 
-                                    self.options.domain,
-                                    line['field_name'], 
-                                    key, 
-                                    value,
-                                    self.options.time
-                                  )
+                for key, value in line.items():
+                    if key != "field_name":
+                        yield (
+                                'assert', 
+                                self.options.domain,
+                                line['field_name'], 
+                                key, 
+                                value,
+                                self.options.time
+                              )

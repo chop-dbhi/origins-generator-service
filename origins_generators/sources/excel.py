@@ -54,82 +54,49 @@ class Client(base.Client):
                 'description': 'Identifier for the workbook.',
                 'type': 'string',
             },
+            'valid_time': {
+                'description': 'Valid time for new facts',
+                'type': 'string',
+                'default': None, 
+            },
+            'domain': {
+                'description': 'Domain for new facts',
+                'type': 'string',
+                'default': None,
+            }
         }
     }
 
-    def parse_workbook(self, wb):
-        uri = self.options.uri
-        id = self.options.id
-
-        # Extract filename without extension
-        name = os.path.splitext(os.path.basename(uri))[0]
-
-        attrs = dict(wb.properties.__dict__)
-
-        if not utils.is_remote(uri):
-            uri = os.path.abspath(uri)
-
-        attrs['uri'] = uri
-        attrs['created'] = _format_time(attrs['created'])
-        attrs['modified'] = _format_time(attrs['modified'])
-
-        # Use the title if it's defined, otherwise prettify the name
-        if attrs['title'] != 'Untitled':
-            label = attrs['title']
-        else:
-            label = pretty_name(name)
-
-        if not id:
-            id = name
-
-        attrs['origins:id'] = id
-        attrs['prov:label'] = label
-        attrs['prov:type'] = 'Workbook'
-
-        return attrs
-
-    def parse_sheet(self, name, parent, index):
-        return {
-            'origins:id': os.path.join(parent['origins:id'], name),
-            'prov:label': name,
-            'prov:type': 'Sheet',
-            'index': index,
-        }
-
-    def parse_column(self, name, parent, index):
-        return {
-            'origins:id': os.path.join(parent['origins:id'], name),
-            'prov:label': name,
-            'prov:type': 'Column',
-            'index': index,
-        }
-
     def parse(self):
         wb = openpyxl.load_workbook(self.options.uri, use_iterators=True)
-
         sheets = wb.get_sheet_names()
+        name = os.path.splitext(os.path.basename(self.options.uri))[0]
 
-        workbook = self.parse_workbook(wb)
-        self.document.add('entity', workbook)
+        print('-----------------------------------------------------------------')
+        print('-----------------------------------------------------------------')
+        print('-----------------------------------------------------------------')
+
+        yield [
+                  'operation',
+                  'domain',
+                  'entity',
+                  'attribute',
+                  'value',
+                  'valid_time'
+              ]
 
         for i, sheet_name in enumerate(sheets):
-            sheet = self.parse_sheet(sheet_name, workbook, i)
-            self.document.add('entity', sheet)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': workbook,
-                'prov:influencee': sheet,
-                'prov:type': 'origins:Edge',
-            })
-
             columns = _column_names(wb, sheet_name)
-
+            sheet = wb.get_sheet_by_name(sheet_name)
             for j, column_name in enumerate(columns):
-                column = self.parse_column(column_name, sheet, j)
-                self.document.add('entity', column)
-
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': sheet,
-                    'prov:influencee': column,
-                    'prov:type': 'origins:Edge',
-                })
+                column = sheet.columns[j]
+                for k, cell in enumerate(column):
+                    if cell.value != None:
+                        yield   [
+                                    'assert',
+                                    self.options.domain,
+                                    (name + '_' + sheet_name),
+                                    column_name + str(k),
+                                    cell.value,
+                                    self.options.valid_time
+                                ]

@@ -117,32 +117,17 @@ class Client(base.Client):
             reader = csv.reader(f)
             FIELDS = next(reader)
             
-            facts = []          
-            if not self.options.time:
-                facts = [['operation','domain','entity','attribute','value']]
-            else:
-                facts =[['operation','domain','entity','attribute','value','valid_time']]
+            yield ['operation','domain','entity','attribute','value','valid_time']
             
             reader = csv.DictReader(f, fieldnames=FIELDS)
             for line in reader:
                 for key, value in line.items():
                     if key != FIELDS[0]:
-                        if not self.options.time:
-                            facts.append([
-                                            'assert',
-                                            self.options.domain,
-                                            line[FIELDS[0]],
-                                            key,
-                                            value
-                                        ])
-                        else:
-                            facts.append([
-                                            'assert',
-                                            self.options.domain,
-                                            line[FIELDS[0]],
-                                            key,
-                                            value,
-                                            self.options.time
-                                        ])
-            for fact in facts:
-                yield fact
+                        yield [
+                                'assert',
+                                self.options.domain,
+                                line[FIELDS[0]],
+                                key,
+                                value,
+                                self.options.time
+                              ]

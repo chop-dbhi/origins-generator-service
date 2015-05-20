@@ -51,12 +51,12 @@ class SourceTestCase(unittest.TestCase):
         
         output_list = sorted(output_list)
         expected_list = sorted(expected_list)
-        print(len(output_list) + '|||' + len(expected_list))
         for i, value in enumerate(output_list):
             try:
+                print(output_list[i], end='')
                 if not (output_list[i] == expected_list[i]):                
                     raise ValueError('Expected and real output is not equal')
             except:
-                print(i)
+                print()
         print('output matches')
         return None

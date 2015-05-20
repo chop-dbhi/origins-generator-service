@@ -110,11 +110,7 @@ class Client(base.Client):
         FIELDS = self.parse_columns()
         with open(self.options.uri, 'rU', newline='') as f:
 
-            facts = []          
-            if not self.options.time:
-                facts = [['operation','domain','entity','attribute','value']]
-            else:
-                facts =[['operation','domain','entity','attribute','value','valid_time']]
+            yield ['operation','domain','entity','attribute','value','valid_time']
             
             reader = csv.DictReader(f, fieldnames=FIELDS, 
                                     delimiter=self.options.delimiter)
@@ -122,22 +118,11 @@ class Client(base.Client):
             for line in reader:
                 for key, value in line.items():
                     if key != FIELDS[0]:
-                        if not self.options.time:
-                            facts.append([
-                                            'assert',
-                                            self.options.domain,
-                                            line[FIELDS[0]],
-                                            key,
-                                            value
-                                        ])
-                        else:
-                            facts.append([
-                                            'assert',
-                                            self.options.domain,
-                                            line[FIELDS[0]],
-                                            key,
-                                            value,
-                                            self.options.time
-                                        ])
-            for fact in facts:
-                yield fact
+                        yield [
+                                'assert',
+                                self.options.domain,
+                                line[FIELDS[0]],
+                                key,
+                                value,
+                                self.options.time
+                              ]
