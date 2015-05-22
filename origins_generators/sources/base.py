@@ -1,3 +1,5 @@
+from io import StringIO
+import csv
 from ..utils import validate, IdGenerator, remove_newlines
 from . import JSON_SCHEMA_NS
 
@@ -195,5 +197,20 @@ class Client(metaclass=ClientMetaclass):
         raise NotImplementedError('export method must be implemented')
 
     def generate(self):
-        self.parse()
-        return self.document.resolve()
+        gen = self.parse()
+        buf = StringIO()
+        writer = csv.writer(buf)
+
+        for i, fact in enumerate(gen):
+            # Write the fact to the buffer
+            writer.writerow(fact)
+
+            if i % 100 == 0:
+                yield buf.getvalue()
+
+                # Remove old data for next iteration
+                buf.seek(0)
+                buf.truncate()
+
+        # Yield the final bit of data
+        yield buf.getvalue()

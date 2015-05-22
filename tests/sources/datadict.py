@@ -10,6 +10,6 @@ class TestCase(SourceTestCase):
         client = self.module.Client(uri=path)
         output = client.generate()
 
-        expected_output = self.load_output('chinook_tracks_datadict_csv.json')
+        expected_output = self.load_output('chinook_tracks_datadict_csv.csv')
 
-        self.assertProvCounts(output, expected_output)
+        self.assertCorrectOutput(output, expected_output)

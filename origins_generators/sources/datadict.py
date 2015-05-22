@@ -1,4 +1,3 @@
-import os
 import csv
 from .._csv import UnicodeCsvReader
 from .. import utils
@@ -26,6 +25,14 @@ class Client(base.Client):
                 'description': 'The character encoding of the file.',
                 'type': 'string',
                 'default': 'utf-8',
+            },
+            'domain': {
+                'description': 'Domain to add new facts to.',
+                'type': 'string',
+            },
+            'time': {
+                'description': 'Valid Time for facts being generated',
+                'type': 'string',
             },
             'delimiter': {
                 'description': 'The delimiter of the file.',
@@ -103,61 +110,30 @@ class Client(base.Client):
 
         self.options.fields = list(r)
 
-    def parse_file(self):
-        uri = self.options.uri
-
-        name = os.path.splitext(os.path.basename(uri))[0]
-
-        if not utils.is_remote(self.options.uri):
-            uri = os.path.abspath(uri)
-
-        return {
-            'origins:id': name,
-            'prov:label': utils.prettify_name(name),
-            'prov:type': 'File',
-            'uri': uri,
-        }
-
-    def parse_fields(self):
-        fields = []
-
-        keys = self.options.keys
-
-        for values in self.options.fields:
-            field = dict(zip(keys, values))
-
-            if isinstance(self.options.id, (list, tuple)):
-                _id = '/'.join([field[i] for i in self.options.id])
-            else:
-                _id = field[self.options.id]
-
-            if isinstance(self.options.label, (list, tuple)):
-                label = ' '.join([field[i] for i in self.options.label])
-            else:
-                label = field[self.options.label]
-
-            field['origins:id'] = _id
-            field['prov:label'] = label
-            field['prov:type'] = 'Field'
-
-            if self.options.description:
-                field['origins:description'] = self.options.description
-
-            fields.append(field)
-
-        return fields
-
     def parse(self):
-        file = self.parse_file()
-        self.document.add('entity', file)
+        with open(self.options.uri, 'rU', newline='') as f:
+            # Get header
+            reader = csv.reader(f)
+            FIELDS = next(reader)
 
-        fields = self.parse_fields()
+            yield [
+                'operation',
+                'domain',
+                'entity',
+                'attribute',
+                'value',
+                'valid_time'
+            ]
 
-        for field in fields:
-            self.document.add('entity', field)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': file,
-                'prov:influencee': field,
-                'prov:type': 'origins:Edge',
-            })
+            reader = csv.DictReader(f, fieldnames=FIELDS)
+            for line in reader:
+                for key, value in line.items():
+                    if key != FIELDS[0]:
+                        yield [
+                            'assert',
+                            self.options.domain,
+                            line[FIELDS[0]],
+                            key,
+                            value,
+                            self.options.time
+                        ]

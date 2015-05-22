@@ -10,5 +10,5 @@ class TestCase(SourceTestCase):
         client = self.module.Client(uri=uri)
         output = client.generate()
 
-        expected_output = self.load_output('chinook_xlsx.json')
-        self.assertProvCounts(output, expected_output)
+        expected_output = self.load_output('chinook_xlsx.csv')
+        self.assertCorrectOutput(output, expected_output)

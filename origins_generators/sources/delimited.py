@@ -1,4 +1,3 @@
-import os
 import csv
 from .._csv import UnicodeCsvReader
 from .. import utils
@@ -17,6 +16,16 @@ class Client(base.Client):
             'uri': {
                 'description': 'A URL or local filesystem path to a file.',
                 'type': 'string',
+            },
+            'domain': {
+                'description': 'The domain for new facts',
+                'type': 'string',
+                'default': None,
+            },
+            'time': {
+                'description': 'The valid time for new facts',
+                'type': 'string',
+                'default': None,
             },
             'delimiter': {
                 'description': 'The delimiter of the file.',
@@ -75,47 +84,35 @@ class Client(base.Client):
         if not self.options.columns:
             self.options.columns = _header
 
-    def parse_file(self):
-        uri = self.options.uri
-
-        name = os.path.splitext(os.path.basename(uri))[0]
-
-        if not utils.is_remote(self.options.uri):
-            uri = os.path.abspath(uri)
-
-        return {
-            'origins:id': name,
-            'prov:label': utils.prettify_name(name),
-            'prov:type': 'File',
-            'uri': uri,
-        }
-
     def parse_columns(self):
         columns = []
-
         for i, name in enumerate(self.options.columns):
-            column = {
-                'origins:id': name,
-                'prov:label': name,
-                'prov:type': 'Column',
-                'index': i,
-            }
-
-            columns.append(column)
-
+            columns.append(name)
         return columns
 
     def parse(self):
-        file = self.parse_file()
-        self.document.add('entity', file)
+        FIELDS = self.parse_columns()
+        with open(self.options.uri, 'rU', newline='') as f:
+            yield [
+                'operation',
+                'domain',
+                'entity',
+                'attribute',
+                'value',
+                'valid_time'
+            ]
 
-        columns = self.parse_columns()
-
-        for column in columns:
-            self.document.add('entity', column)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': file,
-                'prov:influencee': column,
-                'prov:type': 'origins:Edge',
-            })
+            reader = csv.DictReader(f, fieldnames=FIELDS,
+                                    delimiter=self.options.delimiter)
+            next(reader)
+            for line in reader:
+                for key, value in line.items():
+                    if key != FIELDS[0]:
+                        yield [
+                            'assert',
+                            self.options.domain,
+                            line[FIELDS[0]],
+                            key,
+                            value,
+                            self.options.time
+                        ]
