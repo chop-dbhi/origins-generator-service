@@ -200,17 +200,17 @@ class Client(metaclass=ClientMetaclass):
         gen = self.parse()
         buf = StringIO()
         writer = csv.writer(buf)
-    
+
         for i, fact in enumerate(gen):
             # Write the fact to the buffer
             writer.writerow(fact)
-        
+
             if i % 100 == 0:
                 yield buf.getvalue()
- 
+
                 # Remove old data for next iteration
                 buf.seek(0)
                 buf.truncate()
-        
+
         # Yield the final bit of data
         yield buf.getvalue()

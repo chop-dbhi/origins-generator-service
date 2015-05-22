@@ -3,7 +3,6 @@ import os
 import openpyxl
 from datetime import datetime
 from . import base
-from .. import utils
 
 
 OPENPYXL_MAJOR_VERSION = int(openpyxl.__version__[0])
@@ -57,7 +56,7 @@ class Client(base.Client):
             'valid_time': {
                 'description': 'Valid time for new facts',
                 'type': 'string',
-                'default': None, 
+                'default': None,
             },
             'domain': {
                 'description': 'Domain for new facts',
@@ -72,18 +71,14 @@ class Client(base.Client):
         sheets = wb.get_sheet_names()
         name = os.path.splitext(os.path.basename(self.options.uri))[0]
 
-        print('-----------------------------------------------------------------')
-        print('-----------------------------------------------------------------')
-        print('-----------------------------------------------------------------')
-
         yield [
-                  'operation',
-                  'domain',
-                  'entity',
-                  'attribute',
-                  'value',
-                  'valid_time'
-              ]
+            'operation',
+            'domain',
+            'entity',
+            'attribute',
+            'value',
+            'valid_time'
+        ]
 
         for i, sheet_name in enumerate(sheets):
             columns = _column_names(wb, sheet_name)
@@ -91,12 +86,12 @@ class Client(base.Client):
             for j, column_name in enumerate(columns):
                 column = sheet.columns[j]
                 for k, cell in enumerate(column):
-                    if cell.value != None:
-                        yield   [
-                                    'assert',
-                                    self.options.domain,
-                                    (name + '_' + sheet_name),
-                                    column_name + str(k),
-                                    cell.value,
-                                    self.options.valid_time
-                                ]
+                    if cell.value is not None:
+                        yield [
+                            'assert',
+                            self.options.domain,
+                            (name + '_' + sheet_name),
+                            column_name + '_' + str(k),
+                            cell.value,
+                            self.options.valid_time
+                        ]

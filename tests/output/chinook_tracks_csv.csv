@@ -1,121 +1,121 @@
-operation,domain,entity,attribute,value
-assert,,1,AlbumId,1
-assert,,1,Bytes,11170334
-assert,,1,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,1,MediaTypeId,1
-assert,,1,Milliseconds,343719
-assert,,1,Name,For Those About To Rock (We Salute You)
-assert,,1,UnitPrice,0.99
-assert,,10,AlbumId,1
-assert,,10,Bytes,8611245
-assert,,10,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,10,GenreId,1
-assert,,10,MediaTypeId,1
-assert,,10,Milliseconds,263497
-assert,,10,Name,Evil Walks
-assert,,10,UnitPrice,0.99
-assert,,11,AlbumId,1
-assert,,11,Bytes,6566314
-assert,,11,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,11,GenreId,1
-assert,,11,MediaTypeId,1
-assert,,11,Milliseconds,199836
-assert,,11,Name,C.O.D.
-assert,,11,UnitPrice,0.99
-assert,,12,AlbumId,1
-assert,,12,Bytes,8596840
-assert,,12,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,12,GenreId,1
-assert,,12,MediaTypeId,1
-assert,,12,Milliseconds,263288
-assert,,12,Name,Breaking The Rules
-assert,,12,UnitPrice,0.99
-assert,,13,Bytes,6706347
-assert,,13,GenreId,1
-assert,,13,Name,Night Of The Long Knives
-assert,,13,UnitPrice,0.99
-assert,,2,AlbumId,2
-assert,,2,Bytes,5510424
-assert,,2,Composer,
-assert,,2,GenreId,1
-assert,,2,MediaTypeId,2
-assert,,2,Milliseconds,342562
-assert,,2,Name,Balls to the Wall
-assert,,2,UnitPrice,0.99
-assert,,3,AlbumId,3
-assert,,3,Bytes,3990994
-assert,,3,Composer,"F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman"
-assert,,3,GenreId,1
-assert,,3,MediaTypeId,2
-assert,,3,Milliseconds,230619
-assert,,3,Name,Fast As a Shark
-assert,,3,UnitPrice,0.99
-assert,,4,AlbumId,3
-assert,,4,Bytes,4331779
-assert,,4,Composer,"F. Baltes, R.A. Smith-Diesel, S. Kaufman, U. Dirkscneider & W. Hoffman"
-assert,,4,GenreId,1
-assert,,4,MediaTypeId,2
-assert,,4,Milliseconds,252051
-assert,,4,Name,Restless and Wild
-assert,,4,UnitPrice,0.99
-assert,,5,AlbumId,3
-assert,,5,Bytes,6290521
-assert,,5,Composer,Deaffy & R.A. Smith-Diesel
-assert,,5,GenreId,1
-assert,,5,MediaTypeId,2
-assert,,5,Milliseconds,375418
-assert,,5,Name,Princess of the Dawn
-assert,,5,UnitPrice,0.99
-assert,,6,AlbumId,1
-assert,,6,Bytes,6713451
-assert,,6,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,6,GenreId,1
-assert,,6,MediaTypeId,1
-assert,,6,Milliseconds,205662
-assert,,6,Name,Put The Finger On You
-assert,,6,UnitPrice,0.99
-assert,,7,AlbumId,1
-assert,,7,Bytes,7636561
-assert,,7,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,7,GenreId,1
-assert,,7,MediaTypeId,1
-assert,,7,Milliseconds,233926
-assert,,7,Name,Let's Get It Up
-assert,,7,UnitPrice,0.99
-assert,,8,AlbumId,1
-assert,,8,Bytes,6852860
-assert,,8,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,8,GenreId,1
-assert,,8,MediaTypeId,1
-assert,,8,Milliseconds,210834
-assert,,8,Name,Inject The Venom
-assert,,8,UnitPrice,0.99
-assert,,9,AlbumId,1
-assert,,9,Bytes,6599424
-assert,,9,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,9,GenreId,1
-assert,,9,MediaTypeId,1
-assert,,9,Milliseconds,203102
-assert,,9,Name,Snowballed
-assert,,9,UnitPrice,0.99
-assert,,1,GenreId,1
-assert,,13,AlbumId,1
-assert,,13,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,13,Milliseconds,205688
-assert,,14,AlbumId,1
-assert,,14,Bytes,8817038
-assert,,14,Composer,"Angus Young, Malcolm Young, Brian Johnson"
-assert,,14,GenreId,1
-assert,,14,MediaTypeId,1
-assert,,14,Milliseconds,270863
-assert,,14,Name,Spellbound
-assert,,14,UnitPrice,0.99
-assert,,15,AlbumId,4
-assert,,15,Bytes,10847611
-assert,,15,Composer,AC/DC
-assert,,15,GenreId,1
-assert,,15,MediaTypeId,1
-assert,,15,Milliseconds,331180
-assert,,15,Name,Go Down
-assert,,15,UnitPrice,0.99
-assert,,13,MediaTypeId,1
+operation,domain,entity,attribute,value,valid_time
+assert,,1,AlbumId,1,
+assert,,1,Bytes,11170334,
+assert,,1,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,1,GenreId,1,
+assert,,1,MediaTypeId,1,
+assert,,1,Milliseconds,343719,
+assert,,1,Name,For Those About To Rock (We Salute You),
+assert,,1,UnitPrice,0.99,
+assert,,10,AlbumId,1,
+assert,,10,Bytes,8611245,
+assert,,10,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,10,GenreId,1,
+assert,,10,MediaTypeId,1,
+assert,,10,Milliseconds,263497,
+assert,,10,Name,Evil Walks,
+assert,,10,UnitPrice,0.99,
+assert,,11,AlbumId,1,
+assert,,11,Bytes,6566314,
+assert,,11,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,11,GenreId,1,
+assert,,11,MediaTypeId,1,
+assert,,11,Milliseconds,199836,
+assert,,11,Name,C.O.D.,
+assert,,11,UnitPrice,0.99,
+assert,,12,AlbumId,1,
+assert,,12,Bytes,8596840,
+assert,,12,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,12,GenreId,1,
+assert,,12,MediaTypeId,1,
+assert,,12,Milliseconds,263288,
+assert,,12,Name,Breaking The Rules,
+assert,,12,UnitPrice,0.99,
+assert,,13,AlbumId,1,
+assert,,13,Bytes,6706347,
+assert,,13,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,13,GenreId,1,
+assert,,13,MediaTypeId,1,
+assert,,13,Milliseconds,205688,
+assert,,13,Name,Night Of The Long Knives,
+assert,,13,UnitPrice,0.99,
+assert,,14,AlbumId,1,
+assert,,14,Bytes,8817038,
+assert,,14,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,14,GenreId,1,
+assert,,14,MediaTypeId,1,
+assert,,14,Milliseconds,270863,
+assert,,14,Name,Spellbound,
+assert,,14,UnitPrice,0.99,
+assert,,15,AlbumId,4,
+assert,,15,Bytes,10847611,
+assert,,15,Composer,AC/DC,
+assert,,15,GenreId,1,
+assert,,15,MediaTypeId,1,
+assert,,15,Milliseconds,331180,
+assert,,15,Name,Go Down,
+assert,,15,UnitPrice,0.99,
+assert,,2,AlbumId,2,
+assert,,2,Bytes,5510424,
+assert,,2,Composer,,
+assert,,2,GenreId,1,
+assert,,2,MediaTypeId,2,
+assert,,2,Milliseconds,342562,
+assert,,2,Name,Balls to the Wall,
+assert,,2,UnitPrice,0.99,
+assert,,3,AlbumId,3,
+assert,,3,Bytes,3990994,
+assert,,3,Composer,"F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman",
+assert,,3,GenreId,1,
+assert,,3,MediaTypeId,2,
+assert,,3,Milliseconds,230619,
+assert,,3,Name,Fast As a Shark,
+assert,,3,UnitPrice,0.99,
+assert,,4,AlbumId,3,
+assert,,4,Bytes,4331779,
+assert,,4,Composer,"F. Baltes, R.A. Smith-Diesel, S. Kaufman, U. Dirkscneider & W. Hoffman",
+assert,,4,GenreId,1,
+assert,,4,MediaTypeId,2,
+assert,,4,Milliseconds,252051,
+assert,,4,Name,Restless and Wild,
+assert,,4,UnitPrice,0.99,
+assert,,5,AlbumId,3,
+assert,,5,Bytes,6290521,
+assert,,5,Composer,Deaffy & R.A. Smith-Diesel,
+assert,,5,GenreId,1,
+assert,,5,MediaTypeId,2,
+assert,,5,Milliseconds,375418,
+assert,,5,Name,Princess of the Dawn,
+assert,,5,UnitPrice,0.99,
+assert,,6,AlbumId,1,
+assert,,6,Bytes,6713451,
+assert,,6,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,6,GenreId,1,
+assert,,6,MediaTypeId,1,
+assert,,6,Milliseconds,205662,
+assert,,6,Name,Put The Finger On You,
+assert,,6,UnitPrice,0.99,
+assert,,7,AlbumId,1,
+assert,,7,Bytes,7636561,
+assert,,7,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,7,GenreId,1,
+assert,,7,MediaTypeId,1,
+assert,,7,Milliseconds,233926,
+assert,,7,Name,Let's Get It Up,
+assert,,7,UnitPrice,0.99,
+assert,,8,AlbumId,1,
+assert,,8,Bytes,6852860,
+assert,,8,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,8,GenreId,1,
+assert,,8,MediaTypeId,1,
+assert,,8,Milliseconds,210834,
+assert,,8,Name,Inject The Venom,
+assert,,8,UnitPrice,0.99,
+assert,,9,AlbumId,1,
+assert,,9,Bytes,6599424,
+assert,,9,Composer,"Angus Young, Malcolm Young, Brian Johnson",
+assert,,9,GenreId,1,
+assert,,9,MediaTypeId,1,
+assert,,9,Milliseconds,203102,
+assert,,9,Name,Snowballed,
+assert,,9,UnitPrice,0.99,

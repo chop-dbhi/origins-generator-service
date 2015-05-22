@@ -1,7 +1,6 @@
 import os
 import csv
 from . import base
-from .. import utils
 
 
 FIELDS = (
@@ -31,6 +30,7 @@ DEFAULT_SECTION = 'General'
 # to extract it.
 def get_download_date(path):
     return os.path.basename(path).split('.')[0].split('_')[-1]
+
 
 class Client(base.Client):
     name = 'REDCap Data Dictionary'
@@ -67,27 +67,27 @@ class Client(base.Client):
     def parse(self):
         with open(self.options.uri, 'rU') as f:
             reader = csv.DictReader(f, fieldnames=FIELDS)
-            printed_header = False;
-            
+
             if not self.options.time:
                 self.options.time == get_download_date(self.options.uri)
+
             yield [
-                        'operation',
-                        'domain',
-                        'entity',
-                        'attribute',
-                        'value',
-                        'valid_time'
-                  ]
+                'operation',
+                'domain',
+                'entity',
+                'attribute',
+                'value',
+                'valid_time'
+            ]
 
             for line in reader:
                 for key, value in line.items():
                     if key != "field_name":
-                        yield (
-                                'assert', 
-                                self.options.domain,
-                                line['field_name'], 
-                                key, 
-                                value,
-                                self.options.time
-                              )
+                        yield [
+                            'assert',
+                            self.options.domain,
+                            line['field_name'],
+                            key,
+                            value,
+                            self.options.time
+                        ]

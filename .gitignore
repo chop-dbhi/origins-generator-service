@@ -9,3 +9,4 @@ notebooks
 .ipynb_checkpoints
 projects
 origins-generator-service
+tests/output/*.json

@@ -27,6 +27,16 @@ class Client(base.Client):
                 'type': 'boolean',
                 'default': True,
             },
+            'domain': {
+                'description': 'The domain for new facts',
+                'type': 'string',
+                'default': None,
+            },
+            'valid_time': {
+                'description': 'Valid_time for new facts',
+                'type': 'string',
+                'default': None,
+            },
             'pattern': {
                 'description': 'Glob pattern for directories and files.',
                 'type': 'string',
@@ -48,10 +58,7 @@ class Client(base.Client):
         path_id = os.path.relpath(path, self.options.path)
 
         return {
-            'origins:id': path_id,
-            'prov:type': 'Directory',
-            'prov:label': path_id,
-            'path': path_id,
+            'id': path_id,
         }
 
     def parse_file(self, path):
@@ -71,10 +78,7 @@ class Client(base.Client):
         ctime = datetime.fromtimestamp(create_time)
 
         return {
-            'origins:id': path_id,
-            'prov:type': 'File',
-            'prov:label': path_id,
-            'path': path_id,
+            'id': path_id,
             'mode': stats.st_mode,
             'uid': stats.st_uid,
             'gid': stats.st_gid,
@@ -85,7 +89,18 @@ class Client(base.Client):
         }
 
     def parse(self):
+        print('-----------')
+        print('FILESYSTEM')
+        print('-----------')
         base_path = self.options.path
+        yield [
+            'operation',
+            'domain',
+            'entity',
+            'attribute'
+            'value',
+            'valid_time'
+        ]
 
         for root, dirs, names in os.walk(base_path):
             if self.options.depth is not None:
@@ -104,24 +119,33 @@ class Client(base.Client):
                     if depth >= self.depth:
                         dirs.pop()
                     elif not self.options.hidden and dirname.startswith('.'):
-                        dirs.pop()
+                        dirs.pop() 
 
             directory = self.parse_directory(root)
 
-            self.document.add('entity', directory)
-
-            for f in fnmatch.filter(names, self.options.pattern):
+            for i, f in enumerate(fnmatch.filter(names, self.options.pattern)):
                 if not self.options.hidden and f.startswith('.'):
                     continue
+                file = self.parse_file(os.path.abspath(os.path.join(
+                                                                        base_path,
+                                                                        directory['id'],
+                                                                        f
+                                                                    )))
+                for key, value in file.items():
+                    yield [
+                        'assert',
+                        self.options.domain,
+                        os.path.join(directory['id'], f),
+                        key,
+                        value,
+                        self.options.valid_time
+                    ]
 
-                path = os.path.join(root, f)
-
-                _file = self.parse_file(path)
-
-                self.document.add('entity', _file)
-
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': directory,
-                    'prov:influencee': _file,
-                    'prov:type': 'origins:Edge',
-                })
+                yield [
+                    'assert',
+                    self.options.domain,
+                    directory['id'],
+                    'file',
+                    f,
+                    self.options.valid_time
+                ]

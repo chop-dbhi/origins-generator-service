@@ -1,9 +1,8 @@
-import os
 import csv
 from .._csv import UnicodeCsvReader
 from .. import utils
 from . import base
-from time import gmtime, strftime
+
 
 class Client(base.Client):
     name = 'Data Dictionary'
@@ -110,24 +109,31 @@ class Client(base.Client):
             self.options.label = self.options.keys[1]
 
         self.options.fields = list(r)
-    
+
     def parse(self):
         with open(self.options.uri, 'rU', newline='') as f:
-            #get header
+            # Get header
             reader = csv.reader(f)
             FIELDS = next(reader)
-            
-            yield ['operation','domain','entity','attribute','value','valid_time']
-            
+
+            yield [
+                'operation',
+                'domain',
+                'entity',
+                'attribute',
+                'value',
+                'valid_time'
+            ]
+
             reader = csv.DictReader(f, fieldnames=FIELDS)
             for line in reader:
                 for key, value in line.items():
                     if key != FIELDS[0]:
                         yield [
-                                'assert',
-                                self.options.domain,
-                                line[FIELDS[0]],
-                                key,
-                                value,
-                                self.options.time
-                              ]
+                            'assert',
+                            self.options.domain,
+                            line[FIELDS[0]],
+                            key,
+                            value,
+                            self.options.time
+                        ]
