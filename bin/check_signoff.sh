@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VALIDATE_REPO='https://github.com/chop-dbhi/origins-generator-service.git'
+VALIDATE_REPO='https://github.com/chop-dbhi/prov-extractor.git'
 VALIDATE_BRANCH='master'
 
 if [ -z "$VALIDATE_UPSTREAM" ]; then

@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # vim:ft=python
 
-"""Origins Generators HTTP Service
+"""PROV Extractor HTTP Service
 
 Usage:
-    origins-generators [--debug] [--host <host>] [--port <port>]
+    prov-extractor [--debug] [--host <host>] [--port <port>]
 
 Options:
     -h --help           Show this screen.
@@ -15,10 +15,10 @@ Options:
 """
 
 from docopt import docopt
-from origins_generators.service import app
+from prov_extractor.service import app
 
 
-options = docopt(__doc__, version='Origins Generators 0.1.0')
+options = docopt(__doc__, version='PROV Extractor 0.1.0')
 
 debug = options['--debug']
 host = options['--host']

@@ -1,24 +1,24 @@
-# Origins Generator Service
+# PROV Extractor
 
-[![Build Status](https://travis-ci.org/chop-dbhi/origins-generator-service.svg?branch=master)](https://travis-ci.org/chop-dbhi/origins-generator-service) [![Coverage Status](https://img.shields.io/coveralls/chop-dbhi/origins-generator-service.svg)](https://coveralls.io/r/chop-dbhi/origins-generator-service)
+[![Build Status](https://travis-ci.org/chop-dbhi/prov-extractor.svg?branch=master)](https://travis-ci.org/chop-dbhi/origins-extractor-service) [![Coverage Status](https://img.shields.io/coveralls/chop-dbhi/prov-extractor.svg)](https://coveralls.io/r/chop-dbhi/prov-extractor)
 
-The Origins Generator Service exposes an HTTP service for generating provenance data in the PROV-JSON format which is directly consumable by [Origins](https://github.com/chop-dbhi/origins/).
+The PROV Extractor service exposes an HTTP interface for extracting provenance about the structure of common systems and formats. The provenance data is encoded in the [W3C PROV-JSON](http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/) format for ease of use.
 
 ## Install
 
-Docker image (recommended). All generator dependencies are included.
+Docker image (recommended). All dependencies are included.
 
 ```
-docker run -p 5000:5000 dbhi/origins-generator-service
+docker run -p 5000:5000 dbhi/prov-extractor
 ```
 
-Manual. Generator dependencies need to be installed manually.
+Manual. Extractor dependencies need to be installed manually.
 
 ```
-pip install origins-generators
+pip install prov-extractor
 ```
 
-### Optional Dependencies
+**Optional Dependencies**
 
 - `psycopg2`
 - `pymysql`
@@ -51,17 +51,17 @@ pip install origins-generators
 - GitHub Issues
 - Git
 
-## Interface
+## HTTP Interface
 
 **`GET /`**
-    
+
 Return a list of available sources.
 
 ```bash
 $ curl http://localhost:5000
 [{
     "name": "postgresql",
-    "description": "Generator for PostgreSQL databases.",
+    "description": "Extractor for PostgreSQL databases.",
     "links": {
         "self": "http://localhost:5000/postgresql/",
     },
@@ -72,15 +72,15 @@ $ curl http://localhost:5000
 ```
 
 **`GET /<source>/`**
-    
-Return a description information and the POST options for generating a *resource* from a source. The output is in the [JSON Schema](http://json-schema.org/) format.
+
+Return a description information and the POST options for extracting provenance from a source. The output is in the [JSON Schema](http://json-schema.org/) format.
 
 ```bash
 $ curl http://localhost:5000/postgresql/
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "postgresql",
-    "description": "Generator for PostgreSQL databases.",
+    "description": "Extractor for PostgreSQL databases.",
     "required": ["database"],
     "properties": {
         "database": {
@@ -104,8 +104,8 @@ $ curl http://localhost:5000/postgresql/
 ```
 
 **`POST /<source>/`**
-    
-Generates a export from the source.
+
+Generates a provenance extract from the source.
 
 ```bash
 $ curl -X POST -H 'Content-Type: application/json' http://localhost:5000/postgresql/ -d '
@@ -117,5 +117,3 @@ $ curl -X POST -H 'Content-Type: application/json' http://localhost:5000/postgre
     "password": "nothing"
 }'
 ```
-
-The response will be in the PROV-JSON format which can be imported directly into Origins.

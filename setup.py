@@ -6,14 +6,14 @@ if sys.version_info < (3, 3, 0):
 
 
 kwargs = {
-    'name': 'origins-generators',
-    'version': __import__('origins_generators').get_version(),
-    'description': 'Provenance generator service for Origins.',
-    'url': 'https://github.com/chop-dbhi/origins-generators/',
+    'name': 'prov-extractor',
+    'version': __import__('prov_extractor').get_version(),
+    'description': 'W3C PROV metadata extractor.',
+    'url': 'https://github.com/chop-dbhi/prov-extractor/',
     'author': 'Byron Ruth',
     'author_email': 'b@devel.io',
     'license': 'BSD',
-    'keywords': 'provenance generator origins service REST',
+    'keywords': 'provenance extractor prov service REST',
     'classifiers': [
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
@@ -33,7 +33,7 @@ kwargs = {
         'jsonschema>=2.4,<2.5'
     ],
 
-    'scripts': ['bin/origins-generators'],
+    'scripts': ['bin/prov-extractor'],
 }
 
 setup(**kwargs)
