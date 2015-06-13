@@ -4,9 +4,10 @@ from .base import SourceTestCase
 
 class TestCase(SourceTestCase):
     generator = 'github-issues'
+    output_name = 'origins_issues.json'
 
     @responses.activate
-    def test(self):
+    def generate(self):
         url = self.module.GITHUB_V3_ISSUES_URL\
             .format(owner='chop-dbhi', repo='origins')
 
@@ -18,7 +19,4 @@ class TestCase(SourceTestCase):
                           content_type=self.module.GITHUB_V3_ACCEPT_MIMETYPE)
 
         client = self.module.Client(owner='chop-dbhi', repo='origins')
-        output = client.generate()
-
-        expected_output = self.load_output('origins_issues.json')
-        self.assertProvCounts(output, expected_output)
+        return client.generate()

@@ -51,7 +51,7 @@ class Client(base.Client):
 
     def parse_service(self):
         return {
-            'origins:id': self.options.url,
+            'origins:ident': self.options.url,
             'prov:label': self.options.url,
             'prov:type': 'Service',
             'url': self.options.url,
@@ -69,7 +69,7 @@ class Client(base.Client):
                 unique.add(category['id'])
 
                 categories.append({
-                    'origins:id': 'category:{}'.format(category['id']),
+                    'origins:ident': 'category:{}'.format(category['id']),
                     'prov:label': category['name'],
                     'prov:type': 'Category',
                     'id': category['id'],
@@ -94,15 +94,15 @@ class Client(base.Client):
 
             attrs = dict(attrs)
 
-            attrs['origins:id'] = 'concept:{}'.format(attrs['id'])
-            attrs['origins:description'] = attrs['description']
+            attrs['origins:ident'] = 'concept:{}'.format(attrs['id'])
+            attrs['origins:doc'] = attrs['description']
             attrs['prov:label'] = attrs['name']
             attrs['prov:type'] = 'Concept'
+            attrs['category'] = category
 
             # Remove embedded data
             attrs.pop('_links')
             attrs.pop('fields')
-            attrs.pop('category')
 
             concepts.append(attrs)
 
@@ -120,10 +120,11 @@ class Client(base.Client):
             for field in attrs['fields']:
                 field = field.copy()
 
-                field['origins:id'] = 'field:{}'.format(field['id'])
-                field['origins:description'] = field['description']
+                field['origins:ident'] = 'field:{}'.format(field['id'])
+                field['origins:doc'] = field['description']
                 field['prov:label'] = field['name']
                 field['prov:type'] = 'Field'
+                field['concept'] = concept
 
                 # Remove embedded data
                 field.pop('_links')
@@ -142,26 +143,8 @@ class Client(base.Client):
         for cat in self.parse_categories():
             self.document.add('entity', cat)
 
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': service,
-                'prov:influencee': cat,
-                'prov:type': 'origins:Edge',
-            })
-
             for concept in self.parse_concepts(cat):
                 self.document.add('entity', concept)
 
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': cat,
-                    'prov:influencee': concept,
-                    'prov:type': 'origins:Edge',
-                })
-
                 for field in self.parse_fields(concept):
                     self.document.add('entity', field)
-
-                    self.document.add('wasInfluencedBy', {
-                        'prov:influencer': concept,
-                        'prov:influencee': field,
-                        'prov:type': 'origins:Edge',
-                    })

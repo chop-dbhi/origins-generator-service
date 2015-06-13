@@ -84,21 +84,22 @@ class Client(base.Client):
             uri = os.path.abspath(uri)
 
         return {
-            'origins:id': name,
+            'origins:ident': name,
             'prov:label': utils.prettify_name(name),
             'prov:type': 'File',
             'uri': uri,
         }
 
-    def parse_columns(self):
+    def parse_columns(self, file):
         columns = []
 
         for i, name in enumerate(self.options.columns):
             column = {
-                'origins:id': name,
+                'origins:ident': name,
                 'prov:label': name,
                 'prov:type': 'Column',
                 'index': i,
+                'file': file,
             }
 
             columns.append(column)
@@ -109,13 +110,7 @@ class Client(base.Client):
         file = self.parse_file()
         self.document.add('entity', file)
 
-        columns = self.parse_columns()
+        columns = self.parse_columns(file)
 
         for column in columns:
             self.document.add('entity', column)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': file,
-                'prov:influencee': column,
-                'prov:type': 'origins:Edge',
-            })

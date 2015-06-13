@@ -4,9 +4,10 @@ from .base import SourceTestCase
 
 class TestCase(SourceTestCase):
     generator = 'redcap-api'
+    output_name = 'redcap_api.json'
 
     @responses.activate
-    def test(self):
+    def generate(self):
         url = 'http://redcap-api.org'
         token = 'abc123'
         name = 'Test'
@@ -20,8 +21,5 @@ class TestCase(SourceTestCase):
         client = self.module.Client(url=url,
                                     token=token,
                                     name=name)
-        output = client.generate()
 
-        expected_output = self.load_output('redcap_api.json')
-
-        self.assertProvCounts(output, expected_output)
+        return client.generate()

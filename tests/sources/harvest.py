@@ -3,11 +3,11 @@ from .base import SourceTestCase
 
 
 class TestCase(SourceTestCase):
-    maxDiff = None
     generator = 'harvest'
+    output_name = 'harvest_openmrs.json'
 
     @responses.activate
-    def test(self):
+    def generate(self):
         url = 'http://harvest.research.chop.edu/demo/api/'
         concepts_url = 'http://harvest.research.chop.edu/demo/api/concepts/'
 
@@ -27,8 +27,5 @@ class TestCase(SourceTestCase):
                           content_type='application/json')
 
         client = self.module.Client(url=url)
-        output = client.generate()
 
-        expected_output = self.load_output('harvest_openmrs.json')
-
-        self.assertProvCounts(output, expected_output)
+        return client.generate()

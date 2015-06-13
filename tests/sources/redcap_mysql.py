@@ -12,16 +12,13 @@ PASSWORD = os.environ.get('REDCAP_MYSQL_PASSWORD')
 @unittest.skipUnless(HOST, 'connection settings not available')
 class TestCase(SourceTestCase):
     generator = 'redcap-mysql'
+    ouput_name = 'redcap_mysql.json'
 
-    def test(self):
+    def generate(self):
         client = self.module.Client(host=HOST,
                                     port=PORT,
                                     user=USER,
                                     password=PASSWORD,
                                     project='redcap_demo')
 
-        output = client.generate()
-
-        expected_output = self.load_output('redcap_mysql.json')
-
-        self.assertProvCounts(output, expected_output)
+        return client.generate()

@@ -1,7 +1,7 @@
 import os
 import json
 import unittest
-from origins_generators import sources
+from prov_extractor import sources
 
 
 class SourceTestCase(unittest.TestCase):
@@ -11,6 +11,8 @@ class SourceTestCase(unittest.TestCase):
 
     INPUT_DIR = os.path.join(os.path.dirname(__file__), '../input')
     OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '../output')
+
+    output_name = None
 
     @property
     def module(self):
@@ -40,3 +42,11 @@ class SourceTestCase(unittest.TestCase):
         # Ensure the number of elements are equal
         for key in output:
             self.assertEqual(len(output[key]), len(expected[key]))
+
+    def generate(self):
+        raise NotImplemented
+
+    def test(self):
+        output = self.generate()
+        expected_output = self.load_output(self.output_name)
+        self.assertProvCounts(output, expected_output)

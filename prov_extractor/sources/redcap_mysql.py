@@ -59,7 +59,7 @@ class Client(base.Client):
         self.engine = create_engine(url)
 
     def parse_user(self, attrs):
-        attrs['origins:id'] = attrs['username']
+        attrs['origins:ident'] = attrs['username']
         attrs['prov:label'] = '{} {}'.format(attrs['first_name'],
                                              attrs['last_name'])
 
@@ -144,7 +144,7 @@ class Client(base.Client):
 
         # Project entity, first ten columns
         project = dict(zip(keys[:7], row[:7]))
-        project['origins:id'] = project['name']
+        project['origins:ident'] = project['name']
         project['prov:label'] = project['label']
         project['prov:type'] = 'Project'
 
@@ -157,7 +157,7 @@ class Client(base.Client):
 
         # Activity for creating the project
         activity = {
-            'origins:id': 'creation:{}'.format(project['origins:id']),
+            'origins:ident': 'creation:{}'.format(project['origins:ident']),
             'prov:label': 'Create project',
             'prov:startTime': created_time,
             'prov:endTime': created_time,
@@ -174,7 +174,7 @@ class Client(base.Client):
                 'email': row[13],
             }
 
-            creator['origins:id'] = creator['username'].lower()  # username
+            creator['origins:ident'] = creator['username'].lower()  # username
             creator['prov:label'] = '{} {}'.format(creator['first_name'],
                                                    creator['last_name'])
 
@@ -196,7 +196,7 @@ class Client(base.Client):
 
         # Generation event of this project
         self.document.add('wasGeneratedBy', {
-            'origins:id': project['origins:id'],
+            'origins:ident': project['origins:ident'],
             'prov:entity': project,
             'prov:activity': activity,
             'prov:time': created_time,
@@ -205,7 +205,8 @@ class Client(base.Client):
         # Add the activity for moving the project to production
         if production_time:
             self.document.add('activity', {
-                'origins:id': 'production:{}'.format(project['origins:id']),
+                'origins:ident': 'production:{}'
+                                 .format(project['origins:ident']),
                 'prov:label': 'Move to production',
                 'prov:startTime': production_time,
                 'prov:endTime': production_time,
@@ -214,7 +215,8 @@ class Client(base.Client):
         # Project is deleted
         if deleted_time:
             activity = {
-                'origins:id': 'deletion:{}'.format(project['origins:id']),
+                'origins:ident': 'deletion:{}'
+                                 .format(project['origins:ident']),
                 'prov:label': 'Delete project',
                 'prov:startTime': deleted_time,
                 'prov:endTime': deleted_time,
@@ -264,10 +266,11 @@ class Client(base.Client):
         name = attrs['form_name']
 
         return {
-            'origins:id': os.path.join(project['origins:id'], name),
+            'origins:ident': os.path.join(project['origins:ident'], name),
             'prov:label': utils.prettify_name(name),
             'prov:type': 'Form',
             'name': name,
+            'project': project,
         }
 
     def parse_section(self, form, attrs):
@@ -276,17 +279,20 @@ class Client(base.Client):
         stripped_name = utils.strip_html(name)
 
         return {
-            'origins:id': os.path.join(form['origins:id'], stripped_name),
+            'origins:ident': os.path.join(form['origins:ident'],
+                                          stripped_name),
             'prov:label': stripped_name,
             'prov:type': 'Section',
             'name': attrs['section_header'],
+            'form': form,
         }
 
     def parse_field(self, section, attrs):
-        attrs['origins:id'] = os.path.join(section['origins:id'],
-                                           attrs['field_name'])
+        attrs['origins:ident'] = os.path.join(section['origins:ident'],
+                                              attrs['field_name'])
         attrs['prov:label'] = utils.strip_html(attrs['field_label'])
         attrs['prov:type'] = 'Field'
+        attrs['section'] = section
 
         return attrs
 
@@ -309,12 +315,6 @@ class Client(base.Client):
                 # Reset section
                 section = None
 
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': project,
-                    'prov:influencee': form,
-                    'prov:type': 'origins:Edge',
-                })
-
             # An explicit section is present, switch to section. Otherwise
             # if this is the first section for the form, used the default
             # section name.
@@ -324,17 +324,5 @@ class Client(base.Client):
                 section = self.parse_section(form, attrs)
                 self.document.add('entity', section)
 
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': form,
-                    'prov:influencee': section,
-                    'prov:type': 'origins:Edge',
-                })
-
             field = self.parse_field(section, attrs)
             self.document.add('entity', field)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': section,
-                'prov:influencee': field,
-                'prov:type': 'origins:Edge',
-            })

@@ -117,7 +117,7 @@ class Client(base.Client):
             activity_id = sha1
 
             activity = {
-                'origins:id': activity_id,
+                'origins:ident': activity_id,
                 'prov:label': commit['subject'],
                 'prov:startTime': commit['author_date'],
                 'prov:endTime': commit['commit_date'],
@@ -127,7 +127,7 @@ class Client(base.Client):
             author_id = commit['author']
 
             author = {
-                'origins:id': author_id,
+                'origins:ident': author_id,
                 'prov:label': commit['author'],
             }
 
@@ -135,7 +135,7 @@ class Client(base.Client):
             entity_id = '{}:{}'.format(sha1, fname)
 
             entity = {
-                'origins:id': entity_id,
+                'origins:ident': entity_id,
                 'prov:label': fname,
                 'prov:type': 'File',
                 'sha1': sha1,
@@ -148,7 +148,7 @@ class Client(base.Client):
 
             # Authorship of the commit
             self.document.add('wasAttributedTo', {
-                'origins:id': '{}:{}'.format(entity_id, author_id),
+                'origins:ident': '{}:{}'.format(entity_id, author_id),
                 'prov:entity': entity,
                 'prov:agent': author,
                 'prov:type': 'Authorship'
@@ -158,7 +158,7 @@ class Client(base.Client):
             author_roles = ['Author']
 
             self.document.add('wasAssociatedWith', {
-                'origins:id': '{}:{}'.format(author_id, activity_id),
+                'origins:ident': '{}:{}'.format(author_id, activity_id),
                 'prov:agent': author,
                 'prov:activity': activity,
                 'prov:role': author_roles,
@@ -170,14 +170,14 @@ class Client(base.Client):
                 committer_id = commit['committer']
 
                 committer = {
-                    'origins:id': committer_id,
+                    'origins:ident': committer_id,
                     'prov:label': commit['committer'],
                 }
 
                 self.document.add('agent', committer)
 
                 self.document.add('wasAssociatedWith', {
-                    'origins:id': '{}:{}'.format(committer_id, activity_id),
+                    'origins:ident': '{}:{}'.format(committer_id, activity_id),
                     'prov:activity': activity,
                     'prov:agent': committer,
                     'prov:role': 'Committer',
@@ -186,7 +186,7 @@ class Client(base.Client):
             # Delete
             if commit['mod_type'] == 'D':
                 self.document.add('wasInvalidatedBy', {
-                    'origins:id': '{}:{}'.format(sha1, fname),
+                    'origins:ident': '{}:{}'.format(sha1, fname),
                     'prov:entity': entity,
                     'prov:activity': activity,
                     'prov:time': commit['author_date'],
@@ -195,7 +195,7 @@ class Client(base.Client):
             else:
                 # Generation of the entity, so the entity_id is used
                 generation = {
-                    'origins:id': entity_id,
+                    'origins:ident': entity_id,
                     'prov:entity': entity,
                     'prov:activity': activity,
                     'prov:time': commit['author_date'],
@@ -208,7 +208,7 @@ class Client(base.Client):
                     # Previous entity was used for a derivation in this
                     # commit
                     usage = {
-                        'origins:id': '{}:{}'.format(sha1, previous_id),
+                        'origins:ident': '{}:{}'.format(sha1, previous_id),
                         'prov:activity': activity,
                         'prov:entity': previous,
                         'prov:time': commit['author_date'],
@@ -216,7 +216,7 @@ class Client(base.Client):
 
                     # Derivation of the current entity from the previous state
                     derivation = {
-                        'origins:id': '{}:{}'.format(previous_id, entity_id),
+                        'origins:ident': '{}:{}'.format(previous_id, entity_id),
                         'prov:activity': activity,
                         'prov:generatedEntity': entity,
                         'prov:usedEntity': previous,

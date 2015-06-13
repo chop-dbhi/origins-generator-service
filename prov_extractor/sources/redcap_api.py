@@ -45,7 +45,7 @@ class Client(base.Client):
 
     def parse_project(self):
         return {
-            'origins:id': self.options.name,
+            'origins:ident': self.options.name,
             'prov:label': self.options.name,
             'prov:type': 'Project',
             'name': self.options.name,
@@ -55,10 +55,11 @@ class Client(base.Client):
         name = attrs['form_name']
 
         return {
-            'origins:id': os.path.join(project['origins:id'], name),
+            'origins:ident': os.path.join(project['origins:ident'], name),
             'prov:label': utils.prettify_name(name),
             'prov:type': 'Form',
             'name': name,
+            'project': project,
         }
 
     def parse_section(self, form, attrs):
@@ -67,10 +68,12 @@ class Client(base.Client):
         stripped_name = utils.strip_html(name)
 
         return {
-            'origins:id': os.path.join(form['origins:id'], stripped_name),
+            'origins:ident': os.path.join(form['origins:ident'],
+                                          stripped_name),
             'prov:label': stripped_name,
             'prov:type': 'Section',
             'name': attrs['section_header'],
+            'form': form,
         }
 
     def parse_field(self, section, attrs):
@@ -78,7 +81,7 @@ class Client(base.Client):
         required = attrs['required_field'].lower() == 'y' and True or False
 
         field = {
-            'origins:id': os.path.join(section['origins:id'],
+            'origins:ident': os.path.join(section['origins:ident'],
                                        attrs['field_name']),
             'prov:label': utils.strip_html(attrs['field_label']),
             'prov:type': 'Field',
@@ -96,6 +99,7 @@ class Client(base.Client):
             'alignment': attrs['custom_alignment'],
             'survey_num': attrs['question_number'],
             'matrix': attrs['matrix_group_name'],
+            'section': section,
         }
 
         return field
@@ -115,12 +119,6 @@ class Client(base.Client):
                 # Reset section
                 section = None
 
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': project,
-                    'prov:influencee': form,
-                    'prov:type': 'origins:Edge',
-                })
-
             # An explicit section is present, switch to section. Otherwise
             # if this is the first section for the form, used the default
             # section name.
@@ -130,17 +128,5 @@ class Client(base.Client):
                 section = self.parse_section(form, attrs)
                 self.document.add('entity', section)
 
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': form,
-                    'prov:influencee': section,
-                    'prov:type': 'origins:Edge',
-                })
-
             field = self.parse_field(section, attrs)
             self.document.add('entity', field)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': section,
-                'prov:influencee': field,
-                'prov:type': 'origins:Edge',
-            })

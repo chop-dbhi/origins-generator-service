@@ -73,7 +73,7 @@ class Client(base.Client):
 
     def parse_user(self, user):
         return {
-            'origins:id': user['url'],
+            'origins:ident': user['url'],
             'prov:type': 'User',
             'prov:label': user['login'],
             'id': user['id'],
@@ -83,7 +83,7 @@ class Client(base.Client):
 
     def parse_issue_entity(self, issue):
         return {
-            'origins:id': issue['url'],
+            'origins:ident': issue['url'],
             'prov:type': 'Issue',
             'prov:label': issue['title'],
             'body': issue['body'],
@@ -109,7 +109,7 @@ class Client(base.Client):
         # Attribution to the user for creating the issue. Id is fixed
         # so redundant attribution is not provided.
         self.document.add('wasAttributedTo', {
-            'origins:id': issue['origins:id'],
+            'origins:ident': issue['origins:ident'],
             'prov:label': '{} Creator'.format(issue['prov:type']),
             'prov:entity': issue,
             'prov:agent': user,
@@ -117,7 +117,7 @@ class Client(base.Client):
 
         # Activity of creating the issue.
         activity = {
-            'origins:id': issue['origins:id'],
+            'origins:ident': issue['origins:ident'],
             'prov:type': 'Create {}'.format(issue['prov:type']),
         }
 
@@ -125,7 +125,7 @@ class Client(base.Client):
 
         # Association of the user to the creator role
         self.document.add('wasAssociatedWith', {
-            'origins:id': issue['origins:id'],
+            'origins:ident': issue['origins:ident'],
             'prov:role': '{} Creator'.format(issue['prov:type']),
             'prov:agent': user,
             'prov:activity': activity,
@@ -159,10 +159,10 @@ class Client(base.Client):
             user = self.parse_user(attrs['assignee'])
             self.document.add('agent', user)
 
-            attr_id = '{}/{}'.format(issue['origins:id'], user['login'])
+            attr_id = '{}/{}'.format(issue['origins:ident'], user['login'])
 
             self.document.add('wasAttributedTo', {
-                'origins:id': attr_id,
+                'origins:ident': attr_id,
                 'prov:label': '{} Assignee'.format(issue['prov:type']),
                 'prov:entity': issue,
                 'prov:agent': user,
@@ -171,10 +171,10 @@ class Client(base.Client):
         # The issue is closed. Note this does not invalidate the issue since
         # it can still be modified on the source system (i.e. GitHub)
         if attrs['closed_at']:
-            close_id = '{}/close'.format(issue['origins:id'])
+            close_id = '{}/close'.format(issue['origins:ident'])
 
             activity = {
-                'origins:id': close_id,
+                'origins:ident': close_id,
                 'prov:type': 'Close {}'.format(issue['prov:type']),
                 'prov:startTime': timestr_to_timestamp(attrs['closed_at']),
             }
@@ -186,14 +186,14 @@ class Client(base.Client):
                 self.document.add('agent', user)
 
                 self.document.add('wasAttributedTo', {
-                    'origins:id': close_id,
+                    'origins:ident': close_id,
                     'prov:label': '{} Closer'.format(issue['prov:type']),
                     'prov:entity': issue,
                     'prov:agent': user,
                 })
 
                 self.document.add('wasAssociatedWith', {
-                    'origins:id': close_id,
+                    'origins:ident': close_id,
                     'prov:agent': user,
                     'prov:activity': activity,
                     'prov:role': 'Closer'

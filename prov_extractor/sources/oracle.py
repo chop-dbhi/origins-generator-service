@@ -56,7 +56,7 @@ class Client(base.Client):
 
     def parse_database(self):
         return {
-            'origins:id': self.options.database,
+            'origins:ident': self.options.database,
             'prov:label': self.options.database,
             'prov:type': 'Database',
             'name': self.options.database,
@@ -67,10 +67,11 @@ class Client(base.Client):
 
         for name in self.insp.get_table_names():
             tables.append({
-                'origins:id': os.path.join(db['origins:id'], name),
+                'origins:ident': os.path.join(db['origins:ident'], name),
                 'prov:label': name,
                 'prov:type': 'Table',
                 'name': name,
+                'database': db,
             })
 
         return tables
@@ -80,13 +81,15 @@ class Client(base.Client):
 
         for attrs in self.insp.get_columns(table['name']):
             column = {
-                'origins:id': os.path.join(table['origins:id'], attrs['name']),
+                'origins:ident': os.path.join(table['origins:ident'],
+                                              attrs['name']),
                 'prov:label': attrs['name'],
                 'prov:type': 'Column',
                 'name': attrs['name'],
                 'type': str(attrs['type']),
                 'nullable': attrs['nullable'],
                 'default': attrs['default'],
+                'table': table,
             }
 
             # Extract optional attributes
@@ -104,17 +107,5 @@ class Client(base.Client):
         for table in self.parse_tables(db):
             self.document.add('entity', table)
 
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': db,
-                'prov:influencee': table,
-                'prov:type': 'origins:Edge',
-            })
-
             for column in self.parse_columns(table):
                 self.document.add('entity', column)
-
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': table,
-                    'prov:influencee': column,
-                    'prov:type': 'origins:Edge',
-                })

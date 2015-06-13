@@ -2,7 +2,7 @@
     "entity": {
         "entity:sample": {
             "fileformat": "VCFv4.1",
-            "origins:id": "sample",
+            "origins:ident": "sample",
             "prov:label": "Sample",
             "prov:type": "VCF File",
             "reference": "GRCh37",
@@ -12,7 +12,7 @@
             "description": "Alternate non-reference alleles",
             "index": 4,
             "name": "ALT",
-            "origins:id": "sample/ALT",
+            "origins:ident": "sample/ALT",
             "prov:label": "ALT",
             "prov:type": "Field"
         },
@@ -20,7 +20,7 @@
             "description": "Chromosome",
             "index": 0,
             "name": "CHROM",
-            "origins:id": "sample/CHROM",
+            "origins:ident": "sample/CHROM",
             "prov:label": "CHROM",
             "prov:type": "Field"
         },
@@ -29,7 +29,7 @@
             "index": 31,
             "name": "GL",
             "num_values": null,
-            "origins:id": "sample/FILTER",
+            "origins:ident": "sample/FILTER",
             "prov:label": "FILTER",
             "prov:type": "Field",
             "type": "Float"
@@ -38,7 +38,7 @@
             "description": "Unique identifier",
             "index": 2,
             "name": "ID",
-            "origins:id": "sample/ID",
+            "origins:ident": "sample/ID",
             "prov:label": "ID",
             "prov:type": "Field"
         },
@@ -46,7 +46,7 @@
             "description": "Position",
             "index": 1,
             "name": "POS",
-            "origins:id": "sample/POS",
+            "origins:ident": "sample/POS",
             "prov:label": "POS",
             "prov:type": "Field"
         },
@@ -54,7 +54,7 @@
             "description": "Phred-scale quality score for assertion made in ALT",
             "index": 5,
             "name": "QUAL",
-            "origins:id": "sample/QUAL",
+            "origins:ident": "sample/QUAL",
             "prov:label": "QUAL",
             "prov:type": "Field"
         },
@@ -62,171 +62,9 @@
             "description": "Reference base(s)",
             "index": 3,
             "name": "REF",
-            "origins:id": "sample/REF",
+            "origins:ident": "sample/REF",
             "prov:label": "REF",
             "prov:type": "Field"
-        }
-    },
-    "wasInfluencedBy": {
-        "_:x1": {
-            "prov:influencee": "entity:sample/CHROM",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x10": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x11": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x12": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x13": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x14": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x15": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x16": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x17": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x18": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x19": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x2": {
-            "prov:influencee": "entity:sample/POS",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x20": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x21": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x22": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x23": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x24": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x25": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x26": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x27": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x28": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x29": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x3": {
-            "prov:influencee": "entity:sample/ID",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x30": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x31": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x32": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x4": {
-            "prov:influencee": "entity:sample/REF",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x5": {
-            "prov:influencee": "entity:sample/ALT",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x6": {
-            "prov:influencee": "entity:sample/QUAL",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x7": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x8": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
-        },
-        "_:x9": {
-            "prov:influencee": "entity:sample/FILTER",
-            "prov:influencer": "entity:sample",
-            "prov:type": "origins:Edge"
         }
     }
 }

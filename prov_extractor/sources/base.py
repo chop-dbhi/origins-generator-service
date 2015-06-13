@@ -123,8 +123,8 @@ class Document(dict):
             attrs = cid
 
             # Create an identifier
-            if 'origins:id' in attrs:
-                cid = '{}:{}'.format(concept, attrs['origins:id'])
+            if 'origins:ident' in attrs:
+                cid = '{}:{}'.format(concept, attrs['origins:ident'])
             else:
                 cid = self.idr()
 

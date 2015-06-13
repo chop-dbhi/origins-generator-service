@@ -2,19 +2,19 @@
     "entity": {
         "entity:Test": {
             "name": "Test",
-            "origins:id": "Test",
+            "origins:ident": "Test",
             "prov:label": "Test",
             "prov:type": "Project"
         },
         "entity:Test/demographics": {
             "name": "demographics",
-            "origins:id": "Test/demographics",
+            "origins:ident": "Test/demographics",
             "prov:label": "Demographics",
             "prov:type": "Form"
         },
         "entity:Test/demographics/Demographics Information": {
             "name": "Demographics Information",
-            "origins:id": "Test/demographics/Demographics Information",
+            "origins:ident": "Test/demographics/Demographics Information",
             "prov:label": "Demographics Information",
             "prov:type": "Section"
         },
@@ -27,7 +27,7 @@
             "matrix": "",
             "name": "address",
             "note": "",
-            "origins:id": "Test/demographics/Demographics Information/address",
+            "origins:ident": "Test/demographics/Demographics Information/address",
             "prov:label": "Street, City, State, ZIP",
             "prov:type": "Field",
             "required": false,
@@ -46,7 +46,7 @@
             "matrix": "",
             "name": "dob",
             "note": "",
-            "origins:id": "Test/demographics/Demographics Information/dob",
+            "origins:ident": "Test/demographics/Demographics Information/dob",
             "prov:label": "Date of Birth",
             "prov:type": "Field",
             "required": false,
@@ -65,7 +65,7 @@
             "matrix": "",
             "name": "first_name",
             "note": "",
-            "origins:id": "Test/demographics/Demographics Information/first_name",
+            "origins:ident": "Test/demographics/Demographics Information/first_name",
             "prov:label": "First Name",
             "prov:type": "Field",
             "required": false,
@@ -84,7 +84,7 @@
             "matrix": "",
             "name": "last_name",
             "note": "",
-            "origins:id": "Test/demographics/Demographics Information/last_name",
+            "origins:ident": "Test/demographics/Demographics Information/last_name",
             "prov:label": "Last Name",
             "prov:type": "Field",
             "required": false,
@@ -103,7 +103,7 @@
             "matrix": "",
             "name": "phone_number",
             "note": "",
-            "origins:id": "Test/demographics/Demographics Information/phone_number",
+            "origins:ident": "Test/demographics/Demographics Information/phone_number",
             "prov:label": "Phone number",
             "prov:type": "Field",
             "required": false,
@@ -122,7 +122,7 @@
             "matrix": "",
             "name": "sex",
             "note": "",
-            "origins:id": "Test/demographics/Demographics Information/sex",
+            "origins:ident": "Test/demographics/Demographics Information/sex",
             "prov:label": "Gender",
             "prov:type": "Field",
             "required": false,
@@ -134,7 +134,7 @@
         },
         "entity:Test/demographics/General": {
             "name": "",
-            "origins:id": "Test/demographics/General",
+            "origins:ident": "Test/demographics/General",
             "prov:label": "General",
             "prov:type": "Section"
         },
@@ -147,7 +147,7 @@
             "matrix": "",
             "name": "study_id",
             "note": "",
-            "origins:id": "Test/demographics/General/study_id",
+            "origins:ident": "Test/demographics/General/study_id",
             "prov:label": "Study ID",
             "prov:type": "Field",
             "required": false,
@@ -156,58 +156,6 @@
             "validation_max": "",
             "validation_min": "",
             "validation_type": ""
-        }
-    },
-    "wasInfluencedBy": {
-        "_:x1": {
-            "prov:influencee": "entity:Test/demographics",
-            "prov:influencer": "entity:Test",
-            "prov:type": "origins:Edge"
-        },
-        "_:x10": {
-            "prov:influencee": "entity:Test/demographics/Demographics Information/phone_number",
-            "prov:influencer": "entity:Test/demographics/Demographics Information",
-            "prov:type": "origins:Edge"
-        },
-        "_:x2": {
-            "prov:influencee": "entity:Test/demographics/General",
-            "prov:influencer": "entity:Test/demographics",
-            "prov:type": "origins:Edge"
-        },
-        "_:x3": {
-            "prov:influencee": "entity:Test/demographics/General/study_id",
-            "prov:influencer": "entity:Test/demographics/General",
-            "prov:type": "origins:Edge"
-        },
-        "_:x4": {
-            "prov:influencee": "entity:Test/demographics/Demographics Information",
-            "prov:influencer": "entity:Test/demographics",
-            "prov:type": "origins:Edge"
-        },
-        "_:x5": {
-            "prov:influencee": "entity:Test/demographics/Demographics Information/first_name",
-            "prov:influencer": "entity:Test/demographics/Demographics Information",
-            "prov:type": "origins:Edge"
-        },
-        "_:x6": {
-            "prov:influencee": "entity:Test/demographics/Demographics Information/last_name",
-            "prov:influencer": "entity:Test/demographics/Demographics Information",
-            "prov:type": "origins:Edge"
-        },
-        "_:x7": {
-            "prov:influencee": "entity:Test/demographics/Demographics Information/dob",
-            "prov:influencer": "entity:Test/demographics/Demographics Information",
-            "prov:type": "origins:Edge"
-        },
-        "_:x8": {
-            "prov:influencee": "entity:Test/demographics/Demographics Information/sex",
-            "prov:influencer": "entity:Test/demographics/Demographics Information",
-            "prov:type": "origins:Edge"
-        },
-        "_:x9": {
-            "prov:influencee": "entity:Test/demographics/Demographics Information/address",
-            "prov:influencer": "entity:Test/demographics/Demographics Information",
-            "prov:type": "origins:Edge"
         }
     }
 }

@@ -9,14 +9,12 @@ PASSWORD = os.environ.get('POSTGRESQL_PASSWORD', '')
 
 class TestCase(SourceTestCase):
     generator = 'postgresql'
+    output_name = 'chinook_postgresql.json'
 
-    def test(self):
+    def generate(self):
         client = self.module.Client(database='chinook',
                                     host=HOST,
                                     user=USER,
                                     password=PASSWORD)
-        output = client.generate()
 
-        expected_output = self.load_output('chinook_postgresql.json')
-
-        self.assertProvCounts(output, expected_output)
+        return client.generate()

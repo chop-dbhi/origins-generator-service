@@ -74,9 +74,7 @@ class Client(base.Client):
                                full_response=True)
 
         # result['value'] / output['counts']['input'] would produce the
-        # occurrence of the field across documents. However this is
-        # data-level calculation which are not supported by Origins at
-        # this time.
+        # occurrence of the field across documents.
         fields = []
 
         for result in output['results']:
@@ -91,23 +89,27 @@ class Client(base.Client):
         version = self.conn.server_info()['version']
 
         return {
-            'origins:id': name,
+            'origins:ident': name,
             'prov:label': name,
             'prov:type': 'Database',
             'version': version
         }
 
     def parse_collection(self, attrs, db):
-        attrs['origins:id'] = os.path.join(db['origins:id'], attrs['name'])
+        attrs['origins:ident'] = os.path.join(db['origins:ident'],
+                                              attrs['name'])
         attrs['prov:label'] = attrs['name']
         attrs['prov:type'] = 'Collection'
+        attrs['database'] = db
 
         return attrs
 
     def parse_field(self, attrs, col):
-        attrs['origins:id'] = os.path.join(col['origins:id'], attrs['name'])
+        attrs['origins:ident'] = os.path.join(col['origins:ident'],
+                                              attrs['name'])
         attrs['prov:label'] = attrs['name']
         attrs['prov:type'] = 'Field'
+        attrs['column'] = col
 
         return attrs
 
@@ -119,18 +121,6 @@ class Client(base.Client):
             col = self.parse_collection(col, db)
             self.document.add('entity', col)
 
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': db,
-                'prov:influencee': col,
-                'prov:type': 'origins:Edge',
-            })
-
             for field in self.get_fields(col['name']):
                 field = self.parse_field(field, col)
                 self.document.add('entity', field)
-
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': col,
-                    'prov:influencee': field,
-                    'prov:type': 'origins:Edge',
-                })

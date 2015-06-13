@@ -46,7 +46,7 @@ class Client(base.Client):
             uri = os.path.abspath(uri)
 
         attrs = {
-            'origins:id': name,
+            'origins:ident': name,
             'prov:label': utils.prettify_name(name),
             'prov:type': 'VCF File',
             'uri': uri,
@@ -59,17 +59,18 @@ class Client(base.Client):
     def parse_fields(self, parent):
         index = 0
         fields = []
-        parent_id = parent['origins:id']
+        parent_id = parent['origins:ident']
 
         # Fixed fields
         for name, desc in FIXED_FIELDS:
             fields.append({
-                'origins:id': os.path.join(parent_id, name),
+                'origins:ident': os.path.join(parent_id, name),
                 'prov:label': name,
                 'prov:type': 'Field',
                 'name': name,
                 'description': desc,
                 'index': index,
+                'file': parent,
             })
 
             index += 1
@@ -80,7 +81,7 @@ class Client(base.Client):
         for row in self.reader.infos.values():
             attrs = dict(zip(keys, row))
 
-            attrs['origins:id'] = os.path.join(parent_id, name)
+            attrs['origins:ident'] = os.path.join(parent_id, name)
             attrs['prov:label'] = name
             attrs['prov:type'] = 'Field'
             attrs['index'] = index
@@ -92,7 +93,7 @@ class Client(base.Client):
         for row in self.reader.formats.values():
             attrs = dict(zip(keys, row))
 
-            attrs['origins:id'] = os.path.join(parent_id, name)
+            attrs['origins:ident'] = os.path.join(parent_id, name)
             attrs['prov:label'] = name
             attrs['prov:type'] = 'Field'
             attrs['index'] = index
@@ -108,9 +109,3 @@ class Client(base.Client):
 
         for field in self.parse_fields(_file):
             self.document.add('entity', field)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': _file,
-                'prov:influencee': field,
-                'prov:type': 'origins:Edge',
-            })

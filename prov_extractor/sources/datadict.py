@@ -112,19 +112,21 @@ class Client(base.Client):
             uri = os.path.abspath(uri)
 
         return {
-            'origins:id': name,
+            'origins:ident': name,
             'prov:label': utils.prettify_name(name),
             'prov:type': 'File',
             'uri': uri,
         }
 
-    def parse_fields(self):
+    def parse_fields(self, file):
         fields = []
 
         keys = self.options.keys
 
         for values in self.options.fields:
             field = dict(zip(keys, values))
+
+            field['file'] = file
 
             if isinstance(self.options.id, (list, tuple)):
                 _id = '/'.join([field[i] for i in self.options.id])
@@ -136,12 +138,12 @@ class Client(base.Client):
             else:
                 label = field[self.options.label]
 
-            field['origins:id'] = _id
+            field['origins:ident'] = _id
             field['prov:label'] = label
             field['prov:type'] = 'Field'
 
             if self.options.description:
-                field['origins:description'] = self.options.description
+                field['origins:doc'] = self.options.description
 
             fields.append(field)
 
@@ -151,13 +153,7 @@ class Client(base.Client):
         file = self.parse_file()
         self.document.add('entity', file)
 
-        fields = self.parse_fields()
+        fields = self.parse_fields(file)
 
         for field in fields:
             self.document.add('entity', field)
-
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': file,
-                'prov:influencee': field,
-                'prov:type': 'origins:Edge',
-            })

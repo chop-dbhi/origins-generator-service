@@ -1,15 +1,17 @@
 import os
+import unittest
 from .base import SourceTestCase
 
 
-HOST = os.environ.get('MYSQL_HOST', 'localhost')
-USER = os.environ.get('MYSQL_USER', '')
-PASSWORD = os.environ.get('MYSQL_PASSWORD', '')
+HOST = os.environ.get('ORACLE_HOST', 'localhost')
+USER = os.environ.get('ORACLE_USER', '')
+PASSWORD = os.environ.get('ORACLE_PASSWORD', '')
 
 
+@unittest.skip
 class TestCase(SourceTestCase):
-    generator = 'mysql'
-    output_name = 'chinook_mysql.json'
+    generator = 'oracle'
+    output_name = 'chinook_oracle.json'
 
     def generate(self):
         client = self.module.Client(database='chinook',

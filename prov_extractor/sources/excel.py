@@ -82,26 +82,28 @@ class Client(base.Client):
         if not id:
             id = name
 
-        attrs['origins:id'] = id
+        attrs['origins:ident'] = id
         attrs['prov:label'] = label
         attrs['prov:type'] = 'Workbook'
 
         return attrs
 
-    def parse_sheet(self, name, parent, index):
+    def parse_sheet(self, name, workbook, index):
         return {
-            'origins:id': os.path.join(parent['origins:id'], name),
+            'origins:ident': os.path.join(workbook['origins:ident'], name),
             'prov:label': name,
             'prov:type': 'Sheet',
             'index': index,
+            'workbook': workbook,
         }
 
-    def parse_column(self, name, parent, index):
+    def parse_column(self, name, sheet, index):
         return {
-            'origins:id': os.path.join(parent['origins:id'], name),
+            'origins:ident': os.path.join(sheet['origins:ident'], name),
             'prov:label': name,
             'prov:type': 'Column',
             'index': index,
+            'sheet': sheet,
         }
 
     def parse(self):
@@ -116,20 +118,8 @@ class Client(base.Client):
             sheet = self.parse_sheet(sheet_name, workbook, i)
             self.document.add('entity', sheet)
 
-            self.document.add('wasInfluencedBy', {
-                'prov:influencer': workbook,
-                'prov:influencee': sheet,
-                'prov:type': 'origins:Edge',
-            })
-
             columns = _column_names(wb, sheet_name)
 
             for j, column_name in enumerate(columns):
                 column = self.parse_column(column_name, sheet, j)
                 self.document.add('entity', column)
-
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': sheet,
-                    'prov:influencee': column,
-                    'prov:type': 'origins:Edge',
-                })

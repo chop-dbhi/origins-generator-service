@@ -48,7 +48,7 @@ class Client(base.Client):
         path_id = os.path.relpath(path, self.options.path)
 
         return {
-            'origins:id': path_id,
+            'origins:ident': path_id,
             'prov:type': 'Directory',
             'prov:label': path_id,
             'path': path_id,
@@ -71,7 +71,7 @@ class Client(base.Client):
         ctime = datetime.fromtimestamp(create_time)
 
         return {
-            'origins:id': path_id,
+            'origins:ident': path_id,
             'prov:type': 'File',
             'prov:label': path_id,
             'path': path_id,
@@ -117,11 +117,6 @@ class Client(base.Client):
                 path = os.path.join(root, f)
 
                 _file = self.parse_file(path)
+                _file['directory'] = directory
 
                 self.document.add('entity', _file)
-
-                self.document.add('wasInfluencedBy', {
-                    'prov:influencer': directory,
-                    'prov:influencee': _file,
-                    'prov:type': 'origins:Edge',
-                })

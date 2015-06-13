@@ -3,7 +3,7 @@
         "entity:AlbumId": {
             "name": "AlbumId",
             "nullable": "1",
-            "origins:id": "AlbumId",
+            "origins:ident": "AlbumId",
             "primary_key": "0",
             "prov:label": "INTEGER",
             "prov:type": "Field",
@@ -12,7 +12,7 @@
         "entity:Bytes": {
             "name": "Bytes",
             "nullable": "0",
-            "origins:id": "Bytes",
+            "origins:ident": "Bytes",
             "primary_key": "0",
             "prov:label": "INTEGER",
             "prov:type": "Field",
@@ -21,7 +21,7 @@
         "entity:Composer": {
             "name": "Composer",
             "nullable": "1",
-            "origins:id": "Composer",
+            "origins:ident": "Composer",
             "primary_key": "0",
             "prov:label": "NVARCHAR(220)",
             "prov:type": "Field",
@@ -30,7 +30,7 @@
         "entity:GenreId": {
             "name": "GenreId",
             "nullable": "1",
-            "origins:id": "GenreId",
+            "origins:ident": "GenreId",
             "primary_key": "0",
             "prov:label": "INTEGER",
             "prov:type": "Field",
@@ -39,7 +39,7 @@
         "entity:MediaTypeId": {
             "name": "MediaTypeId",
             "nullable": "0",
-            "origins:id": "MediaTypeId",
+            "origins:ident": "MediaTypeId",
             "primary_key": "0",
             "prov:label": "INTEGER",
             "prov:type": "Field",
@@ -48,7 +48,7 @@
         "entity:Milliseconds": {
             "name": "Milliseconds",
             "nullable": "0",
-            "origins:id": "Milliseconds",
+            "origins:ident": "Milliseconds",
             "primary_key": "0",
             "prov:label": "INTEGER",
             "prov:type": "Field",
@@ -57,7 +57,7 @@
         "entity:Name": {
             "name": "Name",
             "nullable": "0",
-            "origins:id": "Name",
+            "origins:ident": "Name",
             "primary_key": "0",
             "prov:label": "NVARCHAR(200)",
             "prov:type": "Field",
@@ -66,7 +66,7 @@
         "entity:TrackId": {
             "name": "TrackId",
             "nullable": "0",
-            "origins:id": "TrackId",
+            "origins:ident": "TrackId",
             "primary_key": "1",
             "prov:label": "INTEGER",
             "prov:type": "Field",
@@ -75,64 +75,17 @@
         "entity:UnitPrice": {
             "name": "UnitPrice",
             "nullable": "0",
-            "origins:id": "UnitPrice",
+            "origins:ident": "UnitPrice",
             "primary_key": "0",
             "prov:label": "NUMERIC(10,2)",
             "prov:type": "Field",
             "type": "NUMERIC(10,2)"
         },
         "entity:chinook_tracks_datadict": {
-            "origins:id": "chinook_tracks_datadict",
+            "origins:ident": "chinook_tracks_datadict",
             "prov:label": "Chinook Tracks Datadict",
             "prov:type": "File",
             "uri": "/Users/ruthb/Code/cbmi/origins-generators/tests/input/chinook_tracks_datadict.csv"
-        }
-    },
-    "wasInfluencedBy": {
-        "_:x1": {
-            "prov:influencee": "entity:TrackId",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x2": {
-            "prov:influencee": "entity:Name",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x3": {
-            "prov:influencee": "entity:AlbumId",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x4": {
-            "prov:influencee": "entity:MediaTypeId",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x5": {
-            "prov:influencee": "entity:GenreId",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x6": {
-            "prov:influencee": "entity:Composer",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x7": {
-            "prov:influencee": "entity:Milliseconds",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x8": {
-            "prov:influencee": "entity:Bytes",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
-        },
-        "_:x9": {
-            "prov:influencee": "entity:UnitPrice",
-            "prov:influencer": "entity:chinook_tracks_datadict",
-            "prov:type": "origins:Edge"
         }
     }
 }
