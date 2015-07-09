@@ -30,9 +30,9 @@ before_script:
     - psql -U $POSTGRESQL_USER -d chinook < tests/input/chinook_postgresql.sql > /dev/null
     - mongorestore --db chinook tests/input/mongodb > /dev/null
 
-script:
-    - coverage run test_suite.py
-
-after_success:
-    - pip install -q coveralls
-    - coveralls > /dev/null
+#script:
+#    - coverage run test_suite.py
+#
+#after_success:
+#    - pip install -q coveralls
+#    - coveralls > /dev/null
