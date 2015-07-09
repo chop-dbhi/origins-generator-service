@@ -216,7 +216,8 @@ class Client(base.Client):
 
                     # Derivation of the current entity from the previous state
                     derivation = {
-                        'origins:ident': '{}:{}'.format(previous_id, entity_id),
+                        'origins:ident': '{}:{}'.format(previous_id,
+                                                        entity_id),
                         'prov:activity': activity,
                         'prov:generatedEntity': entity,
                         'prov:usedEntity': previous,
